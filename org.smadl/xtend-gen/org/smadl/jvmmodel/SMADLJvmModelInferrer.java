@@ -2,12 +2,24 @@ package org.smadl.jvmmodel;
 
 import com.google.inject.Inject;
 import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.common.types.JvmGenericType;
+import org.eclipse.xtext.common.types.JvmMember;
+import org.eclipse.xtext.common.types.JvmOperation;
+import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.xbase.XExpression;
+import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
+import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.smadl.smadl.Entity;
+import org.smadl.smadl.ProvidedService;
+import org.smadl.smadl.SocialMachine;
 
 /**
  * <p>Infers a JVM model from the source model.</p>
@@ -50,6 +62,40 @@ public class SMADLJvmModelInferrer extends AbstractModelInferrer {
    *            <code>true</code>.
    */
   protected void _infer(final Entity element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
+    EList<SocialMachine> _entities = element.getEntities();
+    for (final SocialMachine sm : _entities) {
+      String _name = sm.getName();
+      String _firstUpper = StringExtensions.toFirstUpper(_name);
+      JvmGenericType _class = this._jvmTypesBuilder.toClass(sm, _firstUpper);
+      IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+      final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
+          public void apply(final JvmGenericType it) {
+            EList<ProvidedService> _wrapperInterface = sm.getWrapperInterface();
+            for (final ProvidedService operation : _wrapperInterface) {
+              EList<JvmMember> _members = it.getMembers();
+              String _name = operation.getName();
+              JvmTypeReference _newTypeRef = SMADLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(operation, String.class);
+              final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+                  public void apply(final JvmOperation it) {
+                    final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+                        public void apply(final ITreeAppendable it) {
+                          EList<XExpression> _expressions = operation.getExpressions();
+                          for (final XExpression exp : _expressions) {
+                            String _string = exp.toString();
+                            it.append(_string);
+                          }
+                        }
+                      };
+                    SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+                  }
+                };
+              JvmOperation _method = SMADLJvmModelInferrer.this._jvmTypesBuilder.toMethod(operation, _name, _newTypeRef, _function);
+              SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _method);
+            }
+          }
+        };
+      _accept.initializeLater(_function);
+    }
   }
   
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
