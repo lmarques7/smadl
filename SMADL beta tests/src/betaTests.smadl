@@ -1,0 +1,40 @@
+SocialMachine dropbox relates to facebook {
+	
+	constructor(String baseURL) {
+		/* Setting up the REST URL */
+	}
+	
+	operation saveFile (java.io.File newFile) {
+		x = facebook.listFriends /* calling another Social Machine operation */
+		if (x.size > 25) {
+			facebook.share
+		}
+	} constraint UNLIMITED
+	
+	operation listFilesInFolder returns java.util.List<java.io.File> (String folder) {
+		/* Operation body */
+	} constraint REDUCED_RESOURCE
+}
+
+SocialMachine facebook {
+	
+	general constraint PRE_AUTH_SM
+	
+	constructor (String baseURL, String apiKey) {
+		/* Instantiate basic operations of current social machine */
+	}
+	
+	operation listFriends returns java.util.List<String> () {
+		x = new ArrayList<String>()
+		return x
+	} constraint REQUESTS_PER_PERIOD
+	
+}
+
+SocialMachine toggl relates to dropbox {
+    
+    constructor() {
+        
+    }
+    
+}
