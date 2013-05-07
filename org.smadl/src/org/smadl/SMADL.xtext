@@ -1,0 +1,41 @@
+grammar org.smadl.SMADL with org.eclipse.xtext.xbase.Xbase
+
+generate smadl "http://www.smadl.org"
+
+Entity:
+	entities+=SocialMachine*
+;
+	
+SocialMachine:
+    'SocialMachine' name=ValidID ('relates to' depends+=[SocialMachine|ValidID] (',' depends+=[SocialMachine|ValidID])*)? '{'
+        (generalConstraints=GeneralConstraint ';'?)?
+        constructor=ComputationalUnit
+        (wrapperInterface+=ProvidedService)* ';'?
+    '}'
+;
+
+ComputationalUnit:
+    {ComputationalUnit}
+    'constructor' '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')' '{'
+        (expressions+=XExpression ';'?)*
+    '}'
+;
+
+ProvidedService:
+    'operation' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')' '{'
+        (expressions+=XExpression ';'?)*
+    '}' (opConstraints+=OperationConstraint)*  
+;
+
+OperationConstraint:
+    'constraint' type+=ConstraintType+
+;
+
+GeneralConstraint:
+    'general constraint' type=ConstraintType
+;
+
+//Four constraint types that can be used in specific or general constraints
+enum ConstraintType:
+    REQUESTS_PER_PERIOD | PRE_AUTH_SM | REDUCED_RESOURCE | UNLIMITED
+;

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.smadl/src-gen" editDirectory="/org.smadl.edit/src"
+    editorDirectory="/org.smadl.editor/src" modelPluginID="org.smadl" forceOverwrite="true"
+    modelName="SMADL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.smadl.edit" editorPluginID="org.smadl.editor"
+    runtimeVersion="2.8" usedGenPackages="../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+  <genPackages prefix="Smadl" basePackage="org.smadl" disposableProviderFactory="true"
+      fileExtensions="smadl" ecorePackage="SMADL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SMADL.ecore#//ConstraintType">
+      <genEnumLiterals ecoreEnumLiteral="SMADL.ecore#//ConstraintType/REQUESTS_PER_PERIOD"/>
+      <genEnumLiterals ecoreEnumLiteral="SMADL.ecore#//ConstraintType/PRE_AUTH_SM"/>
+      <genEnumLiterals ecoreEnumLiteral="SMADL.ecore#//ConstraintType/REDUCED_RESOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="SMADL.ecore#//ConstraintType/UNLIMITED"/>
+    </genEnums>
+    <genClasses ecoreClass="SMADL.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//Entity/entities"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//SocialMachine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//SocialMachine/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/depends"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/generalConstraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/constructor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/wrapperInterface"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//ComputationalUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ComputationalUnit/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ComputationalUnit/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//ProvidedService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//ProvidedService/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/expressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/opConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//OperationConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//OperationConstraint/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//GeneralConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralConstraint/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
