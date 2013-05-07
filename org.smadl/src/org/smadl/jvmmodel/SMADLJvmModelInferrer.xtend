@@ -13,13 +13,12 @@ import org.smadl.smadl.Entity
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class SMADLJvmModelInferrer extends AbstractModelInferrer {
-
     /**
      * convenience API to build and initialize JVM types and their members.
      */
-	@Inject extension JvmTypesBuilder
+    @Inject extension JvmTypesBuilder
 
-	/**
+    /**
 	 * The dispatch method {@code infer} is called for each instance of the
 	 * given element's type that is contained in a resource.
 	 * 
@@ -44,20 +43,23 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-   	def dispatch void infer(Entity element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		// Here you explain how your model is mapped to Java elements, by writing the actual translation code.
-   		
-   		// An implementation for the initial hello world example could look like this:
-//   		acceptor.accept(element.toClass("my.company.greeting.MyGreetings"))
-//   			.initializeLater([
-//   				for (greeting : element.greetings) {
-//   					members += greeting.toMethod("hello" + greeting.name, greeting.newTypeRef(typeof(String))) [
-//   						body = [
-//   							append('''return "Hello «greeting.name»";''')
-//   						]
-//   					]
-//   				}
-//   			])
-   	}
-}
+    def dispatch void infer(Entity element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 
+        // Here you explain how your model is mapped to Java elements, by writing the actual translation code.
+        // An implementation for the initial hello world example could look like this:
+        for (sm : element.entities) {
+            acceptor.accept(sm.toClass(sm.name.toFirstUpper)).initializeLater(
+                [
+                    for (operation : sm.wrapperInterface) {
+                        members += operation.toMethod(operation.name, operation.newTypeRef(typeof(String))) [
+                            body = [
+                                for (exp : operation.expressions) {
+                                    append(exp.toString)
+                                }
+                            ]
+                        ]
+                    }
+                ])
+        }
+    }
+}
