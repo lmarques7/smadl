@@ -5,8 +5,8 @@ package org.smadl.formatting
 
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter
 import org.eclipse.xtext.formatting.impl.FormattingConfig
-// import com.google.inject.Inject;
-// import org.smadl.services.SMADLGrammarAccess
+import org.smadl.services.SMADLGrammarAccess
+import com.google.inject.Inject
 
 /**
  * This class contains custom formatting description.
@@ -18,13 +18,13 @@ import org.eclipse.xtext.formatting.impl.FormattingConfig
  */
 class SMADLFormatter extends AbstractDeclarativeFormatter {
 
-//	@Inject extension SMADLGrammarAccess
+	@Inject extension SMADLGrammarAccess
 	
 	override protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
-//		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
-//		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
+        // It's usually a good idea to activate the following three statements.
+        // They will add and preserve newlines around comments
+		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
+		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
+		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
 	}
 }

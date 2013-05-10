@@ -1051,7 +1051,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameters+=FullJvmFormalParameter* parameters+=FullJvmFormalParameter* expressions+=XExpression*)
+	 *     (parameters+=FullJvmFormalParameter* parameters+=FullJvmFormalParameter* body=XBlockExpression)
 	 */
 	protected void sequence_ComputationalUnit(EObject context, ComputationalUnit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1099,7 +1099,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	 *         returnType=JvmTypeReference? 
 	 *         parameters+=FullJvmFormalParameter* 
 	 *         parameters+=FullJvmFormalParameter* 
-	 *         expressions+=XExpression* 
+	 *         body=XBlockExpression 
 	 *         opConstraints+=OperationConstraint*
 	 *     )
 	 */
@@ -1114,7 +1114,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	 *         name=ValidID 
 	 *         (depends+=[SocialMachine|ValidID] depends+=[SocialMachine|ValidID]*)? 
 	 *         generalConstraints=GeneralConstraint? 
-	 *         constructor=ComputationalUnit 
+	 *         constructors+=ComputationalUnit* 
 	 *         wrapperInterface+=ProvidedService*
 	 *     )
 	 */

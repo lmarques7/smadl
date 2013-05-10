@@ -20,18 +20,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//SocialMachine/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/depends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/generalConstraints"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/constructor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/constructors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//SocialMachine/wrapperInterface"/>
     </genClasses>
     <genClasses ecoreClass="SMADL.ecore#//ComputationalUnit">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ComputationalUnit/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ComputationalUnit/expressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ComputationalUnit/body"/>
     </genClasses>
     <genClasses ecoreClass="SMADL.ecore#//ProvidedService">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//ProvidedService/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/returnType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/expressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/body"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//ProvidedService/opConstraints"/>
     </genClasses>
     <genClasses ecoreClass="SMADL.ecore#//OperationConstraint">

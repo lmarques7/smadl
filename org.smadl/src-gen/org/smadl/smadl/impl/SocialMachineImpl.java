@@ -35,7 +35,7 @@ import org.smadl.smadl.SocialMachine;
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getGeneralConstraints <em>General Constraints</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getConstructor <em>Constructor</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getWrapperInterface <em>Wrapper Interface</em>}</li>
  * </ul>
  * </p>
@@ -85,14 +85,14 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
   protected GeneralConstraint generalConstraints;
 
   /**
-   * The cached value of the '{@link #getConstructor() <em>Constructor</em>}' containment reference.
+   * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConstructor()
+   * @see #getConstructors()
    * @generated
    * @ordered
    */
-  protected ComputationalUnit constructor;
+  protected EList<ComputationalUnit> constructors;
 
   /**
    * The cached value of the '{@link #getWrapperInterface() <em>Wrapper Interface</em>}' containment reference list.
@@ -215,47 +215,13 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComputationalUnit getConstructor()
+  public EList<ComputationalUnit> getConstructors()
   {
-    return constructor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetConstructor(ComputationalUnit newConstructor, NotificationChain msgs)
-  {
-    ComputationalUnit oldConstructor = constructor;
-    constructor = newConstructor;
-    if (eNotificationRequired())
+    if (constructors == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR, oldConstructor, newConstructor);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      constructors = new EObjectContainmentEList<ComputationalUnit>(ComputationalUnit.class, this, SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setConstructor(ComputationalUnit newConstructor)
-  {
-    if (newConstructor != constructor)
-    {
-      NotificationChain msgs = null;
-      if (constructor != null)
-        msgs = ((InternalEObject)constructor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR, null, msgs);
-      if (newConstructor != null)
-        msgs = ((InternalEObject)newConstructor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR, null, msgs);
-      msgs = basicSetConstructor(newConstructor, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR, newConstructor, newConstructor));
+    return constructors;
   }
 
   /**
@@ -284,8 +250,8 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
     {
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return basicSetGeneralConstraints(null, msgs);
-      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR:
-        return basicSetConstructor(null, msgs);
+      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
+        return ((InternalEList<?>)getConstructors()).basicRemove(otherEnd, msgs);
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
         return ((InternalEList<?>)getWrapperInterface()).basicRemove(otherEnd, msgs);
     }
@@ -308,8 +274,8 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
         return getDepends();
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return getGeneralConstraints();
-      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR:
-        return getConstructor();
+      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
+        return getConstructors();
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
         return getWrapperInterface();
     }
@@ -337,8 +303,9 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         setGeneralConstraints((GeneralConstraint)newValue);
         return;
-      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR:
-        setConstructor((ComputationalUnit)newValue);
+      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
+        getConstructors().clear();
+        getConstructors().addAll((Collection<? extends ComputationalUnit>)newValue);
         return;
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
         getWrapperInterface().clear();
@@ -367,8 +334,8 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         setGeneralConstraints((GeneralConstraint)null);
         return;
-      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR:
-        setConstructor((ComputationalUnit)null);
+      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
+        getConstructors().clear();
         return;
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
         getWrapperInterface().clear();
@@ -393,8 +360,8 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
         return depends != null && !depends.isEmpty();
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return generalConstraints != null;
-      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTOR:
-        return constructor != null;
+      case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
+        return constructors != null && !constructors.isEmpty();
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
         return wrapperInterface != null && !wrapperInterface.isEmpty();
     }

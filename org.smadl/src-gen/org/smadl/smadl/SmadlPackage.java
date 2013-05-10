@@ -123,13 +123,13 @@ public interface SmadlPackage extends EPackage
   int SOCIAL_MACHINE__GENERAL_CONSTRAINTS = 2;
 
   /**
-   * The feature id for the '<em><b>Constructor</b></em>' containment reference.
+   * The feature id for the '<em><b>Constructors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOCIAL_MACHINE__CONSTRUCTOR = 3;
+  int SOCIAL_MACHINE__CONSTRUCTORS = 3;
 
   /**
    * The feature id for the '<em><b>Wrapper Interface</b></em>' containment reference list.
@@ -169,13 +169,13 @@ public interface SmadlPackage extends EPackage
   int COMPUTATIONAL_UNIT__PARAMETERS = 0;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPUTATIONAL_UNIT__EXPRESSIONS = 1;
+  int COMPUTATIONAL_UNIT__BODY = 1;
 
   /**
    * The number of structural features of the '<em>Computational Unit</em>' class.
@@ -224,13 +224,13 @@ public interface SmadlPackage extends EPackage
   int PROVIDED_SERVICE__PARAMETERS = 2;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROVIDED_SERVICE__EXPRESSIONS = 3;
+  int PROVIDED_SERVICE__BODY = 3;
 
   /**
    * The feature id for the '<em><b>Op Constraints</b></em>' containment reference list.
@@ -382,15 +382,15 @@ public interface SmadlPackage extends EPackage
   EReference getSocialMachine_GeneralConstraints();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.smadl.smadl.SocialMachine#getConstructor <em>Constructor</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.SocialMachine#getConstructors <em>Constructors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Constructor</em>'.
-   * @see org.smadl.smadl.SocialMachine#getConstructor()
+   * @return the meta object for the containment reference list '<em>Constructors</em>'.
+   * @see org.smadl.smadl.SocialMachine#getConstructors()
    * @see #getSocialMachine()
    * @generated
    */
-  EReference getSocialMachine_Constructor();
+  EReference getSocialMachine_Constructors();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.smadl.smadl.SocialMachine#getWrapperInterface <em>Wrapper Interface</em>}'.
@@ -425,15 +425,15 @@ public interface SmadlPackage extends EPackage
   EReference getComputationalUnit_Parameters();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.ComputationalUnit#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference '{@link org.smadl.smadl.ComputationalUnit#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see org.smadl.smadl.ComputationalUnit#getExpressions()
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see org.smadl.smadl.ComputationalUnit#getBody()
    * @see #getComputationalUnit()
    * @generated
    */
-  EReference getComputationalUnit_Expressions();
+  EReference getComputationalUnit_Body();
 
   /**
    * Returns the meta object for class '{@link org.smadl.smadl.ProvidedService <em>Provided Service</em>}'.
@@ -479,15 +479,15 @@ public interface SmadlPackage extends EPackage
   EReference getProvidedService_Parameters();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.ProvidedService#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference '{@link org.smadl.smadl.ProvidedService#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see org.smadl.smadl.ProvidedService#getExpressions()
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see org.smadl.smadl.ProvidedService#getBody()
    * @see #getProvidedService()
    * @generated
    */
-  EReference getProvidedService_Expressions();
+  EReference getProvidedService_Body();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.smadl.smadl.ProvidedService#getOpConstraints <em>Op Constraints</em>}'.
@@ -628,12 +628,12 @@ public interface SmadlPackage extends EPackage
     EReference SOCIAL_MACHINE__GENERAL_CONSTRAINTS = eINSTANCE.getSocialMachine_GeneralConstraints();
 
     /**
-     * The meta object literal for the '<em><b>Constructor</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Constructors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SOCIAL_MACHINE__CONSTRUCTOR = eINSTANCE.getSocialMachine_Constructor();
+    EReference SOCIAL_MACHINE__CONSTRUCTORS = eINSTANCE.getSocialMachine_Constructors();
 
     /**
      * The meta object literal for the '<em><b>Wrapper Interface</b></em>' containment reference list feature.
@@ -662,12 +662,12 @@ public interface SmadlPackage extends EPackage
     EReference COMPUTATIONAL_UNIT__PARAMETERS = eINSTANCE.getComputationalUnit_Parameters();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPUTATIONAL_UNIT__EXPRESSIONS = eINSTANCE.getComputationalUnit_Expressions();
+    EReference COMPUTATIONAL_UNIT__BODY = eINSTANCE.getComputationalUnit_Body();
 
     /**
      * The meta object literal for the '{@link org.smadl.smadl.impl.ProvidedServiceImpl <em>Provided Service</em>}' class.
@@ -704,12 +704,12 @@ public interface SmadlPackage extends EPackage
     EReference PROVIDED_SERVICE__PARAMETERS = eINSTANCE.getProvidedService_Parameters();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROVIDED_SERVICE__EXPRESSIONS = eINSTANCE.getProvidedService_Expressions();
+    EReference PROVIDED_SERVICE__BODY = eINSTANCE.getProvidedService_Body();
 
     /**
      * The meta object literal for the '<em><b>Op Constraints</b></em>' containment reference list feature.

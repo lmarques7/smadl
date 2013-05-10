@@ -9,22 +9,21 @@ Entity:
 SocialMachine:
     'SocialMachine' name=ValidID ('relates to' depends+=[SocialMachine|ValidID] (',' depends+=[SocialMachine|ValidID])*)? '{'
         (generalConstraints=GeneralConstraint ';'?)?
-        constructor=ComputationalUnit
-        (wrapperInterface+=ProvidedService)* ';'?
+        (constructors+=ComputationalUnit)*
+        (wrapperInterface+=ProvidedService)*
     '}'
 ;
 
 ComputationalUnit:
     {ComputationalUnit}
-    'constructor' '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')' '{'
-        (expressions+=XExpression ';'?)*
-    '}'
+    'constructor' '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
+    body=XBlockExpression
 ;
 
 ProvidedService:
-    'operation' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')' '{'
-        (expressions+=XExpression ';'?)*
-    '}' (opConstraints+=OperationConstraint)*  
+    'operation' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
+    body=XBlockExpression
+    (opConstraints+=OperationConstraint)*  
 ;
 
 OperationConstraint:

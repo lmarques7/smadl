@@ -18,10 +18,7 @@ import org.smadl.services.SMADLGrammarAccess;
 public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SMADLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ComputationalUnit_SemicolonKeyword_7_1_q;
-	protected AbstractElementAlias match_ProvidedService_SemicolonKeyword_8_1_q;
 	protected AbstractElementAlias match_SocialMachine_SemicolonKeyword_4_1_q;
-	protected AbstractElementAlias match_SocialMachine_SemicolonKeyword_7_q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
@@ -33,10 +30,7 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SMADLGrammarAccess) access;
-		match_ComputationalUnit_SemicolonKeyword_7_1_q = new TokenAlias(false, true, grammarAccess.getComputationalUnitAccess().getSemicolonKeyword_7_1());
-		match_ProvidedService_SemicolonKeyword_8_1_q = new TokenAlias(false, true, grammarAccess.getProvidedServiceAccess().getSemicolonKeyword_8_1());
 		match_SocialMachine_SemicolonKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getSocialMachineAccess().getSemicolonKeyword_4_1());
-		match_SocialMachine_SemicolonKeyword_7_q = new TokenAlias(false, true, grammarAccess.getSocialMachineAccess().getSemicolonKeyword_7());
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getRightParenthesisKeyword_4_2()));
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
@@ -83,14 +77,8 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_ComputationalUnit_SemicolonKeyword_7_1_q.equals(syntax))
-				emit_ComputationalUnit_SemicolonKeyword_7_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ProvidedService_SemicolonKeyword_8_1_q.equals(syntax))
-				emit_ProvidedService_SemicolonKeyword_8_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_SocialMachine_SemicolonKeyword_4_1_q.equals(syntax))
+			if(match_SocialMachine_SemicolonKeyword_4_1_q.equals(syntax))
 				emit_SocialMachine_SemicolonKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_SocialMachine_SemicolonKeyword_7_q.equals(syntax))
-				emit_SocialMachine_SemicolonKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q.equals(syntax))
@@ -113,31 +101,7 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ';'?
 	 */
-	protected void emit_ComputationalUnit_SemicolonKeyword_7_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ';'?
-	 */
-	protected void emit_ProvidedService_SemicolonKeyword_8_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ';'?
-	 */
 	protected void emit_SocialMachine_SemicolonKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ';'?
-	 */
-	protected void emit_SocialMachine_SemicolonKeyword_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

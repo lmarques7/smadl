@@ -212,7 +212,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSocialMachine_Constructor()
+  public EReference getSocialMachine_Constructors()
   {
     return (EReference)socialMachineEClass.getEStructuralFeatures().get(3);
   }
@@ -252,7 +252,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComputationalUnit_Expressions()
+  public EReference getComputationalUnit_Body()
   {
     return (EReference)computationalUnitEClass.getEStructuralFeatures().get(1);
   }
@@ -302,7 +302,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProvidedService_Expressions()
+  public EReference getProvidedService_Body()
   {
     return (EReference)providedServiceEClass.getEStructuralFeatures().get(3);
   }
@@ -404,18 +404,18 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     createEAttribute(socialMachineEClass, SOCIAL_MACHINE__NAME);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__DEPENDS);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__GENERAL_CONSTRAINTS);
-    createEReference(socialMachineEClass, SOCIAL_MACHINE__CONSTRUCTOR);
+    createEReference(socialMachineEClass, SOCIAL_MACHINE__CONSTRUCTORS);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__WRAPPER_INTERFACE);
 
     computationalUnitEClass = createEClass(COMPUTATIONAL_UNIT);
     createEReference(computationalUnitEClass, COMPUTATIONAL_UNIT__PARAMETERS);
-    createEReference(computationalUnitEClass, COMPUTATIONAL_UNIT__EXPRESSIONS);
+    createEReference(computationalUnitEClass, COMPUTATIONAL_UNIT__BODY);
 
     providedServiceEClass = createEClass(PROVIDED_SERVICE);
     createEAttribute(providedServiceEClass, PROVIDED_SERVICE__NAME);
     createEReference(providedServiceEClass, PROVIDED_SERVICE__RETURN_TYPE);
     createEReference(providedServiceEClass, PROVIDED_SERVICE__PARAMETERS);
-    createEReference(providedServiceEClass, PROVIDED_SERVICE__EXPRESSIONS);
+    createEReference(providedServiceEClass, PROVIDED_SERVICE__BODY);
     createEReference(providedServiceEClass, PROVIDED_SERVICE__OP_CONSTRAINTS);
 
     operationConstraintEClass = createEClass(OPERATION_CONSTRAINT);
@@ -470,18 +470,18 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     initEAttribute(getSocialMachine_Name(), ecorePackage.getEString(), "name", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_Depends(), this.getSocialMachine(), null, "depends", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_GeneralConstraints(), this.getGeneralConstraint(), null, "generalConstraints", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSocialMachine_Constructor(), this.getComputationalUnit(), null, "constructor", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSocialMachine_Constructors(), this.getComputationalUnit(), null, "constructors", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_WrapperInterface(), this.getProvidedService(), null, "wrapperInterface", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(computationalUnitEClass, ComputationalUnit.class, "ComputationalUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComputationalUnit_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, ComputationalUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComputationalUnit_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, ComputationalUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComputationalUnit_Body(), theXbasePackage.getXExpression(), null, "body", null, 0, 1, ComputationalUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(providedServiceEClass, ProvidedService.class, "ProvidedService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProvidedService_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvidedService_ReturnType(), theTypesPackage.getJvmTypeReference(), null, "returnType", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvidedService_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProvidedService_Expressions(), theXbasePackage.getXExpression(), null, "expressions", null, 0, -1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvidedService_Body(), theXbasePackage.getXExpression(), null, "body", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvidedService_OpConstraints(), this.getOperationConstraint(), null, "opConstraints", null, 0, -1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationConstraintEClass, OperationConstraint.class, "OperationConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

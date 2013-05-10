@@ -1,6 +1,7 @@
 package org.smadl.jvmmodel
 
 import com.google.inject.Inject
+import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
@@ -13,6 +14,10 @@ import org.smadl.smadl.Entity
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class SMADLJvmModelInferrer extends AbstractModelInferrer {
+    
+    // Maybe used for xbase transformations
+    //@Inject XbaseCompiler xBaseCompiler
+    
     /**
      * convenience API to build and initialize JVM types and their members.
      */
@@ -43,23 +48,31 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-    def dispatch void infer(Entity element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+    def dispatch void infer(Entity element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {    
 
         // Here you explain how your model is mapped to Java elements, by writing the actual translation code.
         // An implementation for the initial hello world example could look like this:
         for (sm : element.entities) {
-            acceptor.accept(sm.toClass(sm.name.toFirstUpper)).initializeLater(
+            var smClassDefault = sm.toClass(sm.name.toFirstUpper)
+            acceptor.accept(smClassDefault).initializeLater
                 [
-                    for (operation : sm.wrapperInterface) {
-                        members += operation.toMethod(operation.name, operation.newTypeRef(typeof(String))) [
-                            body = [
-                                for (exp : operation.expressions) {
-                                    append(exp.toString)
-                                }
-                            ]
+                    for (constructor : sm.constructors) {
+                        members += constructor.toConstructor[
+                            for (p : constructor.parameters) {
+                                parameters += p.toParameter(p.name, p.parameterType)
+                            }
+                            body = constructor.body
                         ]
                     }
-                ])
+                    for (op : sm.wrapperInterface) {
+                        members += op.toMethod(op.name, op.returnType) [
+                            for (p : op.parameters) {
+                                parameters += p.toParameter(p.name, p.parameterType)
+                            }
+                            body = op.body
+                        ]
+                    }
+                ]
         }
     }
 }

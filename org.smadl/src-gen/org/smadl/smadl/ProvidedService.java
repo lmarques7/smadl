@@ -22,7 +22,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link org.smadl.smadl.ProvidedService#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.ProvidedService#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.smadl.smadl.ProvidedService#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.smadl.smadl.ProvidedService#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link org.smadl.smadl.ProvidedService#getBody <em>Body</em>}</li>
  *   <li>{@link org.smadl.smadl.ProvidedService#getOpConstraints <em>Op Constraints</em>}</li>
  * </ul>
  * </p>
@@ -102,20 +102,30 @@ public interface ProvidedService extends EObject
   EList<JvmFormalParameter> getParameters();
 
   /**
-   * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
+   * Returns the value of the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Body</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expressions</em>' containment reference list.
-   * @see org.smadl.smadl.SmadlPackage#getProvidedService_Expressions()
+   * @return the value of the '<em>Body</em>' containment reference.
+   * @see #setBody(XExpression)
+   * @see org.smadl.smadl.SmadlPackage#getProvidedService_Body()
    * @model containment="true"
    * @generated
    */
-  EList<XExpression> getExpressions();
+  XExpression getBody();
+
+  /**
+   * Sets the value of the '{@link org.smadl.smadl.ProvidedService#getBody <em>Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Body</em>' containment reference.
+   * @see #getBody()
+   * @generated
+   */
+  void setBody(XExpression value);
 
   /**
    * Returns the value of the '<em><b>Op Constraints</b></em>' containment reference list.

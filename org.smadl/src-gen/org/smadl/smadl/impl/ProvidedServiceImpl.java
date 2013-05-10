@@ -37,7 +37,7 @@ import org.smadl.smadl.SmadlPackage;
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getBody <em>Body</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getOpConstraints <em>Op Constraints</em>}</li>
  * </ul>
  * </p>
@@ -87,14 +87,14 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
   protected EList<JvmFormalParameter> parameters;
 
   /**
-   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
+   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressions()
+   * @see #getBody()
    * @generated
    * @ordered
    */
-  protected EList<XExpression> expressions;
+  protected XExpression body;
 
   /**
    * The cached value of the '{@link #getOpConstraints() <em>Op Constraints</em>}' containment reference list.
@@ -217,13 +217,47 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XExpression> getExpressions()
+  public XExpression getBody()
   {
-    if (expressions == null)
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBody(XExpression newBody, NotificationChain msgs)
+  {
+    XExpression oldBody = body;
+    body = newBody;
+    if (eNotificationRequired())
     {
-      expressions = new EObjectContainmentEList<XExpression>(XExpression.class, this, SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__BODY, oldBody, newBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return expressions;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBody(XExpression newBody)
+  {
+    if (newBody != body)
+    {
+      NotificationChain msgs = null;
+      if (body != null)
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__BODY, null, msgs);
+      if (newBody != null)
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__BODY, null, msgs);
+      msgs = basicSetBody(newBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__BODY, newBody, newBody));
   }
 
   /**
@@ -254,8 +288,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return basicSetReturnType(null, msgs);
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-      case SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS:
-        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
+      case SmadlPackage.PROVIDED_SERVICE__BODY:
+        return basicSetBody(null, msgs);
       case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
         return ((InternalEList<?>)getOpConstraints()).basicRemove(otherEnd, msgs);
     }
@@ -278,8 +312,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return getReturnType();
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return getParameters();
-      case SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS:
-        return getExpressions();
+      case SmadlPackage.PROVIDED_SERVICE__BODY:
+        return getBody();
       case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
         return getOpConstraints();
     }
@@ -307,9 +341,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         getParameters().clear();
         getParameters().addAll((Collection<? extends JvmFormalParameter>)newValue);
         return;
-      case SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS:
-        getExpressions().clear();
-        getExpressions().addAll((Collection<? extends XExpression>)newValue);
+      case SmadlPackage.PROVIDED_SERVICE__BODY:
+        setBody((XExpression)newValue);
         return;
       case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
         getOpConstraints().clear();
@@ -338,8 +371,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         getParameters().clear();
         return;
-      case SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS:
-        getExpressions().clear();
+      case SmadlPackage.PROVIDED_SERVICE__BODY:
+        setBody((XExpression)null);
         return;
       case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
         getOpConstraints().clear();
@@ -364,8 +397,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return returnType != null;
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
-      case SmadlPackage.PROVIDED_SERVICE__EXPRESSIONS:
-        return expressions != null && !expressions.isEmpty();
+      case SmadlPackage.PROVIDED_SERVICE__BODY:
+        return body != null;
       case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
         return opConstraints != null && !opConstraints.isEmpty();
     }

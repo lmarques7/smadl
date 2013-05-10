@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.smadl.smadl.SocialMachine#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getGeneralConstraints <em>General Constraints</em>}</li>
- *   <li>{@link org.smadl.smadl.SocialMachine#getConstructor <em>Constructor</em>}</li>
+ *   <li>{@link org.smadl.smadl.SocialMachine#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getWrapperInterface <em>Wrapper Interface</em>}</li>
  * </ul>
  * </p>
@@ -97,30 +97,20 @@ public interface SocialMachine extends EObject
   void setGeneralConstraints(GeneralConstraint value);
 
   /**
-   * Returns the value of the '<em><b>Constructor</b></em>' containment reference.
+   * Returns the value of the '<em><b>Constructors</b></em>' containment reference list.
+   * The list contents are of type {@link org.smadl.smadl.ComputationalUnit}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Constructor</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Constructors</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Constructor</em>' containment reference.
-   * @see #setConstructor(ComputationalUnit)
-   * @see org.smadl.smadl.SmadlPackage#getSocialMachine_Constructor()
+   * @return the value of the '<em>Constructors</em>' containment reference list.
+   * @see org.smadl.smadl.SmadlPackage#getSocialMachine_Constructors()
    * @model containment="true"
    * @generated
    */
-  ComputationalUnit getConstructor();
-
-  /**
-   * Sets the value of the '{@link org.smadl.smadl.SocialMachine#getConstructor <em>Constructor</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Constructor</em>' containment reference.
-   * @see #getConstructor()
-   * @generated
-   */
-  void setConstructor(ComputationalUnit value);
+  EList<ComputationalUnit> getConstructors();
 
   /**
    * Returns the value of the '<em><b>Wrapper Interface</b></em>' containment reference list.
