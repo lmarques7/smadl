@@ -8,14 +8,14 @@ SocialMachine dropbox relates to facebook {
         /* Setting up the REST URL */
     }
 	
-	operation saveFile (java.io.File newFile) {
+	op saveFile (java.io.File newFile) {
 	    var Integer x = 26
 		if (x > 25) {
 		    print("Testing")
 	    }
 	} constraint UNLIMITED
 	
-	operation listFilesInFolder returns java.util.List<java.io.File> (String folder) {
+	op listFilesInFolder returns java.util.List<java.io.File> (String folder) {
 		return newArrayList
 	} constraint REDUCED_RESOURCE
 }
@@ -28,7 +28,7 @@ SocialMachine facebook {
 		/* Instantiate basic operations of current social machine */
 	}
 	
-	operation listFriends returns java.util.List<String> () {
+	op listFriends returns java.util.List<String> () {
 		var x = new java.util.ArrayList<String>()
 		return x
 	} constraint REQUESTS_PER_PERIOD
@@ -41,7 +41,7 @@ SocialMachine toggl relates to dropbox {
         
     }
     
-    operation nothing() {
+    op nothing() {
         
     }
     
