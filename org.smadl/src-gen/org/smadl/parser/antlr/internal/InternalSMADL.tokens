@@ -117,6 +117,7 @@ RULE_WS=11
 'general constraint'=25
 'catch'=88
 'else'=63
+'op'=22
 'extends'=73
 '+='=27
 '{'=16
@@ -151,7 +152,6 @@ RULE_WS=11
 '::'=78
 'UNLIMITED'=94
 ')'=21
-'operation'=22
 '->'=40
 '%'=52
 'super'=77

@@ -91,7 +91,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.smadl.org#//ProvidedService"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="operation"/>
+        <elements xsi:type="xtext:Keyword" value="op"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.12"/>
         </elements>

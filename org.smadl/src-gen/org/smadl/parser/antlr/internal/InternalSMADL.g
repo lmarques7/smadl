@@ -361,9 +361,9 @@ ruleProvidedService returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='operation' 
+(	otherlv_0='op' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getProvidedServiceAccess().getOperationKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getProvidedServiceAccess().getOpKeyword_0());
     }
 (
 (

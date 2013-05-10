@@ -21,7 +21,7 @@ ComputationalUnit:
 ;
 
 ProvidedService:
-    'operation' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
+    'op' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
     body=XBlockExpression
     (opConstraints+=OperationConstraint)*  
 ;

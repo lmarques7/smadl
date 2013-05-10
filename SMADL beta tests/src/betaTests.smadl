@@ -31,7 +31,7 @@ SocialMachine facebook {
 	op listFriends returns java.util.List<String> () {
 		var x = new java.util.ArrayList<String>()
 		return x
-	} constraint REQUESTS_PER_PERIOD
+	} constraint UNLIMITED 
 	
 }
 

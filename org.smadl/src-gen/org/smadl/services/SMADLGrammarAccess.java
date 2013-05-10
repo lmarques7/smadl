@@ -217,7 +217,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	public class ProvidedServiceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ProvidedService");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOperationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOpKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -239,18 +239,18 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ProvidedService:
 		//
-		//	"operation" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
+		//	"op" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
 		//
 		//	parameters+=FullJvmFormalParameter)* ")" body=XBlockExpression opConstraints+=OperationConstraint*;
 		public ParserRule getRule() { return rule; }
 
-		//"operation" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
+		//"op" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
 		//
 		//parameters+=FullJvmFormalParameter)* ")" body=XBlockExpression opConstraints+=OperationConstraint*
 		public Group getGroup() { return cGroup; }
 
-		//"operation"
-		public Keyword getOperationKeyword_0() { return cOperationKeyword_0; }
+		//"op"
+		public Keyword getOpKeyword_0() { return cOpKeyword_0; }
 
 		//name=ValidID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -492,7 +492,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ProvidedService:
 	//
-	//	"operation" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
+	//	"op" name=ValidID ("returns" returnType=JvmTypeReference)? "(" parameters+=FullJvmFormalParameter* (","
 	//
 	//	parameters+=FullJvmFormalParameter)* ")" body=XBlockExpression opConstraints+=OperationConstraint*;
 	public ProvidedServiceElements getProvidedServiceAccess() {
