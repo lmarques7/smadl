@@ -20,7 +20,7 @@ class SMADLGenerator implements IGenerator {
     def toXtendCode(String testing) '''
         class Teste {
             def static void main(String[] args) {
-                println("nada")
+                println("testing IGenerator approach to code generation")
                 /*
                 «testing»
                 */

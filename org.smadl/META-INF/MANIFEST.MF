@@ -31,4 +31,5 @@ Export-Package: org.smadl,
  org.smadl.parser.antlr.internal,
  org.smadl.validation,
  org.smadl.formatting,
- org.smadl.jvmmodel
+ org.smadl.jvmmodel,
+ org.smadl.generator

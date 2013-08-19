@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
-import org.smadl.smadl.ConstraintType;
 import org.smadl.smadl.OperationConstraint;
+import org.smadl.smadl.OperationConstraintType;
 import org.smadl.smadl.SmadlPackage;
 
 /**
@@ -39,7 +39,7 @@ public class OperationConstraintImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected EList<ConstraintType> type;
+  protected EList<OperationConstraintType> type;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,11 +67,11 @@ public class OperationConstraintImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConstraintType> getType()
+  public EList<OperationConstraintType> getType()
   {
     if (type == null)
     {
-      type = new EDataTypeEList<ConstraintType>(ConstraintType.class, this, SmadlPackage.OPERATION_CONSTRAINT__TYPE);
+      type = new EDataTypeEList<OperationConstraintType>(OperationConstraintType.class, this, SmadlPackage.OPERATION_CONSTRAINT__TYPE);
     }
     return type;
   }
@@ -105,7 +105,7 @@ public class OperationConstraintImpl extends MinimalEObjectImpl.Container implem
     {
       case SmadlPackage.OPERATION_CONSTRAINT__TYPE:
         getType().clear();
-        getType().addAll((Collection<? extends ConstraintType>)newValue);
+        getType().addAll((Collection<? extends OperationConstraintType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.GeneralConstraint;
 import org.smadl.smadl.ProvidedService;
+import org.smadl.smadl.RelationshipGroup;
 import org.smadl.smadl.SmadlPackage;
 import org.smadl.smadl.SocialMachine;
 
@@ -33,8 +34,9 @@ import org.smadl.smadl.SocialMachine;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getDepends <em>Depends</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getGeneralConstraints <em>General Constraints</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getRelationshipGroup <em>Relationship Group</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.SocialMachineImpl#getWrapperInterface <em>Wrapper Interface</em>}</li>
  * </ul>
@@ -65,14 +67,14 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDepends() <em>Depends</em>}' reference list.
+   * The cached value of the '{@link #getDependencies() <em>Dependencies</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDepends()
+   * @see #getDependencies()
    * @generated
    * @ordered
    */
-  protected EList<SocialMachine> depends;
+  protected EList<SocialMachine> dependencies;
 
   /**
    * The cached value of the '{@link #getGeneralConstraints() <em>General Constraints</em>}' containment reference.
@@ -83,6 +85,16 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
    * @ordered
    */
   protected GeneralConstraint generalConstraints;
+
+  /**
+   * The cached value of the '{@link #getRelationshipGroup() <em>Relationship Group</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationshipGroup()
+   * @generated
+   * @ordered
+   */
+  protected RelationshipGroup relationshipGroup;
 
   /**
    * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
@@ -153,13 +165,13 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<SocialMachine> getDepends()
+  public EList<SocialMachine> getDependencies()
   {
-    if (depends == null)
+    if (dependencies == null)
     {
-      depends = new EObjectResolvingEList<SocialMachine>(SocialMachine.class, this, SmadlPackage.SOCIAL_MACHINE__DEPENDS);
+      dependencies = new EObjectResolvingEList<SocialMachine>(SocialMachine.class, this, SmadlPackage.SOCIAL_MACHINE__DEPENDENCIES);
     }
-    return depends;
+    return dependencies;
   }
 
   /**
@@ -215,6 +227,54 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
+  public RelationshipGroup getRelationshipGroup()
+  {
+    return relationshipGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRelationshipGroup(RelationshipGroup newRelationshipGroup, NotificationChain msgs)
+  {
+    RelationshipGroup oldRelationshipGroup = relationshipGroup;
+    relationshipGroup = newRelationshipGroup;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP, oldRelationshipGroup, newRelationshipGroup);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRelationshipGroup(RelationshipGroup newRelationshipGroup)
+  {
+    if (newRelationshipGroup != relationshipGroup)
+    {
+      NotificationChain msgs = null;
+      if (relationshipGroup != null)
+        msgs = ((InternalEObject)relationshipGroup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP, null, msgs);
+      if (newRelationshipGroup != null)
+        msgs = ((InternalEObject)newRelationshipGroup).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP, null, msgs);
+      msgs = basicSetRelationshipGroup(newRelationshipGroup, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP, newRelationshipGroup, newRelationshipGroup));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ComputationalUnit> getConstructors()
   {
     if (constructors == null)
@@ -250,6 +310,8 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
     {
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return basicSetGeneralConstraints(null, msgs);
+      case SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP:
+        return basicSetRelationshipGroup(null, msgs);
       case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
         return ((InternalEList<?>)getConstructors()).basicRemove(otherEnd, msgs);
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
@@ -270,10 +332,12 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
     {
       case SmadlPackage.SOCIAL_MACHINE__NAME:
         return getName();
-      case SmadlPackage.SOCIAL_MACHINE__DEPENDS:
-        return getDepends();
+      case SmadlPackage.SOCIAL_MACHINE__DEPENDENCIES:
+        return getDependencies();
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return getGeneralConstraints();
+      case SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP:
+        return getRelationshipGroup();
       case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
         return getConstructors();
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:
@@ -296,12 +360,15 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
       case SmadlPackage.SOCIAL_MACHINE__NAME:
         setName((String)newValue);
         return;
-      case SmadlPackage.SOCIAL_MACHINE__DEPENDS:
-        getDepends().clear();
-        getDepends().addAll((Collection<? extends SocialMachine>)newValue);
+      case SmadlPackage.SOCIAL_MACHINE__DEPENDENCIES:
+        getDependencies().clear();
+        getDependencies().addAll((Collection<? extends SocialMachine>)newValue);
         return;
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         setGeneralConstraints((GeneralConstraint)newValue);
+        return;
+      case SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP:
+        setRelationshipGroup((RelationshipGroup)newValue);
         return;
       case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
         getConstructors().clear();
@@ -328,11 +395,14 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
       case SmadlPackage.SOCIAL_MACHINE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SmadlPackage.SOCIAL_MACHINE__DEPENDS:
-        getDepends().clear();
+      case SmadlPackage.SOCIAL_MACHINE__DEPENDENCIES:
+        getDependencies().clear();
         return;
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         setGeneralConstraints((GeneralConstraint)null);
+        return;
+      case SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP:
+        setRelationshipGroup((RelationshipGroup)null);
         return;
       case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
         getConstructors().clear();
@@ -356,10 +426,12 @@ public class SocialMachineImpl extends MinimalEObjectImpl.Container implements S
     {
       case SmadlPackage.SOCIAL_MACHINE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SmadlPackage.SOCIAL_MACHINE__DEPENDS:
-        return depends != null && !depends.isEmpty();
+      case SmadlPackage.SOCIAL_MACHINE__DEPENDENCIES:
+        return dependencies != null && !dependencies.isEmpty();
       case SmadlPackage.SOCIAL_MACHINE__GENERAL_CONSTRAINTS:
         return generalConstraints != null;
+      case SmadlPackage.SOCIAL_MACHINE__RELATIONSHIP_GROUP:
+        return relationshipGroup != null;
       case SmadlPackage.SOCIAL_MACHINE__CONSTRUCTORS:
         return constructors != null && !constructors.isEmpty();
       case SmadlPackage.SOCIAL_MACHINE__WRAPPER_INTERFACE:

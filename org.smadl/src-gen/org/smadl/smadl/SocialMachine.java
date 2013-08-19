@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.smadl.smadl.SocialMachine#getName <em>Name</em>}</li>
- *   <li>{@link org.smadl.smadl.SocialMachine#getDepends <em>Depends</em>}</li>
+ *   <li>{@link org.smadl.smadl.SocialMachine#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getGeneralConstraints <em>General Constraints</em>}</li>
+ *   <li>{@link org.smadl.smadl.SocialMachine#getRelationshipGroup <em>Relationship Group</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link org.smadl.smadl.SocialMachine#getWrapperInterface <em>Wrapper Interface</em>}</li>
  * </ul>
@@ -55,20 +56,20 @@ public interface SocialMachine extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Depends</b></em>' reference list.
+   * Returns the value of the '<em><b>Dependencies</b></em>' reference list.
    * The list contents are of type {@link org.smadl.smadl.SocialMachine}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Depends</em>' reference list isn't clear,
+   * If the meaning of the '<em>Dependencies</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Depends</em>' reference list.
-   * @see org.smadl.smadl.SmadlPackage#getSocialMachine_Depends()
+   * @return the value of the '<em>Dependencies</em>' reference list.
+   * @see org.smadl.smadl.SmadlPackage#getSocialMachine_Dependencies()
    * @model
    * @generated
    */
-  EList<SocialMachine> getDepends();
+  EList<SocialMachine> getDependencies();
 
   /**
    * Returns the value of the '<em><b>General Constraints</b></em>' containment reference.
@@ -95,6 +96,32 @@ public interface SocialMachine extends EObject
    * @generated
    */
   void setGeneralConstraints(GeneralConstraint value);
+
+  /**
+   * Returns the value of the '<em><b>Relationship Group</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Relationship Group</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Relationship Group</em>' containment reference.
+   * @see #setRelationshipGroup(RelationshipGroup)
+   * @see org.smadl.smadl.SmadlPackage#getSocialMachine_RelationshipGroup()
+   * @model containment="true"
+   * @generated
+   */
+  RelationshipGroup getRelationshipGroup();
+
+  /**
+   * Sets the value of the '{@link org.smadl.smadl.SocialMachine#getRelationshipGroup <em>Relationship Group</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Relationship Group</em>' containment reference.
+   * @see #getRelationshipGroup()
+   * @generated
+   */
+  void setRelationshipGroup(RelationshipGroup value);
 
   /**
    * Returns the value of the '<em><b>Constructors</b></em>' containment reference list.

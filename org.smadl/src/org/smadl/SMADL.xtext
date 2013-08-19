@@ -1,17 +1,56 @@
+/*******************************************************************************
+ * Fair use Copyright (c) 2013. This software is distributed only for research 
+ * purposes as part of Leandro Nascimento's PhD thesis.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 grammar org.smadl.SMADL with org.eclipse.xtext.xbase.Xbase
 
 generate smadl "http://www.smadl.org"
+
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
 Entity:
 	entities+=SocialMachine*
 ;
 	
 SocialMachine:
-    'SocialMachine' name=ValidID ('relates to' depends+=[SocialMachine|ValidID] (',' depends+=[SocialMachine|ValidID])*)? '{'
+    'SocialMachine' name=ValidID 
+        ('relates to' dependencies+=[SocialMachine|ValidID] (',' dependencies+=[SocialMachine|ValidID])*)? '{'
         (generalConstraints=GeneralConstraint ';'?)?
+        (relationshipGroup=RelationshipGroup)?
         (constructors+=ComputationalUnit)*
         (wrapperInterface+=ProvidedService)*
     '}'
+;
+
+RelationshipGroup:
+    'Relationships' '{' 
+        relationships+=Relationship+ 
+    '}'
+;
+
+Relationship:
+    name=ValidID 'with' target=[SocialMachine|ValidID] '['
+        'uri' '=' uri=STRING ';'?
+        'api-key' '=' apiKey=STRING ';'?
+        'secret' '=' secret=STRING ';'?
+        'user-token' '=' userToken=STRING ';'?
+    ']' (constraint=RelationshipConstraint)?
+;
+
+RelationshipConstraint:
+    'type' ':' type=(RelationshipConstraintFullAccess | RelationshipConstraintListOfOps)
+;
+
+RelationshipConstraintFullAccess:
+    name='FULL_ACCESS'
+;
+
+RelationshipConstraintListOfOps:
+    name='LIST_OF_OPS' '(' operations+=[ProvidedService] (',' operations+=[ProvidedService])* ')'
 ;
 
 ComputationalUnit:
@@ -21,20 +60,21 @@ ComputationalUnit:
 ;
 
 ProvidedService:
-    'op' name=ValidID ('returns' returnType=JvmTypeReference)? '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
-    body=XBlockExpression
-    (opConstraints+=OperationConstraint)*  
+    {ProvidedService}
+    'op' name=ValidID ('returns' returnType=JvmTypeReference)? 
+       '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')' 
+        (opConstraint=OperationConstraint)?  
 ;
 
 OperationConstraint:
-    'constraint' type+=ConstraintType+
+    'constraint' type+=OperationConstraintType+
 ;
 
 GeneralConstraint:
-    'general constraint' type=ConstraintType
+    'general constraint' type=OperationConstraintType
 ;
 
 //Four constraint types that can be used in specific or general constraints
-enum ConstraintType:
-    REQUESTS_PER_PERIOD | PRE_AUTH_SM | REDUCED_RESOURCE | UNLIMITED
+enum OperationConstraintType:
+    UNLIMITED | REQUESTS_PER_PERIOD | PRE_AUTH_SM | REDUCED_RESOURCE 
 ;

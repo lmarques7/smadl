@@ -15,11 +15,16 @@ import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.smadl.smadl.ComputationalUnit;
-import org.smadl.smadl.ConstraintType;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConstraint;
 import org.smadl.smadl.OperationConstraint;
+import org.smadl.smadl.OperationConstraintType;
 import org.smadl.smadl.ProvidedService;
+import org.smadl.smadl.Relationship;
+import org.smadl.smadl.RelationshipConstraint;
+import org.smadl.smadl.RelationshipConstraintFullAccess;
+import org.smadl.smadl.RelationshipConstraintListOfOps;
+import org.smadl.smadl.RelationshipGroup;
 import org.smadl.smadl.SmadlFactory;
 import org.smadl.smadl.SmadlPackage;
 import org.smadl.smadl.SocialMachine;
@@ -45,6 +50,41 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * @generated
    */
   private EClass socialMachineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationshipGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationshipEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationshipConstraintEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationshipConstraintFullAccessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationshipConstraintListOfOpsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,7 +119,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum constraintTypeEEnum = null;
+  private EEnum operationConstraintTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -192,7 +232,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSocialMachine_Depends()
+  public EReference getSocialMachine_Dependencies()
   {
     return (EReference)socialMachineEClass.getEStructuralFeatures().get(1);
   }
@@ -212,7 +252,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSocialMachine_Constructors()
+  public EReference getSocialMachine_RelationshipGroup()
   {
     return (EReference)socialMachineEClass.getEStructuralFeatures().get(3);
   }
@@ -222,9 +262,189 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSocialMachine_WrapperInterface()
+  public EReference getSocialMachine_Constructors()
   {
     return (EReference)socialMachineEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSocialMachine_WrapperInterface()
+  {
+    return (EReference)socialMachineEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationshipGroup()
+  {
+    return relationshipGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationshipGroup_Relationships()
+  {
+    return (EReference)relationshipGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationship()
+  {
+    return relationshipEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationship_Name()
+  {
+    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationship_Target()
+  {
+    return (EReference)relationshipEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationship_Uri()
+  {
+    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationship_ApiKey()
+  {
+    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationship_Secret()
+  {
+    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationship_UserToken()
+  {
+    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationship_Constraint()
+  {
+    return (EReference)relationshipEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationshipConstraint()
+  {
+    return relationshipConstraintEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationshipConstraint_Type()
+  {
+    return (EReference)relationshipConstraintEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationshipConstraintFullAccess()
+  {
+    return relationshipConstraintFullAccessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationshipConstraintFullAccess_Name()
+  {
+    return (EAttribute)relationshipConstraintFullAccessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationshipConstraintListOfOps()
+  {
+    return relationshipConstraintListOfOpsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRelationshipConstraintListOfOps_Name()
+  {
+    return (EAttribute)relationshipConstraintListOfOpsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationshipConstraintListOfOps_Operations()
+  {
+    return (EReference)relationshipConstraintListOfOpsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -302,19 +522,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProvidedService_Body()
+  public EReference getProvidedService_OpConstraint()
   {
     return (EReference)providedServiceEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getProvidedService_OpConstraints()
-  {
-    return (EReference)providedServiceEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -362,9 +572,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getConstraintType()
+  public EEnum getOperationConstraintType()
   {
-    return constraintTypeEEnum;
+    return operationConstraintTypeEEnum;
   }
 
   /**
@@ -402,10 +612,33 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
 
     socialMachineEClass = createEClass(SOCIAL_MACHINE);
     createEAttribute(socialMachineEClass, SOCIAL_MACHINE__NAME);
-    createEReference(socialMachineEClass, SOCIAL_MACHINE__DEPENDS);
+    createEReference(socialMachineEClass, SOCIAL_MACHINE__DEPENDENCIES);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__GENERAL_CONSTRAINTS);
+    createEReference(socialMachineEClass, SOCIAL_MACHINE__RELATIONSHIP_GROUP);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__CONSTRUCTORS);
     createEReference(socialMachineEClass, SOCIAL_MACHINE__WRAPPER_INTERFACE);
+
+    relationshipGroupEClass = createEClass(RELATIONSHIP_GROUP);
+    createEReference(relationshipGroupEClass, RELATIONSHIP_GROUP__RELATIONSHIPS);
+
+    relationshipEClass = createEClass(RELATIONSHIP);
+    createEAttribute(relationshipEClass, RELATIONSHIP__NAME);
+    createEReference(relationshipEClass, RELATIONSHIP__TARGET);
+    createEAttribute(relationshipEClass, RELATIONSHIP__URI);
+    createEAttribute(relationshipEClass, RELATIONSHIP__API_KEY);
+    createEAttribute(relationshipEClass, RELATIONSHIP__SECRET);
+    createEAttribute(relationshipEClass, RELATIONSHIP__USER_TOKEN);
+    createEReference(relationshipEClass, RELATIONSHIP__CONSTRAINT);
+
+    relationshipConstraintEClass = createEClass(RELATIONSHIP_CONSTRAINT);
+    createEReference(relationshipConstraintEClass, RELATIONSHIP_CONSTRAINT__TYPE);
+
+    relationshipConstraintFullAccessEClass = createEClass(RELATIONSHIP_CONSTRAINT_FULL_ACCESS);
+    createEAttribute(relationshipConstraintFullAccessEClass, RELATIONSHIP_CONSTRAINT_FULL_ACCESS__NAME);
+
+    relationshipConstraintListOfOpsEClass = createEClass(RELATIONSHIP_CONSTRAINT_LIST_OF_OPS);
+    createEAttribute(relationshipConstraintListOfOpsEClass, RELATIONSHIP_CONSTRAINT_LIST_OF_OPS__NAME);
+    createEReference(relationshipConstraintListOfOpsEClass, RELATIONSHIP_CONSTRAINT_LIST_OF_OPS__OPERATIONS);
 
     computationalUnitEClass = createEClass(COMPUTATIONAL_UNIT);
     createEReference(computationalUnitEClass, COMPUTATIONAL_UNIT__PARAMETERS);
@@ -415,8 +648,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     createEAttribute(providedServiceEClass, PROVIDED_SERVICE__NAME);
     createEReference(providedServiceEClass, PROVIDED_SERVICE__RETURN_TYPE);
     createEReference(providedServiceEClass, PROVIDED_SERVICE__PARAMETERS);
-    createEReference(providedServiceEClass, PROVIDED_SERVICE__BODY);
-    createEReference(providedServiceEClass, PROVIDED_SERVICE__OP_CONSTRAINTS);
+    createEReference(providedServiceEClass, PROVIDED_SERVICE__OP_CONSTRAINT);
 
     operationConstraintEClass = createEClass(OPERATION_CONSTRAINT);
     createEAttribute(operationConstraintEClass, OPERATION_CONSTRAINT__TYPE);
@@ -425,7 +657,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     createEAttribute(generalConstraintEClass, GENERAL_CONSTRAINT__TYPE);
 
     // Create enums
-    constraintTypeEEnum = createEEnum(CONSTRAINT_TYPE);
+    operationConstraintTypeEEnum = createEEnum(OPERATION_CONSTRAINT_TYPE);
   }
 
   /**
@@ -468,10 +700,33 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
 
     initEClass(socialMachineEClass, SocialMachine.class, "SocialMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSocialMachine_Name(), ecorePackage.getEString(), "name", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSocialMachine_Depends(), this.getSocialMachine(), null, "depends", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSocialMachine_Dependencies(), this.getSocialMachine(), null, "dependencies", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_GeneralConstraints(), this.getGeneralConstraint(), null, "generalConstraints", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSocialMachine_RelationshipGroup(), this.getRelationshipGroup(), null, "relationshipGroup", null, 0, 1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_Constructors(), this.getComputationalUnit(), null, "constructors", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSocialMachine_WrapperInterface(), this.getProvidedService(), null, "wrapperInterface", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationshipGroupEClass, RelationshipGroup.class, "RelationshipGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelationshipGroup_Relationships(), this.getRelationship(), null, "relationships", null, 0, -1, RelationshipGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationship_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationship_ApiKey(), ecorePackage.getEString(), "apiKey", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationship_Secret(), ecorePackage.getEString(), "secret", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRelationship_UserToken(), ecorePackage.getEString(), "userToken", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationshipConstraintEClass, RelationshipConstraint.class, "RelationshipConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelationshipConstraint_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, RelationshipConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationshipConstraintFullAccessEClass, RelationshipConstraintFullAccess.class, "RelationshipConstraintFullAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRelationshipConstraintFullAccess_Name(), ecorePackage.getEString(), "name", null, 0, 1, RelationshipConstraintFullAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationshipConstraintListOfOpsEClass, RelationshipConstraintListOfOps.class, "RelationshipConstraintListOfOps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRelationshipConstraintListOfOps_Name(), ecorePackage.getEString(), "name", null, 0, 1, RelationshipConstraintListOfOps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationshipConstraintListOfOps_Operations(), this.getProvidedService(), null, "operations", null, 0, -1, RelationshipConstraintListOfOps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(computationalUnitEClass, ComputationalUnit.class, "ComputationalUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComputationalUnit_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, ComputationalUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -481,21 +736,20 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     initEAttribute(getProvidedService_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvidedService_ReturnType(), theTypesPackage.getJvmTypeReference(), null, "returnType", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProvidedService_Parameters(), theTypesPackage.getJvmFormalParameter(), null, "parameters", null, 0, -1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProvidedService_Body(), theXbasePackage.getXExpression(), null, "body", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProvidedService_OpConstraints(), this.getOperationConstraint(), null, "opConstraints", null, 0, -1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProvidedService_OpConstraint(), this.getOperationConstraint(), null, "opConstraint", null, 0, 1, ProvidedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationConstraintEClass, OperationConstraint.class, "OperationConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperationConstraint_Type(), this.getConstraintType(), "type", null, 0, -1, OperationConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOperationConstraint_Type(), this.getOperationConstraintType(), "type", null, 0, -1, OperationConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalConstraintEClass, GeneralConstraint.class, "GeneralConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGeneralConstraint_Type(), this.getConstraintType(), "type", null, 0, 1, GeneralConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralConstraint_Type(), this.getOperationConstraintType(), "type", null, 0, 1, GeneralConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(constraintTypeEEnum, ConstraintType.class, "ConstraintType");
-    addEEnumLiteral(constraintTypeEEnum, ConstraintType.REQUESTS_PER_PERIOD);
-    addEEnumLiteral(constraintTypeEEnum, ConstraintType.PRE_AUTH_SM);
-    addEEnumLiteral(constraintTypeEEnum, ConstraintType.REDUCED_RESOURCE);
-    addEEnumLiteral(constraintTypeEEnum, ConstraintType.UNLIMITED);
+    initEEnum(operationConstraintTypeEEnum, OperationConstraintType.class, "OperationConstraintType");
+    addEEnumLiteral(operationConstraintTypeEEnum, OperationConstraintType.UNLIMITED);
+    addEEnumLiteral(operationConstraintTypeEEnum, OperationConstraintType.REQUESTS_PER_PERIOD);
+    addEEnumLiteral(operationConstraintTypeEEnum, OperationConstraintType.PRE_AUTH_SM);
+    addEEnumLiteral(operationConstraintTypeEEnum, OperationConstraintType.REDUCED_RESOURCE);
 
     // Create resource
     createResource(eNS_URI);

@@ -86,6 +86,41 @@ public class SmadlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SmadlPackage.RELATIONSHIP_GROUP:
+      {
+        RelationshipGroup relationshipGroup = (RelationshipGroup)theEObject;
+        T result = caseRelationshipGroup(relationshipGroup);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmadlPackage.RELATIONSHIP:
+      {
+        Relationship relationship = (Relationship)theEObject;
+        T result = caseRelationship(relationship);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT:
+      {
+        RelationshipConstraint relationshipConstraint = (RelationshipConstraint)theEObject;
+        T result = caseRelationshipConstraint(relationshipConstraint);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT_FULL_ACCESS:
+      {
+        RelationshipConstraintFullAccess relationshipConstraintFullAccess = (RelationshipConstraintFullAccess)theEObject;
+        T result = caseRelationshipConstraintFullAccess(relationshipConstraintFullAccess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT_LIST_OF_OPS:
+      {
+        RelationshipConstraintListOfOps relationshipConstraintListOfOps = (RelationshipConstraintListOfOps)theEObject;
+        T result = caseRelationshipConstraintListOfOps(relationshipConstraintListOfOps);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SmadlPackage.COMPUTATIONAL_UNIT:
       {
         ComputationalUnit computationalUnit = (ComputationalUnit)theEObject;
@@ -146,6 +181,86 @@ public class SmadlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSocialMachine(SocialMachine object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relationship Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relationship Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationshipGroup(RelationshipGroup object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationship(Relationship object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relationship Constraint</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relationship Constraint</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationshipConstraint(RelationshipConstraint object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relationship Constraint Full Access</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relationship Constraint Full Access</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationshipConstraintFullAccess(RelationshipConstraintFullAccess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relationship Constraint List Of Ops</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relationship Constraint List Of Ops</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationshipConstraintListOfOps(RelationshipConstraintListOfOps object)
   {
     return null;
   }

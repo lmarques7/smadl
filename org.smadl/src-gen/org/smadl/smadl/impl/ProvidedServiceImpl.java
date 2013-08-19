@@ -21,8 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
-import org.eclipse.xtext.xbase.XExpression;
-
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.ProvidedService;
 import org.smadl.smadl.SmadlPackage;
@@ -37,8 +35,7 @@ import org.smadl.smadl.SmadlPackage;
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getBody <em>Body</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getOpConstraints <em>Op Constraints</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.ProvidedServiceImpl#getOpConstraint <em>Op Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,24 +84,14 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
   protected EList<JvmFormalParameter> parameters;
 
   /**
-   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
+   * The cached value of the '{@link #getOpConstraint() <em>Op Constraint</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBody()
+   * @see #getOpConstraint()
    * @generated
    * @ordered
    */
-  protected XExpression body;
-
-  /**
-   * The cached value of the '{@link #getOpConstraints() <em>Op Constraints</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOpConstraints()
-   * @generated
-   * @ordered
-   */
-  protected EList<OperationConstraint> opConstraints;
+  protected OperationConstraint opConstraint;
 
   /**
    * <!-- begin-user-doc -->
@@ -217,9 +204,9 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getBody()
+  public OperationConstraint getOpConstraint()
   {
-    return body;
+    return opConstraint;
   }
 
   /**
@@ -227,13 +214,13 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(XExpression newBody, NotificationChain msgs)
+  public NotificationChain basicSetOpConstraint(OperationConstraint newOpConstraint, NotificationChain msgs)
   {
-    XExpression oldBody = body;
-    body = newBody;
+    OperationConstraint oldOpConstraint = opConstraint;
+    opConstraint = newOpConstraint;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__BODY, oldBody, newBody);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT, oldOpConstraint, newOpConstraint);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -244,34 +231,20 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(XExpression newBody)
+  public void setOpConstraint(OperationConstraint newOpConstraint)
   {
-    if (newBody != body)
+    if (newOpConstraint != opConstraint)
     {
       NotificationChain msgs = null;
-      if (body != null)
-        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__BODY, null, msgs);
-      if (newBody != null)
-        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__BODY, null, msgs);
-      msgs = basicSetBody(newBody, msgs);
+      if (opConstraint != null)
+        msgs = ((InternalEObject)opConstraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT, null, msgs);
+      if (newOpConstraint != null)
+        msgs = ((InternalEObject)newOpConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT, null, msgs);
+      msgs = basicSetOpConstraint(newOpConstraint, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__BODY, newBody, newBody));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<OperationConstraint> getOpConstraints()
-  {
-    if (opConstraints == null)
-    {
-      opConstraints = new EObjectContainmentEList<OperationConstraint>(OperationConstraint.class, this, SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS);
-    }
-    return opConstraints;
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT, newOpConstraint, newOpConstraint));
   }
 
   /**
@@ -288,10 +261,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return basicSetReturnType(null, msgs);
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-      case SmadlPackage.PROVIDED_SERVICE__BODY:
-        return basicSetBody(null, msgs);
-      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
-        return ((InternalEList<?>)getOpConstraints()).basicRemove(otherEnd, msgs);
+      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT:
+        return basicSetOpConstraint(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -312,10 +283,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return getReturnType();
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return getParameters();
-      case SmadlPackage.PROVIDED_SERVICE__BODY:
-        return getBody();
-      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
-        return getOpConstraints();
+      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT:
+        return getOpConstraint();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -341,12 +310,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         getParameters().clear();
         getParameters().addAll((Collection<? extends JvmFormalParameter>)newValue);
         return;
-      case SmadlPackage.PROVIDED_SERVICE__BODY:
-        setBody((XExpression)newValue);
-        return;
-      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
-        getOpConstraints().clear();
-        getOpConstraints().addAll((Collection<? extends OperationConstraint>)newValue);
+      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT:
+        setOpConstraint((OperationConstraint)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -371,11 +336,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         getParameters().clear();
         return;
-      case SmadlPackage.PROVIDED_SERVICE__BODY:
-        setBody((XExpression)null);
-        return;
-      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
-        getOpConstraints().clear();
+      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT:
+        setOpConstraint((OperationConstraint)null);
         return;
     }
     super.eUnset(featureID);
@@ -397,10 +359,8 @@ public class ProvidedServiceImpl extends MinimalEObjectImpl.Container implements
         return returnType != null;
       case SmadlPackage.PROVIDED_SERVICE__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
-      case SmadlPackage.PROVIDED_SERVICE__BODY:
-        return body != null;
-      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINTS:
-        return opConstraints != null && !opConstraints.isEmpty();
+      case SmadlPackage.PROVIDED_SERVICE__OP_CONSTRAINT:
+        return opConstraint != null;
     }
     return super.eIsSet(featureID);
   }

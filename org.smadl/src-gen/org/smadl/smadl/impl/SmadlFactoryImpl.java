@@ -67,6 +67,11 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
     {
       case SmadlPackage.ENTITY: return createEntity();
       case SmadlPackage.SOCIAL_MACHINE: return createSocialMachine();
+      case SmadlPackage.RELATIONSHIP_GROUP: return createRelationshipGroup();
+      case SmadlPackage.RELATIONSHIP: return createRelationship();
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT: return createRelationshipConstraint();
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT_FULL_ACCESS: return createRelationshipConstraintFullAccess();
+      case SmadlPackage.RELATIONSHIP_CONSTRAINT_LIST_OF_OPS: return createRelationshipConstraintListOfOps();
       case SmadlPackage.COMPUTATIONAL_UNIT: return createComputationalUnit();
       case SmadlPackage.PROVIDED_SERVICE: return createProvidedService();
       case SmadlPackage.OPERATION_CONSTRAINT: return createOperationConstraint();
@@ -86,8 +91,8 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case SmadlPackage.CONSTRAINT_TYPE:
-        return createConstraintTypeFromString(eDataType, initialValue);
+      case SmadlPackage.OPERATION_CONSTRAINT_TYPE:
+        return createOperationConstraintTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -103,8 +108,8 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case SmadlPackage.CONSTRAINT_TYPE:
-        return convertConstraintTypeToString(eDataType, instanceValue);
+      case SmadlPackage.OPERATION_CONSTRAINT_TYPE:
+        return convertOperationConstraintTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -130,6 +135,61 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
   {
     SocialMachineImpl socialMachine = new SocialMachineImpl();
     return socialMachine;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationshipGroup createRelationshipGroup()
+  {
+    RelationshipGroupImpl relationshipGroup = new RelationshipGroupImpl();
+    return relationshipGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Relationship createRelationship()
+  {
+    RelationshipImpl relationship = new RelationshipImpl();
+    return relationship;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationshipConstraint createRelationshipConstraint()
+  {
+    RelationshipConstraintImpl relationshipConstraint = new RelationshipConstraintImpl();
+    return relationshipConstraint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationshipConstraintFullAccess createRelationshipConstraintFullAccess()
+  {
+    RelationshipConstraintFullAccessImpl relationshipConstraintFullAccess = new RelationshipConstraintFullAccessImpl();
+    return relationshipConstraintFullAccess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationshipConstraintListOfOps createRelationshipConstraintListOfOps()
+  {
+    RelationshipConstraintListOfOpsImpl relationshipConstraintListOfOps = new RelationshipConstraintListOfOpsImpl();
+    return relationshipConstraintListOfOps;
   }
 
   /**
@@ -181,9 +241,9 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstraintType createConstraintTypeFromString(EDataType eDataType, String initialValue)
+  public OperationConstraintType createOperationConstraintTypeFromString(EDataType eDataType, String initialValue)
   {
-    ConstraintType result = ConstraintType.get(initialValue);
+    OperationConstraintType result = OperationConstraintType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -193,7 +253,7 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertConstraintTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertOperationConstraintTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

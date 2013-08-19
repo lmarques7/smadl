@@ -16,7 +16,7 @@ import org.smadl.smadl.Entity
 class SMADLJvmModelInferrer extends AbstractModelInferrer {
     
     // Maybe used for xbase transformations
-    //@Inject XbaseCompiler xBaseCompiler
+    @Inject XbaseCompiler xBaseCompiler
     
     /**
      * convenience API to build and initialize JVM types and their members.
@@ -54,25 +54,26 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
         // An implementation for the initial hello world example could look like this:
         for (sm : element.entities) {
             var smClassDefault = sm.toClass(sm.name.toFirstUpper)
-            acceptor.accept(smClassDefault).initializeLater
-                [
-                    for (constructor : sm.constructors) {
-                        members += constructor.toConstructor[
-                            for (p : constructor.parameters) {
-                                parameters += p.toParameter(p.name, p.parameterType)
-                            }
-                            body = constructor.body
-                        ]
-                    }
-                    for (op : sm.wrapperInterface) {
-                        members += op.toMethod(op.name, op.returnType) [
-                            for (p : op.parameters) {
-                                parameters += p.toParameter(p.name, p.parameterType)
-                            }
-                            body = op.body
-                        ]
-                    }
-                ]
+            acceptor.accept(smClassDefault).initializeLater [
+                it.abstract = true
+                for (constructor : sm.constructors) {
+                    members += constructor.toConstructor[
+                        for (p : constructor.parameters) {
+                            parameters += p.toParameter(p.name, p.parameterType)
+                        }
+                        body = constructor.body
+                    ]
+                }
+                for (op : sm.wrapperInterface) {
+                    var returnType = op.returnType ?: newTypeRef("void");
+                    members += op.toMethod(op.name, returnType) [
+                        for (param : op.parameters) {
+                            parameters += param.toParameter(param.name, param.parameterType)
+                        }
+                        it.abstract = true
+                    ]
+                }
+            ]
         }
     }
 }

@@ -26,8 +26,8 @@ public interface OperationConstraint extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute list.
-   * The list contents are of type {@link org.smadl.smadl.ConstraintType}.
-   * The literals are from the enumeration {@link org.smadl.smadl.ConstraintType}.
+   * The list contents are of type {@link org.smadl.smadl.OperationConstraintType}.
+   * The literals are from the enumeration {@link org.smadl.smadl.OperationConstraintType}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute list isn't clear,
@@ -35,11 +35,11 @@ public interface OperationConstraint extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute list.
-   * @see org.smadl.smadl.ConstraintType
+   * @see org.smadl.smadl.OperationConstraintType
    * @see org.smadl.smadl.SmadlPackage#getOperationConstraint_Type()
    * @model unique="false"
    * @generated
    */
-  EList<ConstraintType> getType();
+  EList<OperationConstraintType> getType();
 
 } // OperationConstraint

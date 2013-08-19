@@ -60,6 +60,11 @@ import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConstraint;
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.ProvidedService;
+import org.smadl.smadl.Relationship;
+import org.smadl.smadl.RelationshipConstraint;
+import org.smadl.smadl.RelationshipConstraintFullAccess;
+import org.smadl.smadl.RelationshipConstraintListOfOps;
+import org.smadl.smadl.RelationshipGroup;
 import org.smadl.smadl.SmadlPackage;
 import org.smadl.smadl.SocialMachine;
 
@@ -98,6 +103,36 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 			case SmadlPackage.PROVIDED_SERVICE:
 				if(context == grammarAccess.getProvidedServiceRule()) {
 					sequence_ProvidedService(context, (ProvidedService) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.RELATIONSHIP:
+				if(context == grammarAccess.getRelationshipRule()) {
+					sequence_Relationship(context, (Relationship) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.RELATIONSHIP_CONSTRAINT:
+				if(context == grammarAccess.getRelationshipConstraintRule()) {
+					sequence_RelationshipConstraint(context, (RelationshipConstraint) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.RELATIONSHIP_CONSTRAINT_FULL_ACCESS:
+				if(context == grammarAccess.getRelationshipConstraintFullAccessRule()) {
+					sequence_RelationshipConstraintFullAccess(context, (RelationshipConstraintFullAccess) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.RELATIONSHIP_CONSTRAINT_LIST_OF_OPS:
+				if(context == grammarAccess.getRelationshipConstraintListOfOpsRule()) {
+					sequence_RelationshipConstraintListOfOps(context, (RelationshipConstraintListOfOps) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.RELATIONSHIP_GROUP:
+				if(context == grammarAccess.getRelationshipGroupRule()) {
+					sequence_RelationshipGroup(context, (RelationshipGroup) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1069,7 +1104,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     type=ConstraintType
+	 *     type=OperationConstraintType
 	 */
 	protected void sequence_GeneralConstraint(EObject context, GeneralConstraint semanticObject) {
 		if(errorAcceptor != null) {
@@ -1078,14 +1113,14 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getGeneralConstraintAccess().getTypeConstraintTypeEnumRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getGeneralConstraintAccess().getTypeOperationConstraintTypeEnumRuleCall_1_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     type+=ConstraintType+
+	 *     type+=OperationConstraintType+
 	 */
 	protected void sequence_OperationConstraint(EObject context, OperationConstraint semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1099,8 +1134,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	 *         returnType=JvmTypeReference? 
 	 *         parameters+=FullJvmFormalParameter* 
 	 *         parameters+=FullJvmFormalParameter* 
-	 *         body=XBlockExpression 
-	 *         opConstraints+=OperationConstraint*
+	 *         opConstraint=OperationConstraint?
 	 *     )
 	 */
 	protected void sequence_ProvidedService(EObject context, ProvidedService semanticObject) {
@@ -1110,10 +1144,71 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     name='FULL_ACCESS'
+	 */
+	protected void sequence_RelationshipConstraintFullAccess(EObject context, RelationshipConstraintFullAccess semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SmadlPackage.Literals.RELATIONSHIP_CONSTRAINT_FULL_ACCESS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmadlPackage.Literals.RELATIONSHIP_CONSTRAINT_FULL_ACCESS__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRelationshipConstraintFullAccessAccess().getNameFULL_ACCESSKeyword_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='LIST_OF_OPS' operations+=[ProvidedService|ID] operations+=[ProvidedService|ID]*)
+	 */
+	protected void sequence_RelationshipConstraintListOfOps(EObject context, RelationshipConstraintListOfOps semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=RelationshipConstraintFullAccess | type=RelationshipConstraintListOfOps)
+	 */
+	protected void sequence_RelationshipConstraint(EObject context, RelationshipConstraint semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     relationships+=Relationship+
+	 */
+	protected void sequence_RelationshipGroup(EObject context, RelationshipGroup semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=ValidID 
-	 *         (depends+=[SocialMachine|ValidID] depends+=[SocialMachine|ValidID]*)? 
+	 *         target=[SocialMachine|ValidID] 
+	 *         uri=STRING 
+	 *         apiKey=STRING 
+	 *         secret=STRING 
+	 *         userToken=STRING 
+	 *         constraint=RelationshipConstraint?
+	 *     )
+	 */
+	protected void sequence_Relationship(EObject context, Relationship semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=ValidID 
+	 *         (dependencies+=[SocialMachine|ValidID] dependencies+=[SocialMachine|ValidID]*)? 
 	 *         generalConstraints=GeneralConstraint? 
+	 *         relationshipGroup=RelationshipGroup? 
 	 *         constructors+=ComputationalUnit* 
 	 *         wrapperInterface+=ProvidedService*
 	 *     )

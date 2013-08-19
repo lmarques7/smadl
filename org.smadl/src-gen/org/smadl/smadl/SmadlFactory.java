@@ -41,6 +41,51 @@ public interface SmadlFactory extends EFactory
   SocialMachine createSocialMachine();
 
   /**
+   * Returns a new object of class '<em>Relationship Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship Group</em>'.
+   * @generated
+   */
+  RelationshipGroup createRelationshipGroup();
+
+  /**
+   * Returns a new object of class '<em>Relationship</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship</em>'.
+   * @generated
+   */
+  Relationship createRelationship();
+
+  /**
+   * Returns a new object of class '<em>Relationship Constraint</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship Constraint</em>'.
+   * @generated
+   */
+  RelationshipConstraint createRelationshipConstraint();
+
+  /**
+   * Returns a new object of class '<em>Relationship Constraint Full Access</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship Constraint Full Access</em>'.
+   * @generated
+   */
+  RelationshipConstraintFullAccess createRelationshipConstraintFullAccess();
+
+  /**
+   * Returns a new object of class '<em>Relationship Constraint List Of Ops</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship Constraint List Of Ops</em>'.
+   * @generated
+   */
+  RelationshipConstraintListOfOps createRelationshipConstraintListOfOps();
+
+  /**
    * Returns a new object of class '<em>Computational Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

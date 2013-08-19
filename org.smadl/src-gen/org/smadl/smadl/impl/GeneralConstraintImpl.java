@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.smadl.smadl.ConstraintType;
 import org.smadl.smadl.GeneralConstraint;
+import org.smadl.smadl.OperationConstraintType;
 import org.smadl.smadl.SmadlPackage;
 
 /**
@@ -36,7 +36,7 @@ public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected static final ConstraintType TYPE_EDEFAULT = ConstraintType.REQUESTS_PER_PERIOD;
+  protected static final OperationConstraintType TYPE_EDEFAULT = OperationConstraintType.UNLIMITED;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -46,7 +46,7 @@ public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected ConstraintType type = TYPE_EDEFAULT;
+  protected OperationConstraintType type = TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstraintType getType()
+  public OperationConstraintType getType()
   {
     return type;
   }
@@ -84,9 +84,9 @@ public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(ConstraintType newType)
+  public void setType(OperationConstraintType newType)
   {
-    ConstraintType oldType = type;
+    OperationConstraintType oldType = type;
     type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.GENERAL_CONSTRAINT__TYPE, oldType, type));
@@ -119,7 +119,7 @@ public class GeneralConstraintImpl extends MinimalEObjectImpl.Container implemen
     switch (featureID)
     {
       case SmadlPackage.GENERAL_CONSTRAINT__TYPE:
-        setType((ConstraintType)newValue);
+        setType((OperationConstraintType)newValue);
         return;
     }
     super.eSet(featureID, newValue);

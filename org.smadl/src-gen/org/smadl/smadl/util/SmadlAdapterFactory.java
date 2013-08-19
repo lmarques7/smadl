@@ -85,6 +85,31 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
         return createSocialMachineAdapter();
       }
       @Override
+      public Adapter caseRelationshipGroup(RelationshipGroup object)
+      {
+        return createRelationshipGroupAdapter();
+      }
+      @Override
+      public Adapter caseRelationship(Relationship object)
+      {
+        return createRelationshipAdapter();
+      }
+      @Override
+      public Adapter caseRelationshipConstraint(RelationshipConstraint object)
+      {
+        return createRelationshipConstraintAdapter();
+      }
+      @Override
+      public Adapter caseRelationshipConstraintFullAccess(RelationshipConstraintFullAccess object)
+      {
+        return createRelationshipConstraintFullAccessAdapter();
+      }
+      @Override
+      public Adapter caseRelationshipConstraintListOfOps(RelationshipConstraintListOfOps object)
+      {
+        return createRelationshipConstraintListOfOpsAdapter();
+      }
+      @Override
       public Adapter caseComputationalUnit(ComputationalUnit object)
       {
         return createComputationalUnitAdapter();
@@ -152,6 +177,81 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSocialMachineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.RelationshipGroup <em>Relationship Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.RelationshipGroup
+   * @generated
+   */
+  public Adapter createRelationshipGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.Relationship <em>Relationship</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.Relationship
+   * @generated
+   */
+  public Adapter createRelationshipAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.RelationshipConstraint <em>Relationship Constraint</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.RelationshipConstraint
+   * @generated
+   */
+  public Adapter createRelationshipConstraintAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.RelationshipConstraintFullAccess <em>Relationship Constraint Full Access</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.RelationshipConstraintFullAccess
+   * @generated
+   */
+  public Adapter createRelationshipConstraintFullAccessAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.RelationshipConstraintListOfOps <em>Relationship Constraint List Of Ops</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.RelationshipConstraintListOfOps
+   * @generated
+   */
+  public Adapter createRelationshipConstraintListOfOpsAdapter()
   {
     return null;
   }
