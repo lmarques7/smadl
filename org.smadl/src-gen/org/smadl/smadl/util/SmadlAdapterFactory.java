@@ -90,9 +90,14 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
         return createRelationshipGroupAdapter();
       }
       @Override
-      public Adapter caseRelationship(Relationship object)
+      public Adapter caseOAuthRelationship(OAuthRelationship object)
       {
-        return createRelationshipAdapter();
+        return createOAuthRelationshipAdapter();
+      }
+      @Override
+      public Adapter caseGeneralRelationship(GeneralRelationship object)
+      {
+        return createGeneralRelationshipAdapter();
       }
       @Override
       public Adapter caseRelationshipConstraint(RelationshipConstraint object)
@@ -197,16 +202,31 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.smadl.smadl.Relationship <em>Relationship</em>}'.
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.OAuthRelationship <em>OAuth Relationship</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.smadl.smadl.Relationship
+   * @see org.smadl.smadl.OAuthRelationship
    * @generated
    */
-  public Adapter createRelationshipAdapter()
+  public Adapter createOAuthRelationshipAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.GeneralRelationship <em>General Relationship</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.GeneralRelationship
+   * @generated
+   */
+  public Adapter createGeneralRelationshipAdapter()
   {
     return null;
   }

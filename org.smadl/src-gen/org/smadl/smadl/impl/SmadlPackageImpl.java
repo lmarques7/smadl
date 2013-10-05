@@ -17,10 +17,11 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConstraint;
+import org.smadl.smadl.GeneralRelationship;
+import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.OperationConstraintType;
 import org.smadl.smadl.ProvidedService;
-import org.smadl.smadl.Relationship;
 import org.smadl.smadl.RelationshipConstraint;
 import org.smadl.smadl.RelationshipConstraintFullAccess;
 import org.smadl.smadl.RelationshipConstraintListOfOps;
@@ -63,7 +64,14 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass relationshipEClass = null;
+  private EClass oAuthRelationshipEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generalRelationshipEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -302,9 +310,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRelationship()
+  public EClass getOAuthRelationship()
   {
-    return relationshipEClass;
+    return oAuthRelationshipEClass;
   }
 
   /**
@@ -312,9 +320,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationship_Name()
+  public EAttribute getOAuthRelationship_Name()
   {
-    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)oAuthRelationshipEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -322,9 +330,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelationship_Target()
+  public EReference getOAuthRelationship_Target()
   {
-    return (EReference)relationshipEClass.getEStructuralFeatures().get(1);
+    return (EReference)oAuthRelationshipEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -332,9 +340,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationship_Uri()
+  public EAttribute getOAuthRelationship_Uri()
   {
-    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)oAuthRelationshipEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -342,9 +350,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationship_ApiKey()
+  public EAttribute getOAuthRelationship_ApiKey()
   {
-    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)oAuthRelationshipEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -352,9 +360,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationship_Secret()
+  public EAttribute getOAuthRelationship_Secret()
   {
-    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)oAuthRelationshipEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -362,9 +370,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationship_UserToken()
+  public EAttribute getOAuthRelationship_UserToken()
   {
-    return (EAttribute)relationshipEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)oAuthRelationshipEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -372,9 +380,69 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelationship_Constraint()
+  public EReference getOAuthRelationship_Constraint()
   {
-    return (EReference)relationshipEClass.getEStructuralFeatures().get(6);
+    return (EReference)oAuthRelationshipEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGeneralRelationship()
+  {
+    return generalRelationshipEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralRelationship_Name()
+  {
+    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGeneralRelationship_Target()
+  {
+    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralRelationship_ParamName()
+  {
+    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralRelationship_ParamValue()
+  {
+    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGeneralRelationship_Constraint()
+  {
+    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -621,14 +689,21 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     relationshipGroupEClass = createEClass(RELATIONSHIP_GROUP);
     createEReference(relationshipGroupEClass, RELATIONSHIP_GROUP__RELATIONSHIPS);
 
-    relationshipEClass = createEClass(RELATIONSHIP);
-    createEAttribute(relationshipEClass, RELATIONSHIP__NAME);
-    createEReference(relationshipEClass, RELATIONSHIP__TARGET);
-    createEAttribute(relationshipEClass, RELATIONSHIP__URI);
-    createEAttribute(relationshipEClass, RELATIONSHIP__API_KEY);
-    createEAttribute(relationshipEClass, RELATIONSHIP__SECRET);
-    createEAttribute(relationshipEClass, RELATIONSHIP__USER_TOKEN);
-    createEReference(relationshipEClass, RELATIONSHIP__CONSTRAINT);
+    oAuthRelationshipEClass = createEClass(OAUTH_RELATIONSHIP);
+    createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__NAME);
+    createEReference(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__TARGET);
+    createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__URI);
+    createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__API_KEY);
+    createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__SECRET);
+    createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__USER_TOKEN);
+    createEReference(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__CONSTRAINT);
+
+    generalRelationshipEClass = createEClass(GENERAL_RELATIONSHIP);
+    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__NAME);
+    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__TARGET);
+    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__PARAM_NAME);
+    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__PARAM_VALUE);
+    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__CONSTRAINT);
 
     relationshipConstraintEClass = createEClass(RELATIONSHIP_CONSTRAINT);
     createEReference(relationshipConstraintEClass, RELATIONSHIP_CONSTRAINT__TYPE);
@@ -707,16 +782,23 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     initEReference(getSocialMachine_WrapperInterface(), this.getProvidedService(), null, "wrapperInterface", null, 0, -1, SocialMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationshipGroupEClass, RelationshipGroup.class, "RelationshipGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRelationshipGroup_Relationships(), this.getRelationship(), null, "relationships", null, 0, -1, RelationshipGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationshipGroup_Relationships(), ecorePackage.getEObject(), null, "relationships", null, 0, -1, RelationshipGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelationship_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelationship_ApiKey(), ecorePackage.getEString(), "apiKey", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelationship_Secret(), ecorePackage.getEString(), "secret", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelationship_UserToken(), ecorePackage.getEString(), "userToken", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(oAuthRelationshipEClass, OAuthRelationship.class, "OAuthRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOAuthRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOAuthRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOAuthRelationship_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOAuthRelationship_ApiKey(), ecorePackage.getEString(), "apiKey", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOAuthRelationship_Secret(), ecorePackage.getEString(), "secret", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOAuthRelationship_UserToken(), ecorePackage.getEString(), "userToken", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOAuthRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalRelationshipEClass, GeneralRelationship.class, "GeneralRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGeneralRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralRelationship_ParamName(), ecorePackage.getEString(), "paramName", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralRelationship_ParamValue(), ecorePackage.getEString(), "paramValue", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationshipConstraintEClass, RelationshipConstraint.class, "RelationshipConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelationshipConstraint_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, RelationshipConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

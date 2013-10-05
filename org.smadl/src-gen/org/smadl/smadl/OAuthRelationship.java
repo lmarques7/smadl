@@ -6,27 +6,27 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Relationship</b></em>'.
+ * A representation of the model object '<em><b>OAuth Relationship</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.smadl.smadl.Relationship#getName <em>Name</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getTarget <em>Target</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getUri <em>Uri</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getApiKey <em>Api Key</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getSecret <em>Secret</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getUserToken <em>User Token</em>}</li>
- *   <li>{@link org.smadl.smadl.Relationship#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getName <em>Name</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getUri <em>Uri</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getApiKey <em>Api Key</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getSecret <em>Secret</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getUserToken <em>User Token</em>}</li>
+ *   <li>{@link org.smadl.smadl.OAuthRelationship#getConstraint <em>Constraint</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.smadl.smadl.SmadlPackage#getRelationship()
+ * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship()
  * @model
  * @generated
  */
-public interface Relationship extends EObject
+public interface OAuthRelationship extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -38,14 +38,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_Name()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -64,14 +64,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' reference.
    * @see #setTarget(SocialMachine)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_Target()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_Target()
    * @model
    * @generated
    */
   SocialMachine getTarget();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getTarget <em>Target</em>}' reference.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Target</em>' reference.
@@ -90,14 +90,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Uri</em>' attribute.
    * @see #setUri(String)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_Uri()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_Uri()
    * @model
    * @generated
    */
   String getUri();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getUri <em>Uri</em>}' attribute.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getUri <em>Uri</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Uri</em>' attribute.
@@ -116,14 +116,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Api Key</em>' attribute.
    * @see #setApiKey(String)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_ApiKey()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_ApiKey()
    * @model
    * @generated
    */
   String getApiKey();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getApiKey <em>Api Key</em>}' attribute.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getApiKey <em>Api Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Api Key</em>' attribute.
@@ -142,14 +142,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Secret</em>' attribute.
    * @see #setSecret(String)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_Secret()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_Secret()
    * @model
    * @generated
    */
   String getSecret();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getSecret <em>Secret</em>}' attribute.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getSecret <em>Secret</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Secret</em>' attribute.
@@ -168,14 +168,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>User Token</em>' attribute.
    * @see #setUserToken(String)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_UserToken()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_UserToken()
    * @model
    * @generated
    */
   String getUserToken();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getUserToken <em>User Token</em>}' attribute.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getUserToken <em>User Token</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>User Token</em>' attribute.
@@ -194,14 +194,14 @@ public interface Relationship extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Constraint</em>' containment reference.
    * @see #setConstraint(RelationshipConstraint)
-   * @see org.smadl.smadl.SmadlPackage#getRelationship_Constraint()
+   * @see org.smadl.smadl.SmadlPackage#getOAuthRelationship_Constraint()
    * @model containment="true"
    * @generated
    */
   RelationshipConstraint getConstraint();
 
   /**
-   * Sets the value of the '{@link org.smadl.smadl.Relationship#getConstraint <em>Constraint</em>}' containment reference.
+   * Sets the value of the '{@link org.smadl.smadl.OAuthRelationship#getConstraint <em>Constraint</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Constraint</em>' containment reference.
@@ -210,4 +210,4 @@ public interface Relationship extends EObject
    */
   void setConstraint(RelationshipConstraint value);
 
-} // Relationship
+} // OAuthRelationship

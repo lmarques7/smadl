@@ -187,14 +187,14 @@ public interface SmadlPackage extends EPackage
   int RELATIONSHIP_GROUP_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.smadl.smadl.impl.RelationshipImpl <em>Relationship</em>}' class.
+   * The meta object id for the '{@link org.smadl.smadl.impl.OAuthRelationshipImpl <em>OAuth Relationship</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.smadl.smadl.impl.RelationshipImpl
-   * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationship()
+   * @see org.smadl.smadl.impl.OAuthRelationshipImpl
+   * @see org.smadl.smadl.impl.SmadlPackageImpl#getOAuthRelationship()
    * @generated
    */
-  int RELATIONSHIP = 3;
+  int OAUTH_RELATIONSHIP = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -203,7 +203,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__NAME = 0;
+  int OAUTH_RELATIONSHIP__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -212,7 +212,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__TARGET = 1;
+  int OAUTH_RELATIONSHIP__TARGET = 1;
 
   /**
    * The feature id for the '<em><b>Uri</b></em>' attribute.
@@ -221,7 +221,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__URI = 2;
+  int OAUTH_RELATIONSHIP__URI = 2;
 
   /**
    * The feature id for the '<em><b>Api Key</b></em>' attribute.
@@ -230,7 +230,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__API_KEY = 3;
+  int OAUTH_RELATIONSHIP__API_KEY = 3;
 
   /**
    * The feature id for the '<em><b>Secret</b></em>' attribute.
@@ -239,7 +239,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__SECRET = 4;
+  int OAUTH_RELATIONSHIP__SECRET = 4;
 
   /**
    * The feature id for the '<em><b>User Token</b></em>' attribute.
@@ -248,7 +248,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__USER_TOKEN = 5;
+  int OAUTH_RELATIONSHIP__USER_TOKEN = 5;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' containment reference.
@@ -257,16 +257,80 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RELATIONSHIP__CONSTRAINT = 6;
+  int OAUTH_RELATIONSHIP__CONSTRAINT = 6;
 
   /**
-   * The number of structural features of the '<em>Relationship</em>' class.
+   * The number of structural features of the '<em>OAuth Relationship</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RELATIONSHIP_FEATURE_COUNT = 7;
+  int OAUTH_RELATIONSHIP_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.smadl.smadl.impl.GeneralRelationshipImpl <em>General Relationship</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.smadl.smadl.impl.GeneralRelationshipImpl
+   * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralRelationship()
+   * @generated
+   */
+  int GENERAL_RELATIONSHIP = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP__TARGET = 1;
+
+  /**
+   * The feature id for the '<em><b>Param Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP__PARAM_NAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Param Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP__PARAM_VALUE = 3;
+
+  /**
+   * The feature id for the '<em><b>Constraint</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP__CONSTRAINT = 4;
+
+  /**
+   * The number of structural features of the '<em>General Relationship</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_RELATIONSHIP_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.smadl.smadl.impl.RelationshipConstraintImpl <em>Relationship Constraint</em>}' class.
@@ -276,7 +340,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraint()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT = 4;
+  int RELATIONSHIP_CONSTRAINT = 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -304,7 +368,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraintFullAccess()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT_FULL_ACCESS = 5;
+  int RELATIONSHIP_CONSTRAINT_FULL_ACCESS = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -332,7 +396,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraintListOfOps()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT_LIST_OF_OPS = 6;
+  int RELATIONSHIP_CONSTRAINT_LIST_OF_OPS = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -369,7 +433,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getComputationalUnit()
    * @generated
    */
-  int COMPUTATIONAL_UNIT = 7;
+  int COMPUTATIONAL_UNIT = 8;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -406,7 +470,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getProvidedService()
    * @generated
    */
-  int PROVIDED_SERVICE = 8;
+  int PROVIDED_SERVICE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +525,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getOperationConstraint()
    * @generated
    */
-  int OPERATION_CONSTRAINT = 9;
+  int OPERATION_CONSTRAINT = 10;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute list.
@@ -489,7 +553,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralConstraint()
    * @generated
    */
-  int GENERAL_CONSTRAINT = 10;
+  int GENERAL_CONSTRAINT = 11;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -517,7 +581,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getOperationConstraintType()
    * @generated
    */
-  int OPERATION_CONSTRAINT_TYPE = 11;
+  int OPERATION_CONSTRAINT_TYPE = 12;
 
 
   /**
@@ -639,91 +703,156 @@ public interface SmadlPackage extends EPackage
   EReference getRelationshipGroup_Relationships();
 
   /**
-   * Returns the meta object for class '{@link org.smadl.smadl.Relationship <em>Relationship</em>}'.
+   * Returns the meta object for class '{@link org.smadl.smadl.OAuthRelationship <em>OAuth Relationship</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Relationship</em>'.
-   * @see org.smadl.smadl.Relationship
+   * @return the meta object for class '<em>OAuth Relationship</em>'.
+   * @see org.smadl.smadl.OAuthRelationship
    * @generated
    */
-  EClass getRelationship();
+  EClass getOAuthRelationship();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.Relationship#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.OAuthRelationship#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.smadl.smadl.Relationship#getName()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getName()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EAttribute getRelationship_Name();
+  EAttribute getOAuthRelationship_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.smadl.smadl.Relationship#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link org.smadl.smadl.OAuthRelationship#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Target</em>'.
-   * @see org.smadl.smadl.Relationship#getTarget()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getTarget()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EReference getRelationship_Target();
+  EReference getOAuthRelationship_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.Relationship#getUri <em>Uri</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.OAuthRelationship#getUri <em>Uri</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Uri</em>'.
-   * @see org.smadl.smadl.Relationship#getUri()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getUri()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EAttribute getRelationship_Uri();
+  EAttribute getOAuthRelationship_Uri();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.Relationship#getApiKey <em>Api Key</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.OAuthRelationship#getApiKey <em>Api Key</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Api Key</em>'.
-   * @see org.smadl.smadl.Relationship#getApiKey()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getApiKey()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EAttribute getRelationship_ApiKey();
+  EAttribute getOAuthRelationship_ApiKey();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.Relationship#getSecret <em>Secret</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.OAuthRelationship#getSecret <em>Secret</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Secret</em>'.
-   * @see org.smadl.smadl.Relationship#getSecret()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getSecret()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EAttribute getRelationship_Secret();
+  EAttribute getOAuthRelationship_Secret();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.Relationship#getUserToken <em>User Token</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.OAuthRelationship#getUserToken <em>User Token</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>User Token</em>'.
-   * @see org.smadl.smadl.Relationship#getUserToken()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getUserToken()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EAttribute getRelationship_UserToken();
+  EAttribute getOAuthRelationship_UserToken();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.smadl.smadl.Relationship#getConstraint <em>Constraint</em>}'.
+   * Returns the meta object for the containment reference '{@link org.smadl.smadl.OAuthRelationship#getConstraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Constraint</em>'.
-   * @see org.smadl.smadl.Relationship#getConstraint()
-   * @see #getRelationship()
+   * @see org.smadl.smadl.OAuthRelationship#getConstraint()
+   * @see #getOAuthRelationship()
    * @generated
    */
-  EReference getRelationship_Constraint();
+  EReference getOAuthRelationship_Constraint();
+
+  /**
+   * Returns the meta object for class '{@link org.smadl.smadl.GeneralRelationship <em>General Relationship</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Relationship</em>'.
+   * @see org.smadl.smadl.GeneralRelationship
+   * @generated
+   */
+  EClass getGeneralRelationship();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.GeneralRelationship#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getName()
+   * @see #getGeneralRelationship()
+   * @generated
+   */
+  EAttribute getGeneralRelationship_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.smadl.smadl.GeneralRelationship#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getTarget()
+   * @see #getGeneralRelationship()
+   * @generated
+   */
+  EReference getGeneralRelationship_Target();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.smadl.smadl.GeneralRelationship#getParamName <em>Param Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Param Name</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getParamName()
+   * @see #getGeneralRelationship()
+   * @generated
+   */
+  EAttribute getGeneralRelationship_ParamName();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.smadl.smadl.GeneralRelationship#getParamValue <em>Param Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Param Value</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getParamValue()
+   * @see #getGeneralRelationship()
+   * @generated
+   */
+  EAttribute getGeneralRelationship_ParamValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.smadl.smadl.GeneralRelationship#getConstraint <em>Constraint</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Constraint</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getConstraint()
+   * @see #getGeneralRelationship()
+   * @generated
+   */
+  EReference getGeneralRelationship_Constraint();
 
   /**
    * Returns the meta object for class '{@link org.smadl.smadl.RelationshipConstraint <em>Relationship Constraint</em>}'.
@@ -1055,14 +1184,14 @@ public interface SmadlPackage extends EPackage
     EReference RELATIONSHIP_GROUP__RELATIONSHIPS = eINSTANCE.getRelationshipGroup_Relationships();
 
     /**
-     * The meta object literal for the '{@link org.smadl.smadl.impl.RelationshipImpl <em>Relationship</em>}' class.
+     * The meta object literal for the '{@link org.smadl.smadl.impl.OAuthRelationshipImpl <em>OAuth Relationship</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.smadl.smadl.impl.RelationshipImpl
-     * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationship()
+     * @see org.smadl.smadl.impl.OAuthRelationshipImpl
+     * @see org.smadl.smadl.impl.SmadlPackageImpl#getOAuthRelationship()
      * @generated
      */
-    EClass RELATIONSHIP = eINSTANCE.getRelationship();
+    EClass OAUTH_RELATIONSHIP = eINSTANCE.getOAuthRelationship();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1070,7 +1199,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONSHIP__NAME = eINSTANCE.getRelationship_Name();
+    EAttribute OAUTH_RELATIONSHIP__NAME = eINSTANCE.getOAuthRelationship_Name();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1078,7 +1207,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RELATIONSHIP__TARGET = eINSTANCE.getRelationship_Target();
+    EReference OAUTH_RELATIONSHIP__TARGET = eINSTANCE.getOAuthRelationship_Target();
 
     /**
      * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
@@ -1086,7 +1215,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONSHIP__URI = eINSTANCE.getRelationship_Uri();
+    EAttribute OAUTH_RELATIONSHIP__URI = eINSTANCE.getOAuthRelationship_Uri();
 
     /**
      * The meta object literal for the '<em><b>Api Key</b></em>' attribute feature.
@@ -1094,7 +1223,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONSHIP__API_KEY = eINSTANCE.getRelationship_ApiKey();
+    EAttribute OAUTH_RELATIONSHIP__API_KEY = eINSTANCE.getOAuthRelationship_ApiKey();
 
     /**
      * The meta object literal for the '<em><b>Secret</b></em>' attribute feature.
@@ -1102,7 +1231,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONSHIP__SECRET = eINSTANCE.getRelationship_Secret();
+    EAttribute OAUTH_RELATIONSHIP__SECRET = eINSTANCE.getOAuthRelationship_Secret();
 
     /**
      * The meta object literal for the '<em><b>User Token</b></em>' attribute feature.
@@ -1110,7 +1239,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONSHIP__USER_TOKEN = eINSTANCE.getRelationship_UserToken();
+    EAttribute OAUTH_RELATIONSHIP__USER_TOKEN = eINSTANCE.getOAuthRelationship_UserToken();
 
     /**
      * The meta object literal for the '<em><b>Constraint</b></em>' containment reference feature.
@@ -1118,7 +1247,57 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RELATIONSHIP__CONSTRAINT = eINSTANCE.getRelationship_Constraint();
+    EReference OAUTH_RELATIONSHIP__CONSTRAINT = eINSTANCE.getOAuthRelationship_Constraint();
+
+    /**
+     * The meta object literal for the '{@link org.smadl.smadl.impl.GeneralRelationshipImpl <em>General Relationship</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.smadl.smadl.impl.GeneralRelationshipImpl
+     * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralRelationship()
+     * @generated
+     */
+    EClass GENERAL_RELATIONSHIP = eINSTANCE.getGeneralRelationship();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_RELATIONSHIP__NAME = eINSTANCE.getGeneralRelationship_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERAL_RELATIONSHIP__TARGET = eINSTANCE.getGeneralRelationship_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Param Name</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_RELATIONSHIP__PARAM_NAME = eINSTANCE.getGeneralRelationship_ParamName();
+
+    /**
+     * The meta object literal for the '<em><b>Param Value</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_RELATIONSHIP__PARAM_VALUE = eINSTANCE.getGeneralRelationship_ParamValue();
+
+    /**
+     * The meta object literal for the '<em><b>Constraint</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERAL_RELATIONSHIP__CONSTRAINT = eINSTANCE.getGeneralRelationship_Constraint();
 
     /**
      * The meta object literal for the '{@link org.smadl.smadl.impl.RelationshipConstraintImpl <em>Relationship Constraint</em>}' class.

@@ -58,9 +58,10 @@ import org.smadl.services.SMADLGrammarAccess;
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConstraint;
+import org.smadl.smadl.GeneralRelationship;
+import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.ProvidedService;
-import org.smadl.smadl.Relationship;
 import org.smadl.smadl.RelationshipConstraint;
 import org.smadl.smadl.RelationshipConstraintFullAccess;
 import org.smadl.smadl.RelationshipConstraintListOfOps;
@@ -94,6 +95,18 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case SmadlPackage.GENERAL_RELATIONSHIP:
+				if(context == grammarAccess.getGeneralRelationshipRule()) {
+					sequence_GeneralRelationship(context, (GeneralRelationship) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.OAUTH_RELATIONSHIP:
+				if(context == grammarAccess.getOAuthRelationshipRule()) {
+					sequence_OAuthRelationship(context, (OAuthRelationship) semanticObject); 
+					return; 
+				}
+				else break;
 			case SmadlPackage.OPERATION_CONSTRAINT:
 				if(context == grammarAccess.getOperationConstraintRule()) {
 					sequence_OperationConstraint(context, (OperationConstraint) semanticObject); 
@@ -103,12 +116,6 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 			case SmadlPackage.PROVIDED_SERVICE:
 				if(context == grammarAccess.getProvidedServiceRule()) {
 					sequence_ProvidedService(context, (ProvidedService) semanticObject); 
-					return; 
-				}
-				else break;
-			case SmadlPackage.RELATIONSHIP:
-				if(context == grammarAccess.getRelationshipRule()) {
-					sequence_Relationship(context, (Relationship) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1120,6 +1127,32 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (name=ValidID target=[SocialMachine|ValidID] (paramName+=ValidID paramValue+=Number)* constraint=RelationshipConstraint?)
+	 */
+	protected void sequence_GeneralRelationship(EObject context, GeneralRelationship semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=ValidID 
+	 *         target=[SocialMachine|ValidID] 
+	 *         uri=STRING 
+	 *         apiKey=STRING 
+	 *         secret=STRING 
+	 *         userToken=STRING 
+	 *         constraint=RelationshipConstraint?
+	 *     )
+	 */
+	protected void sequence_OAuthRelationship(EObject context, OAuthRelationship semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     type+=OperationConstraintType+
 	 */
 	protected void sequence_OperationConstraint(EObject context, OperationConstraint semanticObject) {
@@ -1178,26 +1211,9 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     relationships+=Relationship+
+	 *     (relationships+=OAuthRelationship | relationships+=GeneralRelationship)+
 	 */
 	protected void sequence_RelationshipGroup(EObject context, RelationshipGroup semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ValidID 
-	 *         target=[SocialMachine|ValidID] 
-	 *         uri=STRING 
-	 *         apiKey=STRING 
-	 *         secret=STRING 
-	 *         userToken=STRING 
-	 *         constraint=RelationshipConstraint?
-	 *     )
-	 */
-	protected void sequence_Relationship(EObject context, Relationship semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

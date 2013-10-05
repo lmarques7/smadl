@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -16,7 +17,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.smadl.smadl.Relationship;
 import org.smadl.smadl.RelationshipGroup;
 import org.smadl.smadl.SmadlPackage;
 
@@ -43,7 +43,7 @@ public class RelationshipGroupImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<Relationship> relationships;
+  protected EList<EObject> relationships;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class RelationshipGroupImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Relationship> getRelationships()
+  public EList<EObject> getRelationships()
   {
     if (relationships == null)
     {
-      relationships = new EObjectContainmentEList<Relationship>(Relationship.class, this, SmadlPackage.RELATIONSHIP_GROUP__RELATIONSHIPS);
+      relationships = new EObjectContainmentEList<EObject>(EObject.class, this, SmadlPackage.RELATIONSHIP_GROUP__RELATIONSHIPS);
     }
     return relationships;
   }
@@ -125,7 +125,7 @@ public class RelationshipGroupImpl extends MinimalEObjectImpl.Container implemen
     {
       case SmadlPackage.RELATIONSHIP_GROUP__RELATIONSHIPS:
         getRelationships().clear();
-        getRelationships().addAll((Collection<? extends Relationship>)newValue);
+        getRelationships().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

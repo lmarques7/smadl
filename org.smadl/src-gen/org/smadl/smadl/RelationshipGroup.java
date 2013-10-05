@@ -26,7 +26,7 @@ public interface RelationshipGroup extends EObject
 {
   /**
    * Returns the value of the '<em><b>Relationships</b></em>' containment reference list.
-   * The list contents are of type {@link org.smadl.smadl.Relationship}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Relationships</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface RelationshipGroup extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Relationship> getRelationships();
+  EList<EObject> getRelationships();
 
 } // RelationshipGroup

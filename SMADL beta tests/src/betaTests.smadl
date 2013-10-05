@@ -1,26 +1,63 @@
+/*
+ * The 'relates to' section is optional. When present, this section lists the
+ * other social machines used in MyNewSocialMachine scope. If any relationships
+ * are listed here, it is mandatory to configure each appropriate relationship
+ * according to its particular constraint
+ */
+ 
+//facebook and dropbox must had been previously defined as 
+//Social Machine entities just like 'MyNewSocialMachine'
+SocialMachine MyNewSocialMachine relates to facebook, dropbox {
+    
+  general constraint UNLIMITED
+  
+  Relationships {
+     //SM 'dropbox' must be listed in the 'relates to' section
+     dropBoxFiles with dropbox [ 
+       uri = "http://localhost:8080/"
+       api-key = "2190809345BJASDH"
+       secret = "IQW098IUABGBAS"
+       user-token = "18UYGS9876GU238"
+     ] type: FULL_ACCESS //every single operation of dropbox
+     
+     //SM 'facebook' must be listed in the 'relates to' section
+     facebookPosts with facebook [ 
+       uri = "http://localhost:9090/"
+       api-key = "IOUQYWERF09871"
+       secret = "6546QWEF0712EDIUH"
+       user-token = "0981234BVUISDC78G1"
+     ] 
+  }
+     
+  constructor(String name, Integer initialPort) {
+    var config = name //Constructor body (dynamically typed expression)  
+  }
+  
+  op listFilesInDropboxFolder returns java.util.List<java.io.File> (String folder) 
+    constraint PRE_AUTH_SM
+  
+  op createFacebookPost(String text) 
+}
+
 SocialMachine dropbox relates to facebook {
-	
+
 	constructor(String baseURL) {
 		/* Setting up the REST URL */
 	}
 	
 	constructor(String baseURL, Integer simultaneosUsers) {
-        /* Setting up the REST URL */
+        var x = 10
+        val y = 20
+        var z = x + y
+        println(z)
     }
 	
-	op saveFile (java.io.File newFile) {
-	    var Integer x = 26
-		if (x > 25) {
-		    print("Testing")
-	    }
-	} constraint UNLIMITED
+	op saveFile (java.io.File newFile)
 	
-	op listFilesInFolder returns java.util.List<java.io.File> (String folder) {
-		return newArrayList
-	} constraint REDUCED_RESOURCE
+	op listFilesInFolder returns java.util.List<java.io.File> (String folder)
 }
 
-SocialMachine facebook {
+SocialMachine facebook relates to toggl {
 	
 	general constraint PRE_AUTH_SM
 	
@@ -28,21 +65,51 @@ SocialMachine facebook {
 		/* Instantiate basic operations of current social machine */
 	}
 	
-	op listFriends returns java.util.List<String> () {
-		var x = new java.util.ArrayList<String>()
-		return x
-	} constraint UNLIMITED 
+	op listMyFriends () 
 	
 }
 
-SocialMachine toggl relates to dropbox {
+SocialMachine AmazonS3 {
     
-    constructor() {
-        
-    }
+}
+
+SocialMachine CloudBees {
     
-    op nothing() {
-        
-    }
+}
+
+SocialMachine Google {
     
+}
+
+SocialMachine MetaContainer relates to AmazonS3, CloudBees, Google {
+  
+  //Every requester application must be authenticated  
+  general constraint PRE_AUTH_SM
+    
+  Relationships {
+   googleOpenID with Google [ 
+     uri = "http://www.metacontainer.com/cloudbees"
+     api-key = "OIUY2345"
+     secret = "ASDEFIUH456H"
+     user-token = "2L3KHJ4573456"
+   ] 
+   
+   cloudDBS with CloudBees [ 
+     uri = "http://www.metacontainer.com/google"
+     api-key = "IOUQYWERF09871"
+     secret = "6546QWEF0712EDIUH"
+     user-token = "0981234BVUISDC78G1"
+   ] 
+   
+   amazonFileStorage with AmazonS3 [ 
+     uri = "http://www.metacontainer.com/amazon"
+     api-key = "98762GRU12QWEG"
+     secret = "029384Y5UIHGSDF"
+     user-token = "1234123HG65JKHG"
+   ] 
+  }
+  
+  op deployApplication (java.io.File WARFile) 
+  
+  op listCloudFiles ()    
 }

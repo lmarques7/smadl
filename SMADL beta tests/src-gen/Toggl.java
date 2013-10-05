@@ -1,9 +1,7 @@
 @SuppressWarnings("all")
-public class Toggl {
+public abstract class Toggl {
   public Toggl() {
   }
   
-  public Object nothing() {
-    return null;
-  }
+  public abstract void nothing();
 }

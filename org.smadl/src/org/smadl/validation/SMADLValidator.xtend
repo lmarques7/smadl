@@ -4,11 +4,14 @@ import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.xtype.XtypePackage
+import org.smadl.smadl.GeneralRelationship
+import org.smadl.smadl.OAuthRelationship
+import org.smadl.smadl.RelationshipConstraint
+import org.smadl.smadl.RelationshipConstraintListOfOps
 import org.smadl.smadl.SmadlPackage
 import org.smadl.smadl.SocialMachine
 
 import static org.smadl.smadl.SmadlPackage$Literals.*
-import org.smadl.smadl.RelationshipConstraintListOfOps
 
 /**
  * Custom validation rules. 
@@ -20,39 +23,59 @@ class SMADLValidator extends AbstractSMADLValidator {
     public static val CYCLIC_DEPENDENCY = "smadl.issue.cyclicDependency"
 
     override protected getEPackages() {
-        newArrayList(
-            SmadlPackage::eINSTANCE,
-            XbasePackage::eINSTANCE,
-            TypesPackage::eINSTANCE,
+        newArrayList(SmadlPackage::eINSTANCE, XbasePackage::eINSTANCE, TypesPackage::eINSTANCE,
             XtypePackage::eINSTANCE)
     }
-    
+
     @Check
     def checkSocialMachineSelfRelationship(SocialMachine sm) {
         for (relationship : sm.relationshipGroup.relationships) {
-            if (relationship.target.name.equals(sm.name)) {
-                error("A social machine cannot have a self relationship", relationship, RELATIONSHIP__TARGET)
+            var targetName = ""
+            var feature = OAUTH_RELATIONSHIP__TARGET
+            if (relationship instanceof OAuthRelationship) {
+                targetName = (relationship as OAuthRelationship).target.name
+            } else if (relationship instanceof GeneralRelationship) {
+                targetName = (relationship as GeneralRelationship).target.name
+                feature = GENERAL_RELATIONSHIP__TARGET
             }
-            
-            if (relationship.constraint != null && relationship.constraint.type instanceof RelationshipConstraintListOfOps) {
-                var listOfOps = (relationship.constraint.type as RelationshipConstraintListOfOps).operations
+            if (targetName.equals(sm.name)) {
+                error("A social machine cannot have a self relationship", relationship, feature)
+            }
+        }
+    }
+
+    @Check
+    def checkSocialMachineRelationshipOperations(SocialMachine sm) {
+        for (relationship : sm.relationshipGroup.relationships) {
+            var RelationshipConstraint constraint = null
+            var SocialMachine relationshipTarget = null
+            var feature = OAUTH_RELATIONSHIP__CONSTRAINT
+            if (relationship instanceof OAuthRelationship) {
+                constraint = (relationship as OAuthRelationship).constraint
+                relationshipTarget = (relationship as OAuthRelationship).target
+            } else if (relationship instanceof GeneralRelationship) {
+                constraint = (relationship as GeneralRelationship).constraint
+                relationshipTarget = (relationship as GeneralRelationship).target
+                feature = GENERAL_RELATIONSHIP__CONSTRAINT
+            }
+            if (constraint != null && constraint.type instanceof RelationshipConstraintListOfOps) {
+                var listOfOps = (constraint.type as RelationshipConstraintListOfOps).operations
                 var opConstraintNames = newArrayList()
                 for (op : listOfOps) {
                     opConstraintNames.add(op.name)
                 }
                 var opTargetNames = newArrayList()
-                for (op : relationship.target.wrapperInterface) {
+                for (op : relationshipTarget.wrapperInterface) {
                     opTargetNames.add(op.name)
                 }
                 if (!opTargetNames.containsAll(opConstraintNames)) {
-                    var name = relationship.target.name
-                    error('''Only operations of the target «name» are valid for this relationship''', 
-                        relationship, RELATIONSHIP__CONSTRAINT)
+                    var name = relationshipTarget.name
+                    error('''Only operations of the target «name» are valid for this relationship''',
+                        relationship, feature)
                 }
             }
         }
     }
-
 //    @Check
 //    def checkSocialMachineSelfOrCyclicReference(SocialMachine sm) {
 //         sm.findDependentTasks [ cycle |
@@ -95,5 +118,4 @@ class SMADLValidator extends AbstractSMADLValidator {
 //        for (t : sm.depends) 
 //            internalFindDependentTasksRec(t, set)
 //    }
-
 }

@@ -93,10 +93,17 @@ public class SmadlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SmadlPackage.RELATIONSHIP:
+      case SmadlPackage.OAUTH_RELATIONSHIP:
       {
-        Relationship relationship = (Relationship)theEObject;
-        T result = caseRelationship(relationship);
+        OAuthRelationship oAuthRelationship = (OAuthRelationship)theEObject;
+        T result = caseOAuthRelationship(oAuthRelationship);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SmadlPackage.GENERAL_RELATIONSHIP:
+      {
+        GeneralRelationship generalRelationship = (GeneralRelationship)theEObject;
+        T result = caseGeneralRelationship(generalRelationship);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -202,17 +209,33 @@ public class SmadlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>OAuth Relationship</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
+   * @return the result of interpreting the object as an instance of '<em>OAuth Relationship</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRelationship(Relationship object)
+  public T caseOAuthRelationship(OAuthRelationship object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Relationship</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Relationship</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralRelationship(GeneralRelationship object)
   {
     return null;
   }

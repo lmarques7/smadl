@@ -10,8 +10,6 @@ grammar org.smadl.SMADL with org.eclipse.xtext.xbase.Xbase
 
 generate smadl "http://www.smadl.org"
 
-import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
-
 Entity:
 	entities+=SocialMachine*
 ;
@@ -28,16 +26,22 @@ SocialMachine:
 
 RelationshipGroup:
     'Relationships' '{' 
-        relationships+=Relationship+ 
+        relationships+=(OAuthRelationship|GeneralRelationship)+ 
     '}'
 ;
 
-Relationship:
+OAuthRelationship:
     name=ValidID 'with' target=[SocialMachine|ValidID] '['
         'uri' '=' uri=STRING ';'?
         'api-key' '=' apiKey=STRING ';'?
         'secret' '=' secret=STRING ';'?
         'user-token' '=' userToken=STRING ';'?
+    ']' (constraint=RelationshipConstraint)?
+;
+
+GeneralRelationship:
+    name=ValidID 'with' target=[SocialMachine|ValidID] '['
+        (paramName+=ValidID '=' paramValue+=Number|STRING)+
     ']' (constraint=RelationshipConstraint)?
 ;
 

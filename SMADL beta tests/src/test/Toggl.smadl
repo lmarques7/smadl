@@ -1,0 +1,21 @@
+SocialMachine toggl relates to Target {
+
+    Relationships {
+      relationA with Target [
+        uri = "nothing"
+        api-key = "well done"
+        secret = "10923874098"
+        user-token = "9872348-098"
+      ]
+      relationB with Target [
+        myNumber = 1045
+      ]
+    }   
+
+    constructor() {
+        
+    }
+    
+    op nothing ()
+    
+}

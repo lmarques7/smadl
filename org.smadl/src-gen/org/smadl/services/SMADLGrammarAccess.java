@@ -163,15 +163,17 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRelationshipsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRelationshipsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRelationshipsRelationshipParserRuleCall_2_0 = (RuleCall)cRelationshipsAssignment_2.eContents().get(0);
+		private final Alternatives cRelationshipsAlternatives_2_0 = (Alternatives)cRelationshipsAssignment_2.eContents().get(0);
+		private final RuleCall cRelationshipsOAuthRelationshipParserRuleCall_2_0_0 = (RuleCall)cRelationshipsAlternatives_2_0.eContents().get(0);
+		private final RuleCall cRelationshipsGeneralRelationshipParserRuleCall_2_0_1 = (RuleCall)cRelationshipsAlternatives_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//RelationshipGroup:
 		//
-		//	"Relationships" "{" relationships+=Relationship+ "}";
+		//	"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Relationships" "{" relationships+=Relationship+ "}"
+		//"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Relationships"
@@ -180,18 +182,24 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
-		//relationships+=Relationship+
+		//relationships+=(OAuthRelationship | GeneralRelationship)+
 		public Assignment getRelationshipsAssignment_2() { return cRelationshipsAssignment_2; }
 
-		//Relationship
-		public RuleCall getRelationshipsRelationshipParserRuleCall_2_0() { return cRelationshipsRelationshipParserRuleCall_2_0; }
+		//OAuthRelationship | GeneralRelationship
+		public Alternatives getRelationshipsAlternatives_2_0() { return cRelationshipsAlternatives_2_0; }
+
+		//OAuthRelationship
+		public RuleCall getRelationshipsOAuthRelationshipParserRuleCall_2_0_0() { return cRelationshipsOAuthRelationshipParserRuleCall_2_0_0; }
+
+		//GeneralRelationship
+		public RuleCall getRelationshipsGeneralRelationshipParserRuleCall_2_0_1() { return cRelationshipsGeneralRelationshipParserRuleCall_2_0_1; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
-	public class RelationshipElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Relationship");
+	public class OAuthRelationshipElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OAuthRelationship");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameValidIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -224,7 +232,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cConstraintAssignment_21 = (Assignment)cGroup.eContents().get(21);
 		private final RuleCall cConstraintRelationshipConstraintParserRuleCall_21_0 = (RuleCall)cConstraintAssignment_21.eContents().get(0);
 		
-		//Relationship:
+		//OAuthRelationship:
 		//
 		//	name=ValidID "with" target=[SocialMachine|ValidID] "[" "uri" "=" uri=STRING ";"? "api-key" "=" apiKey=STRING ";"?
 		//
@@ -325,6 +333,95 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//RelationshipConstraint
 		public RuleCall getConstraintRelationshipConstraintParserRuleCall_21_0() { return cConstraintRelationshipConstraintParserRuleCall_21_0; }
+	}
+
+	public class GeneralRelationshipElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralRelationship");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameValidIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cWithKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTargetSocialMachineCrossReference_2_0 = (CrossReference)cTargetAssignment_2.eContents().get(0);
+		private final RuleCall cTargetSocialMachineValidIDParserRuleCall_2_0_1 = (RuleCall)cTargetSocialMachineCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
+		private final Assignment cParamNameAssignment_4_0_0 = (Assignment)cGroup_4_0.eContents().get(0);
+		private final RuleCall cParamNameValidIDParserRuleCall_4_0_0_0 = (RuleCall)cParamNameAssignment_4_0_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
+		private final Assignment cParamValueAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cParamValueNumberParserRuleCall_4_0_2_0 = (RuleCall)cParamValueAssignment_4_0_2.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_4_1 = (RuleCall)cAlternatives_4.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cConstraintAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cConstraintRelationshipConstraintParserRuleCall_6_0 = (RuleCall)cConstraintAssignment_6.eContents().get(0);
+		
+		//GeneralRelationship:
+		//
+		//	name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+		//
+		//	constraint=RelationshipConstraint?;
+		public ParserRule getRule() { return rule; }
+
+		//name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+		//
+		//constraint=RelationshipConstraint?
+		public Group getGroup() { return cGroup; }
+
+		//name=ValidID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_0_0() { return cNameValidIDParserRuleCall_0_0; }
+
+		//"with"
+		public Keyword getWithKeyword_1() { return cWithKeyword_1; }
+
+		//target=[SocialMachine|ValidID]
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+
+		//[SocialMachine|ValidID]
+		public CrossReference getTargetSocialMachineCrossReference_2_0() { return cTargetSocialMachineCrossReference_2_0; }
+
+		//ValidID
+		public RuleCall getTargetSocialMachineValidIDParserRuleCall_2_0_1() { return cTargetSocialMachineValidIDParserRuleCall_2_0_1; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
+
+		//(paramName+=ValidID "=" paramValue+=Number | STRING)+
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+
+		//paramName+=ValidID "=" paramValue+=Number
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
+		//paramName+=ValidID
+		public Assignment getParamNameAssignment_4_0_0() { return cParamNameAssignment_4_0_0; }
+
+		//ValidID
+		public RuleCall getParamNameValidIDParserRuleCall_4_0_0_0() { return cParamNameValidIDParserRuleCall_4_0_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_4_0_1() { return cEqualsSignKeyword_4_0_1; }
+
+		//paramValue+=Number
+		public Assignment getParamValueAssignment_4_0_2() { return cParamValueAssignment_4_0_2; }
+
+		//Number
+		public RuleCall getParamValueNumberParserRuleCall_4_0_2_0() { return cParamValueNumberParserRuleCall_4_0_2_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_4_1() { return cSTRINGTerminalRuleCall_4_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
+
+		//constraint=RelationshipConstraint?
+		public Assignment getConstraintAssignment_6() { return cConstraintAssignment_6; }
+
+		//RelationshipConstraint
+		public RuleCall getConstraintRelationshipConstraintParserRuleCall_6_0() { return cConstraintRelationshipConstraintParserRuleCall_6_0; }
 	}
 
 	public class RelationshipConstraintElements extends AbstractParserRuleElementFinder {
@@ -697,7 +794,8 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	private EntityElements pEntity;
 	private SocialMachineElements pSocialMachine;
 	private RelationshipGroupElements pRelationshipGroup;
-	private RelationshipElements pRelationship;
+	private OAuthRelationshipElements pOAuthRelationship;
+	private GeneralRelationshipElements pGeneralRelationship;
 	private RelationshipConstraintElements pRelationshipConstraint;
 	private RelationshipConstraintFullAccessElements pRelationshipConstraintFullAccess;
 	private RelationshipConstraintListOfOpsElements pRelationshipConstraintListOfOps;
@@ -773,7 +871,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//RelationshipGroup:
 	//
-	//	"Relationships" "{" relationships+=Relationship+ "}";
+	//	"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}";
 	public RelationshipGroupElements getRelationshipGroupAccess() {
 		return (pRelationshipGroup != null) ? pRelationshipGroup : (pRelationshipGroup = new RelationshipGroupElements());
 	}
@@ -782,17 +880,30 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelationshipGroupAccess().getRule();
 	}
 
-	//Relationship:
+	//OAuthRelationship:
 	//
 	//	name=ValidID "with" target=[SocialMachine|ValidID] "[" "uri" "=" uri=STRING ";"? "api-key" "=" apiKey=STRING ";"?
 	//
 	//	"secret" "=" secret=STRING ";"? "user-token" "=" userToken=STRING ";"? "]" constraint=RelationshipConstraint?;
-	public RelationshipElements getRelationshipAccess() {
-		return (pRelationship != null) ? pRelationship : (pRelationship = new RelationshipElements());
+	public OAuthRelationshipElements getOAuthRelationshipAccess() {
+		return (pOAuthRelationship != null) ? pOAuthRelationship : (pOAuthRelationship = new OAuthRelationshipElements());
 	}
 	
-	public ParserRule getRelationshipRule() {
-		return getRelationshipAccess().getRule();
+	public ParserRule getOAuthRelationshipRule() {
+		return getOAuthRelationshipAccess().getRule();
+	}
+
+	//GeneralRelationship:
+	//
+	//	name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+	//
+	//	constraint=RelationshipConstraint?;
+	public GeneralRelationshipElements getGeneralRelationshipAccess() {
+		return (pGeneralRelationship != null) ? pGeneralRelationship : (pGeneralRelationship = new GeneralRelationshipElements());
+	}
+	
+	public ParserRule getGeneralRelationshipRule() {
+		return getGeneralRelationshipAccess().getRule();
 	}
 
 	//RelationshipConstraint:

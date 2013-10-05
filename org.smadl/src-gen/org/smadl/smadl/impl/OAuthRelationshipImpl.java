@@ -11,31 +11,31 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.smadl.smadl.Relationship;
+import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.RelationshipConstraint;
 import org.smadl.smadl.SmadlPackage;
 import org.smadl.smadl.SocialMachine;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Relationship</b></em>'.
+ * An implementation of the model object '<em><b>OAuth Relationship</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getUri <em>Uri</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getApiKey <em>Api Key</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getSecret <em>Secret</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getUserToken <em>User Token</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.RelationshipImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getUri <em>Uri</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getApiKey <em>Api Key</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getSecret <em>Secret</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getUserToken <em>User Token</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.OAuthRelationshipImpl#getConstraint <em>Constraint</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RelationshipImpl extends MinimalEObjectImpl.Container implements Relationship
+public class OAuthRelationshipImpl extends MinimalEObjectImpl.Container implements OAuthRelationship
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -162,7 +162,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RelationshipImpl()
+  protected OAuthRelationshipImpl()
   {
     super();
   }
@@ -175,7 +175,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   @Override
   protected EClass eStaticClass()
   {
-    return SmadlPackage.Literals.RELATIONSHIP;
+    return SmadlPackage.Literals.OAUTH_RELATIONSHIP;
   }
 
   /**
@@ -198,7 +198,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__NAME, oldName, name));
   }
 
   /**
@@ -215,7 +215,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
       if (target != oldTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmadlPackage.RELATIONSHIP__TARGET, oldTarget, target));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmadlPackage.OAUTH_RELATIONSHIP__TARGET, oldTarget, target));
       }
     }
     return target;
@@ -241,7 +241,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     SocialMachine oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__TARGET, oldTarget, target));
   }
 
   /**
@@ -264,7 +264,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     String oldUri = uri;
     uri = newUri;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__URI, oldUri, uri));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__URI, oldUri, uri));
   }
 
   /**
@@ -287,7 +287,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     String oldApiKey = apiKey;
     apiKey = newApiKey;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__API_KEY, oldApiKey, apiKey));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__API_KEY, oldApiKey, apiKey));
   }
 
   /**
@@ -310,7 +310,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     String oldSecret = secret;
     secret = newSecret;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__SECRET, oldSecret, secret));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__SECRET, oldSecret, secret));
   }
 
   /**
@@ -333,7 +333,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     String oldUserToken = userToken;
     userToken = newUserToken;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__USER_TOKEN, oldUserToken, userToken));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__USER_TOKEN, oldUserToken, userToken));
   }
 
   /**
@@ -357,7 +357,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     constraint = newConstraint;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__CONSTRAINT, oldConstraint, newConstraint);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT, oldConstraint, newConstraint);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -374,14 +374,14 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     {
       NotificationChain msgs = null;
       if (constraint != null)
-        msgs = ((InternalEObject)constraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.RELATIONSHIP__CONSTRAINT, null, msgs);
+        msgs = ((InternalEObject)constraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT, null, msgs);
       if (newConstraint != null)
-        msgs = ((InternalEObject)newConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.RELATIONSHIP__CONSTRAINT, null, msgs);
+        msgs = ((InternalEObject)newConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT, null, msgs);
       msgs = basicSetConstraint(newConstraint, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.RELATIONSHIP__CONSTRAINT, newConstraint, newConstraint));
+      eNotify(new ENotificationImpl(this, Notification.SET, SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT, newConstraint, newConstraint));
   }
 
   /**
@@ -394,7 +394,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   {
     switch (featureID)
     {
-      case SmadlPackage.RELATIONSHIP__CONSTRAINT:
+      case SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT:
         return basicSetConstraint(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -410,20 +410,20 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   {
     switch (featureID)
     {
-      case SmadlPackage.RELATIONSHIP__NAME:
+      case SmadlPackage.OAUTH_RELATIONSHIP__NAME:
         return getName();
-      case SmadlPackage.RELATIONSHIP__TARGET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
-      case SmadlPackage.RELATIONSHIP__URI:
+      case SmadlPackage.OAUTH_RELATIONSHIP__URI:
         return getUri();
-      case SmadlPackage.RELATIONSHIP__API_KEY:
+      case SmadlPackage.OAUTH_RELATIONSHIP__API_KEY:
         return getApiKey();
-      case SmadlPackage.RELATIONSHIP__SECRET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__SECRET:
         return getSecret();
-      case SmadlPackage.RELATIONSHIP__USER_TOKEN:
+      case SmadlPackage.OAUTH_RELATIONSHIP__USER_TOKEN:
         return getUserToken();
-      case SmadlPackage.RELATIONSHIP__CONSTRAINT:
+      case SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT:
         return getConstraint();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -439,25 +439,25 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   {
     switch (featureID)
     {
-      case SmadlPackage.RELATIONSHIP__NAME:
+      case SmadlPackage.OAUTH_RELATIONSHIP__NAME:
         setName((String)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__TARGET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__TARGET:
         setTarget((SocialMachine)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__URI:
+      case SmadlPackage.OAUTH_RELATIONSHIP__URI:
         setUri((String)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__API_KEY:
+      case SmadlPackage.OAUTH_RELATIONSHIP__API_KEY:
         setApiKey((String)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__SECRET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__SECRET:
         setSecret((String)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__USER_TOKEN:
+      case SmadlPackage.OAUTH_RELATIONSHIP__USER_TOKEN:
         setUserToken((String)newValue);
         return;
-      case SmadlPackage.RELATIONSHIP__CONSTRAINT:
+      case SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT:
         setConstraint((RelationshipConstraint)newValue);
         return;
     }
@@ -474,25 +474,25 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   {
     switch (featureID)
     {
-      case SmadlPackage.RELATIONSHIP__NAME:
+      case SmadlPackage.OAUTH_RELATIONSHIP__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case SmadlPackage.RELATIONSHIP__TARGET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__TARGET:
         setTarget((SocialMachine)null);
         return;
-      case SmadlPackage.RELATIONSHIP__URI:
+      case SmadlPackage.OAUTH_RELATIONSHIP__URI:
         setUri(URI_EDEFAULT);
         return;
-      case SmadlPackage.RELATIONSHIP__API_KEY:
+      case SmadlPackage.OAUTH_RELATIONSHIP__API_KEY:
         setApiKey(API_KEY_EDEFAULT);
         return;
-      case SmadlPackage.RELATIONSHIP__SECRET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__SECRET:
         setSecret(SECRET_EDEFAULT);
         return;
-      case SmadlPackage.RELATIONSHIP__USER_TOKEN:
+      case SmadlPackage.OAUTH_RELATIONSHIP__USER_TOKEN:
         setUserToken(USER_TOKEN_EDEFAULT);
         return;
-      case SmadlPackage.RELATIONSHIP__CONSTRAINT:
+      case SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT:
         setConstraint((RelationshipConstraint)null);
         return;
     }
@@ -509,19 +509,19 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
   {
     switch (featureID)
     {
-      case SmadlPackage.RELATIONSHIP__NAME:
+      case SmadlPackage.OAUTH_RELATIONSHIP__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SmadlPackage.RELATIONSHIP__TARGET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__TARGET:
         return target != null;
-      case SmadlPackage.RELATIONSHIP__URI:
+      case SmadlPackage.OAUTH_RELATIONSHIP__URI:
         return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
-      case SmadlPackage.RELATIONSHIP__API_KEY:
+      case SmadlPackage.OAUTH_RELATIONSHIP__API_KEY:
         return API_KEY_EDEFAULT == null ? apiKey != null : !API_KEY_EDEFAULT.equals(apiKey);
-      case SmadlPackage.RELATIONSHIP__SECRET:
+      case SmadlPackage.OAUTH_RELATIONSHIP__SECRET:
         return SECRET_EDEFAULT == null ? secret != null : !SECRET_EDEFAULT.equals(secret);
-      case SmadlPackage.RELATIONSHIP__USER_TOKEN:
+      case SmadlPackage.OAUTH_RELATIONSHIP__USER_TOKEN:
         return USER_TOKEN_EDEFAULT == null ? userToken != null : !USER_TOKEN_EDEFAULT.equals(userToken);
-      case SmadlPackage.RELATIONSHIP__CONSTRAINT:
+      case SmadlPackage.OAUTH_RELATIONSHIP__CONSTRAINT:
         return constraint != null;
     }
     return super.eIsSet(featureID);
@@ -552,4 +552,4 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
     return result.toString();
   }
 
-} //RelationshipImpl
+} //OAuthRelationshipImpl

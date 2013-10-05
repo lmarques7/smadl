@@ -1,9 +1,7 @@
 class Teste {
     def static void main(String[] args) {
-        println("nada")
+        println("testing IGenerator approach to code generation")
         /*
-        class org.smadl.smadl.impl.SocialMachineImpl
-        class org.smadl.smadl.impl.SocialMachineImpl
         class org.smadl.smadl.impl.SocialMachineImpl
         */
     }

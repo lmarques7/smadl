@@ -50,13 +50,22 @@ public interface SmadlFactory extends EFactory
   RelationshipGroup createRelationshipGroup();
 
   /**
-   * Returns a new object of class '<em>Relationship</em>'.
+   * Returns a new object of class '<em>OAuth Relationship</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Relationship</em>'.
+   * @return a new object of class '<em>OAuth Relationship</em>'.
    * @generated
    */
-  Relationship createRelationship();
+  OAuthRelationship createOAuthRelationship();
+
+  /**
+   * Returns a new object of class '<em>General Relationship</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Relationship</em>'.
+   * @generated
+   */
+  GeneralRelationship createGeneralRelationship();
 
   /**
    * Returns a new object of class '<em>Relationship Constraint</em>'.
