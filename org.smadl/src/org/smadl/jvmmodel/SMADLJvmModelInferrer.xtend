@@ -73,6 +73,11 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
                             parameters += param.toParameter(param.name, param.parameterType)
                         }
                         it.abstract = true
+                        body = [
+                            append ('''
+                            
+                            ''')
+                        ]
                     ]
                 }
             ]
