@@ -1,4 +1,4 @@
-SocialMachine toggl relates to Target {
+SocialMachine toggl relates to Target, Any {
 
     Relationships {
       relationA with Target [
@@ -7,13 +7,20 @@ SocialMachine toggl relates to Target {
         secret = "10923874098"
         user-token = "9872348-098"
       ]
-      relationB with Target [
-        myNumber = 1045
+      relationB with Any [
+        myNumber = 1045.30
+        testing = 20
+        a=1
+        b=2
+        c=3
+        d=4
+        e=2
       ]
     }   
 
-    constructor() {
-        
+    constructor(Integer x, String test, Double n, java.util.Comparator<String> tt) {
+      var y = x + 10
+      println(test)
     }
     
     op nothing ()
