@@ -345,26 +345,20 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTargetSocialMachineCrossReference_2_0 = (CrossReference)cTargetAssignment_2.eContents().get(0);
 		private final RuleCall cTargetSocialMachineValidIDParserRuleCall_2_0_1 = (RuleCall)cTargetSocialMachineCrossReference_2_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
-		private final Assignment cParamNameAssignment_4_0_0 = (Assignment)cGroup_4_0.eContents().get(0);
-		private final RuleCall cParamNameValidIDParserRuleCall_4_0_0_0 = (RuleCall)cParamNameAssignment_4_0_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
-		private final Assignment cParamValueAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
-		private final RuleCall cParamValueNumberParserRuleCall_4_0_2_0 = (RuleCall)cParamValueAssignment_4_0_2.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_4_1 = (RuleCall)cAlternatives_4.eContents().get(1);
+		private final Assignment cConfigParamsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConfigParamsGeneralConfigParameterParserRuleCall_4_0 = (RuleCall)cConfigParamsAssignment_4.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cConstraintAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cConstraintRelationshipConstraintParserRuleCall_6_0 = (RuleCall)cConstraintAssignment_6.eContents().get(0);
 		
 		//GeneralRelationship:
 		//
-		//	name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+		//	name=ValidID "with" target=[SocialMachine|ValidID] "[" configParams+=GeneralConfigParameter* "]"
 		//
 		//	constraint=RelationshipConstraint?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+		//name=ValidID "with" target=[SocialMachine|ValidID] "[" configParams+=GeneralConfigParameter* "]"
 		//
 		//constraint=RelationshipConstraint?
 		public Group getGroup() { return cGroup; }
@@ -390,29 +384,11 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
 
-		//(paramName+=ValidID "=" paramValue+=Number | STRING)+
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		//configParams+=GeneralConfigParameter*
+		public Assignment getConfigParamsAssignment_4() { return cConfigParamsAssignment_4; }
 
-		//paramName+=ValidID "=" paramValue+=Number
-		public Group getGroup_4_0() { return cGroup_4_0; }
-
-		//paramName+=ValidID
-		public Assignment getParamNameAssignment_4_0_0() { return cParamNameAssignment_4_0_0; }
-
-		//ValidID
-		public RuleCall getParamNameValidIDParserRuleCall_4_0_0_0() { return cParamNameValidIDParserRuleCall_4_0_0_0; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_4_0_1() { return cEqualsSignKeyword_4_0_1; }
-
-		//paramValue+=Number
-		public Assignment getParamValueAssignment_4_0_2() { return cParamValueAssignment_4_0_2; }
-
-		//Number
-		public RuleCall getParamValueNumberParserRuleCall_4_0_2_0() { return cParamValueNumberParserRuleCall_4_0_2_0; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_4_1() { return cSTRINGTerminalRuleCall_4_1; }
+		//GeneralConfigParameter
+		public RuleCall getConfigParamsGeneralConfigParameterParserRuleCall_4_0() { return cConfigParamsGeneralConfigParameterParserRuleCall_4_0; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
@@ -422,6 +398,51 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//RelationshipConstraint
 		public RuleCall getConstraintRelationshipConstraintParserRuleCall_6_0() { return cConstraintRelationshipConstraintParserRuleCall_6_0; }
+	}
+
+	public class GeneralConfigParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralConfigParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameValidIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueNumberParserRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//GeneralConfigParameter:
+		//
+		//	name=ValidID "=" value=(Number | STRING) ";"?;
+		public ParserRule getRule() { return rule; }
+
+		//name=ValidID "=" value=(Number | STRING) ";"?
+		public Group getGroup() { return cGroup; }
+
+		//name=ValidID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_0_0() { return cNameValidIDParserRuleCall_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=(Number | STRING)
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//Number | STRING
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+
+		//Number
+		public RuleCall getValueNumberParserRuleCall_2_0_0() { return cValueNumberParserRuleCall_2_0_0; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_1() { return cValueSTRINGTerminalRuleCall_2_0_1; }
+
+		//";"?
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class RelationshipConstraintElements extends AbstractParserRuleElementFinder {
@@ -559,12 +580,12 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	{ComputationalUnit} "constructor" "(" parameters+=FullJvmFormalParameter* ("," parameters+=FullJvmFormalParameter)*
 		//
-		//	")" body=XBlockExpression;
+		//	")" body=XBlockExpression?;
 		public ParserRule getRule() { return rule; }
 
 		//{ComputationalUnit} "constructor" "(" parameters+=FullJvmFormalParameter* ("," parameters+=FullJvmFormalParameter)* ")"
 		//
-		//body=XBlockExpression
+		//body=XBlockExpression?
 		public Group getGroup() { return cGroup; }
 
 		//{ComputationalUnit}
@@ -597,7 +618,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 
-		//body=XBlockExpression
+		//body=XBlockExpression?
 		public Assignment getBodyAssignment_6() { return cBodyAssignment_6; }
 
 		//XBlockExpression
@@ -796,6 +817,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	private RelationshipGroupElements pRelationshipGroup;
 	private OAuthRelationshipElements pOAuthRelationship;
 	private GeneralRelationshipElements pGeneralRelationship;
+	private GeneralConfigParameterElements pGeneralConfigParameter;
 	private RelationshipConstraintElements pRelationshipConstraint;
 	private RelationshipConstraintFullAccessElements pRelationshipConstraintFullAccess;
 	private RelationshipConstraintListOfOpsElements pRelationshipConstraintListOfOps;
@@ -895,7 +917,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//GeneralRelationship:
 	//
-	//	name=ValidID "with" target=[SocialMachine|ValidID] "[" (paramName+=ValidID "=" paramValue+=Number | STRING)+ "]"
+	//	name=ValidID "with" target=[SocialMachine|ValidID] "[" configParams+=GeneralConfigParameter* "]"
 	//
 	//	constraint=RelationshipConstraint?;
 	public GeneralRelationshipElements getGeneralRelationshipAccess() {
@@ -904,6 +926,17 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGeneralRelationshipRule() {
 		return getGeneralRelationshipAccess().getRule();
+	}
+
+	//GeneralConfigParameter:
+	//
+	//	name=ValidID "=" value=(Number | STRING) ";"?;
+	public GeneralConfigParameterElements getGeneralConfigParameterAccess() {
+		return (pGeneralConfigParameter != null) ? pGeneralConfigParameter : (pGeneralConfigParameter = new GeneralConfigParameterElements());
+	}
+	
+	public ParserRule getGeneralConfigParameterRule() {
+		return getGeneralConfigParameterAccess().getRule();
 	}
 
 	//RelationshipConstraint:
@@ -943,7 +976,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	{ComputationalUnit} "constructor" "(" parameters+=FullJvmFormalParameter* ("," parameters+=FullJvmFormalParameter)*
 	//
-	//	")" body=XBlockExpression;
+	//	")" body=XBlockExpression?;
 	public ComputationalUnitElements getComputationalUnitAccess() {
 		return (pComputationalUnit != null) ? pComputationalUnit : (pComputationalUnit = new ComputationalUnitElements());
 	}

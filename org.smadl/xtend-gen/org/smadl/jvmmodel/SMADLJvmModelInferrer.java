@@ -20,6 +20,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.smadl.configuration.SMADLOutputProvider;
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.ProvidedService;
@@ -79,6 +80,7 @@ public class SMADLJvmModelInferrer extends AbstractModelInferrer {
         final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
             public void apply(final JvmGenericType it) {
               it.setAbstract(true);
+              it.setPackageName(SMADLOutputProvider.DEFAULT_OUTPUT_PACKAGE);
               EList<ComputationalUnit> _constructors = sm.getConstructors();
               for (final ComputationalUnit constructor : _constructors) {
                 EList<JvmMember> _members = it.getMembers();

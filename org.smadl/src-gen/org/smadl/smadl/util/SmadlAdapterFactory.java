@@ -100,6 +100,11 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
         return createGeneralRelationshipAdapter();
       }
       @Override
+      public Adapter caseGeneralConfigParameter(GeneralConfigParameter object)
+      {
+        return createGeneralConfigParameterAdapter();
+      }
+      @Override
       public Adapter caseRelationshipConstraint(RelationshipConstraint object)
       {
         return createRelationshipConstraintAdapter();
@@ -227,6 +232,21 @@ public class SmadlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGeneralRelationshipAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.smadl.smadl.GeneralConfigParameter <em>General Config Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.smadl.smadl.GeneralConfigParameter
+   * @generated
+   */
+  public Adapter createGeneralConfigParameterAdapter()
   {
     return null;
   }

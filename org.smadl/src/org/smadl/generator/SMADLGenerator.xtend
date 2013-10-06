@@ -8,6 +8,7 @@ import org.smadl.smadl.Entity
 class SMADLGenerator implements IGenerator {
     
     override doGenerate(Resource input, IFileSystemAccess fsa) {
+        /* This code has no use unless an OutputProvider is set up */
         var list = (input.contents.head as Entity).eContents
         var content = ""
         for(i : list) {
@@ -16,6 +17,7 @@ class SMADLGenerator implements IGenerator {
         fsa.generateFile("Teste.xtend", toXtendCode(content))
     }
     
+    /* This code has no use unless an OutputProvider is set up */
     def toXtendCode(String testing) '''
         class Teste {
             def static void main(String[] args) {
@@ -27,4 +29,5 @@ class SMADLGenerator implements IGenerator {
         }
     '''
     
+
 }

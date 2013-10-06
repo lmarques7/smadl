@@ -16,6 +16,7 @@ import org.eclipse.xtext.xbase.XbasePackage;
 
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
+import org.smadl.smadl.GeneralConfigParameter;
 import org.smadl.smadl.GeneralConstraint;
 import org.smadl.smadl.GeneralRelationship;
 import org.smadl.smadl.OAuthRelationship;
@@ -72,6 +73,13 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * @generated
    */
   private EClass generalRelationshipEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generalConfigParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -420,19 +428,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGeneralRelationship_ParamName()
+  public EReference getGeneralRelationship_ConfigParams()
   {
-    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGeneralRelationship_ParamValue()
-  {
-    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(3);
+    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -442,7 +440,37 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    */
   public EReference getGeneralRelationship_Constraint()
   {
-    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(4);
+    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGeneralConfigParameter()
+  {
+    return generalConfigParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralConfigParameter_Name()
+  {
+    return (EAttribute)generalConfigParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralConfigParameter_Value()
+  {
+    return (EAttribute)generalConfigParameterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -701,9 +729,12 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     generalRelationshipEClass = createEClass(GENERAL_RELATIONSHIP);
     createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__NAME);
     createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__TARGET);
-    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__PARAM_NAME);
-    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__PARAM_VALUE);
+    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__CONFIG_PARAMS);
     createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__CONSTRAINT);
+
+    generalConfigParameterEClass = createEClass(GENERAL_CONFIG_PARAMETER);
+    createEAttribute(generalConfigParameterEClass, GENERAL_CONFIG_PARAMETER__NAME);
+    createEAttribute(generalConfigParameterEClass, GENERAL_CONFIG_PARAMETER__VALUE);
 
     relationshipConstraintEClass = createEClass(RELATIONSHIP_CONSTRAINT);
     createEReference(relationshipConstraintEClass, RELATIONSHIP_CONSTRAINT__TYPE);
@@ -796,9 +827,12 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     initEClass(generalRelationshipEClass, GeneralRelationship.class, "GeneralRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGeneralRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGeneralRelationship_ParamName(), ecorePackage.getEString(), "paramName", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGeneralRelationship_ParamValue(), ecorePackage.getEString(), "paramValue", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGeneralRelationship_ConfigParams(), this.getGeneralConfigParameter(), null, "configParams", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGeneralRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalConfigParameterEClass, GeneralConfigParameter.class, "GeneralConfigParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGeneralConfigParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralConfigParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, GeneralConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationshipConstraintEClass, RelationshipConstraint.class, "RelationshipConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelationshipConstraint_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, RelationshipConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -15,8 +15,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.smadl.smadl.GeneralConfigParameter;
 import org.smadl.smadl.GeneralRelationship;
 import org.smadl.smadl.RelationshipConstraint;
 import org.smadl.smadl.SmadlPackage;
@@ -31,8 +33,7 @@ import org.smadl.smadl.SocialMachine;
  * <ul>
  *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getParamName <em>Param Name</em>}</li>
- *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getParamValue <em>Param Value</em>}</li>
+ *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getConfigParams <em>Config Params</em>}</li>
  *   <li>{@link org.smadl.smadl.impl.GeneralRelationshipImpl#getConstraint <em>Constraint</em>}</li>
  * </ul>
  * </p>
@@ -72,24 +73,14 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
   protected SocialMachine target;
 
   /**
-   * The cached value of the '{@link #getParamName() <em>Param Name</em>}' attribute list.
+   * The cached value of the '{@link #getConfigParams() <em>Config Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParamName()
+   * @see #getConfigParams()
    * @generated
    * @ordered
    */
-  protected EList<String> paramName;
-
-  /**
-   * The cached value of the '{@link #getParamValue() <em>Param Value</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParamValue()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> paramValue;
+  protected EList<GeneralConfigParameter> configParams;
 
   /**
    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference.
@@ -193,27 +184,13 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getParamName()
+  public EList<GeneralConfigParameter> getConfigParams()
   {
-    if (paramName == null)
+    if (configParams == null)
     {
-      paramName = new EDataTypeEList<String>(String.class, this, SmadlPackage.GENERAL_RELATIONSHIP__PARAM_NAME);
+      configParams = new EObjectContainmentEList<GeneralConfigParameter>(GeneralConfigParameter.class, this, SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS);
     }
-    return paramName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getParamValue()
-  {
-    if (paramValue == null)
-    {
-      paramValue = new EDataTypeEList<String>(String.class, this, SmadlPackage.GENERAL_RELATIONSHIP__PARAM_VALUE);
-    }
-    return paramValue;
+    return configParams;
   }
 
   /**
@@ -274,6 +251,8 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS:
+        return ((InternalEList<?>)getConfigParams()).basicRemove(otherEnd, msgs);
       case SmadlPackage.GENERAL_RELATIONSHIP__CONSTRAINT:
         return basicSetConstraint(null, msgs);
     }
@@ -295,10 +274,8 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
       case SmadlPackage.GENERAL_RELATIONSHIP__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_NAME:
-        return getParamName();
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_VALUE:
-        return getParamValue();
+      case SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS:
+        return getConfigParams();
       case SmadlPackage.GENERAL_RELATIONSHIP__CONSTRAINT:
         return getConstraint();
     }
@@ -322,13 +299,9 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
       case SmadlPackage.GENERAL_RELATIONSHIP__TARGET:
         setTarget((SocialMachine)newValue);
         return;
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_NAME:
-        getParamName().clear();
-        getParamName().addAll((Collection<? extends String>)newValue);
-        return;
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_VALUE:
-        getParamValue().clear();
-        getParamValue().addAll((Collection<? extends String>)newValue);
+      case SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS:
+        getConfigParams().clear();
+        getConfigParams().addAll((Collection<? extends GeneralConfigParameter>)newValue);
         return;
       case SmadlPackage.GENERAL_RELATIONSHIP__CONSTRAINT:
         setConstraint((RelationshipConstraint)newValue);
@@ -353,11 +326,8 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
       case SmadlPackage.GENERAL_RELATIONSHIP__TARGET:
         setTarget((SocialMachine)null);
         return;
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_NAME:
-        getParamName().clear();
-        return;
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_VALUE:
-        getParamValue().clear();
+      case SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS:
+        getConfigParams().clear();
         return;
       case SmadlPackage.GENERAL_RELATIONSHIP__CONSTRAINT:
         setConstraint((RelationshipConstraint)null);
@@ -380,10 +350,8 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SmadlPackage.GENERAL_RELATIONSHIP__TARGET:
         return target != null;
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_NAME:
-        return paramName != null && !paramName.isEmpty();
-      case SmadlPackage.GENERAL_RELATIONSHIP__PARAM_VALUE:
-        return paramValue != null && !paramValue.isEmpty();
+      case SmadlPackage.GENERAL_RELATIONSHIP__CONFIG_PARAMS:
+        return configParams != null && !configParams.isEmpty();
       case SmadlPackage.GENERAL_RELATIONSHIP__CONSTRAINT:
         return constraint != null;
     }
@@ -403,10 +371,6 @@ public class GeneralRelationshipImpl extends MinimalEObjectImpl.Container implem
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", paramName: ");
-    result.append(paramName);
-    result.append(", paramValue: ");
-    result.append(paramValue);
     result.append(')');
     return result.toString();
   }

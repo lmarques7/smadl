@@ -24,7 +24,11 @@ public class MultipleOutputGenerator extends JvmModelGenerator {
 		for (final EObject obj : contents) {
 			Set<String> configs = new HashSet<String>();
 			obj.eAdapters().add(new OutputConfigurationAdapter(SMADLOutputProvider.DEFAULT));
-			obj.eAdapters().add(new OutputConfigurationAdapter(SMADLOutputProvider.XTEND_OUTPUT));
+			/*
+			If more than one OutputProvider is needed, than uncomment the line 
+			below and set up the appropriate OutputConfiguration
+			*/
+//			obj.eAdapters().add(new OutputConfigurationAdapter(SMADLOutputProvider.XTEND_OUTPUT));
 			for (Adapter adapter : obj.eAdapters()) {
 				if (adapter instanceof OutputConfigurationAdapter) {
 					configs.add(((OutputConfigurationAdapter) adapter).getOutputConfigurationName());
@@ -32,12 +36,12 @@ public class MultipleOutputGenerator extends JvmModelGenerator {
 			}
 			for (String currentConfig : configs) {
 				switch (currentConfig) {
-				case SMADLOutputProvider.DEFAULT:
-					this.internalDoGenerate(obj, fsa); // <= GOTO INFERRER					
-					break;
-				case SMADLOutputProvider.XTEND_OUTPUT:
-					generator.doGenerate(input, fsa); // <= GOTO IGENERATOR					
-					break;
+					case SMADLOutputProvider.DEFAULT:
+						this.internalDoGenerate(obj, fsa); // <= GOTO INFERRER					
+						break;
+					case SMADLOutputProvider.XTEND_OUTPUT:
+						generator.doGenerate(input, fsa); // <= GOTO IGENERATOR					
+						break;
 				}
 			}
 		}

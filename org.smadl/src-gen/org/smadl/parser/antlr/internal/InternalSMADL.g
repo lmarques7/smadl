@@ -596,73 +596,129 @@ ruleGeneralRelationship returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getGeneralRelationshipAccess().getLeftSquareBracketKeyword_3());
     }
-(((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getParamNameValidIDParserRuleCall_4_0_0_0()); 
+	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConfigParamsGeneralConfigParameterParserRuleCall_4_0()); 
 	    }
-		lv_paramName_4_0=ruleValidID		{
+		lv_configParams_4_0=ruleGeneralConfigParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
 	        }
        		add(
        			$current, 
-       			"paramName",
-        		lv_paramName_4_0, 
-        		"ValidID");
+       			"configParams",
+        		lv_configParams_4_0, 
+        		"GeneralConfigParameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5='=' 
+)*	otherlv_5=']' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getGeneralRelationshipAccess().getEqualsSignKeyword_4_0_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getParamValueNumberParserRuleCall_4_0_2_0()); 
-	    }
-		lv_paramValue_6_0=ruleNumber		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
-	        }
-       		add(
-       			$current, 
-       			"paramValue",
-        		lv_paramValue_6_0, 
-        		"Number");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |this_STRING_7=RULE_STRING
-    { 
-    newLeafNode(this_STRING_7, grammarAccess.getGeneralRelationshipAccess().getSTRINGTerminalRuleCall_4_1()); 
-    }
-)+	otherlv_8=']' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getGeneralRelationshipAccess().getRightSquareBracketKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getGeneralRelationshipAccess().getRightSquareBracketKeyword_5());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConstraintRelationshipConstraintParserRuleCall_6_0()); 
 	    }
-		lv_constraint_9_0=ruleRelationshipConstraint		{
+		lv_constraint_6_0=ruleRelationshipConstraint		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
 	        }
        		set(
        			$current, 
        			"constraint",
-        		lv_constraint_9_0, 
+        		lv_constraint_6_0, 
         		"RelationshipConstraint");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
+)?)
+;
+
+
+
+
+
+// Entry rule entryRuleGeneralConfigParameter
+entryRuleGeneralConfigParameter returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGeneralConfigParameterRule()); }
+	 iv_ruleGeneralConfigParameter=ruleGeneralConfigParameter 
+	 { $current=$iv_ruleGeneralConfigParameter.current; } 
+	 EOF 
+;
+
+// Rule GeneralConfigParameter
+ruleGeneralConfigParameter returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getGeneralConfigParameterAccess().getNameValidIDParserRuleCall_0_0()); 
+	    }
+		lv_name_0_0=ruleValidID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGeneralConfigParameterRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"ValidID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1='=' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getGeneralConfigParameterAccess().getEqualsSignKeyword_1());
+    }
+(
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getGeneralConfigParameterAccess().getValueNumberParserRuleCall_2_0_0()); 
+	    }
+		lv_value_2_1=ruleNumber		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGeneralConfigParameterRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_2_1, 
+        		"Number");
+	        afterParserOrEnumRuleCall();
+	    }
+
+    |		lv_value_2_2=RULE_STRING
+		{
+			newLeafNode(lv_value_2_2, grammarAccess.getGeneralConfigParameterAccess().getValueSTRINGTerminalRuleCall_2_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGeneralConfigParameterRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_2_2, 
+        		"STRING");
+	    }
+
+)
+
+)
+)(	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getGeneralConfigParameterAccess().getSemicolonKeyword_3());
+    }
 )?)
 ;
 
@@ -935,7 +991,7 @@ ruleComputationalUnit returns [EObject current=null]
 	    }
 
 )
-))
+)?)
 ;
 
 

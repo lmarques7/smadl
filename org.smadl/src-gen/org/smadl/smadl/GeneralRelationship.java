@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.smadl.smadl.GeneralRelationship#getName <em>Name</em>}</li>
  *   <li>{@link org.smadl.smadl.GeneralRelationship#getTarget <em>Target</em>}</li>
- *   <li>{@link org.smadl.smadl.GeneralRelationship#getParamName <em>Param Name</em>}</li>
- *   <li>{@link org.smadl.smadl.GeneralRelationship#getParamValue <em>Param Value</em>}</li>
+ *   <li>{@link org.smadl.smadl.GeneralRelationship#getConfigParams <em>Config Params</em>}</li>
  *   <li>{@link org.smadl.smadl.GeneralRelationship#getConstraint <em>Constraint</em>}</li>
  * </ul>
  * </p>
@@ -81,36 +80,20 @@ public interface GeneralRelationship extends EObject
   void setTarget(SocialMachine value);
 
   /**
-   * Returns the value of the '<em><b>Param Name</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Config Params</b></em>' containment reference list.
+   * The list contents are of type {@link org.smadl.smadl.GeneralConfigParameter}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Param Name</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Config Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param Name</em>' attribute list.
-   * @see org.smadl.smadl.SmadlPackage#getGeneralRelationship_ParamName()
-   * @model unique="false"
+   * @return the value of the '<em>Config Params</em>' containment reference list.
+   * @see org.smadl.smadl.SmadlPackage#getGeneralRelationship_ConfigParams()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getParamName();
-
-  /**
-   * Returns the value of the '<em><b>Param Value</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Param Value</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Param Value</em>' attribute list.
-   * @see org.smadl.smadl.SmadlPackage#getGeneralRelationship_ParamValue()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getParamValue();
+  EList<GeneralConfigParameter> getConfigParams();
 
   /**
    * Returns the value of the '<em><b>Constraint</b></em>' containment reference.

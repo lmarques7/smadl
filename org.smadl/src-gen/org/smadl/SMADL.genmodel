@@ -39,9 +39,12 @@
     <genClasses ecoreClass="SMADL.ecore#//GeneralRelationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralRelationship/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralRelationship/paramName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralRelationship/paramValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/configParams"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="SMADL.ecore#//GeneralConfigParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralConfigParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralConfigParameter/value"/>
     </genClasses>
     <genClasses ecoreClass="SMADL.ecore#//RelationshipConstraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//RelationshipConstraint/type"/>

@@ -6,6 +6,7 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 import org.smadl.smadl.Entity
+import static org.smadl.configuration.SMADLOutputProvider.*
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -56,6 +57,7 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
             var smClassDefault = sm.toClass(sm.name.toFirstUpper)
             acceptor.accept(smClassDefault).initializeLater [
                 it.abstract = true
+                it.packageName = DEFAULT_OUTPUT_PACKAGE
                 for (constructor : sm.constructors) {
                     members += constructor.toConstructor[
                         for (p : constructor.parameters) {

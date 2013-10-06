@@ -107,6 +107,13 @@ public class SmadlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SmadlPackage.GENERAL_CONFIG_PARAMETER:
+      {
+        GeneralConfigParameter generalConfigParameter = (GeneralConfigParameter)theEObject;
+        T result = caseGeneralConfigParameter(generalConfigParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SmadlPackage.RELATIONSHIP_CONSTRAINT:
       {
         RelationshipConstraint relationshipConstraint = (RelationshipConstraint)theEObject;
@@ -236,6 +243,22 @@ public class SmadlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGeneralRelationship(GeneralRelationship object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Config Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Config Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralConfigParameter(GeneralConfigParameter object)
   {
     return null;
   }

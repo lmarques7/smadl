@@ -1,9 +1,11 @@
 package org.smadl.validation
 
+import java.util.List
 import org.eclipse.xtext.common.types.TypesPackage
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.xtype.XtypePackage
+import org.smadl.smadl.GeneralConfigParameter
 import org.smadl.smadl.GeneralRelationship
 import org.smadl.smadl.OAuthRelationship
 import org.smadl.smadl.RelationshipConstraint
@@ -43,6 +45,29 @@ class SMADLValidator extends AbstractSMADLValidator {
             }
         }
     }
+    
+    @Check
+    def checkSocialMachineNonRelatedRelationship(SocialMachine sm) {
+        var List<String> relatedNames = newArrayList
+        for (relatedSM : sm.dependencies) {
+            relatedNames.add(relatedSM.name)
+        }
+        for (relationship : sm.relationshipGroup.relationships) {
+            var targetName = ""
+            var feature = OAUTH_RELATIONSHIP__TARGET
+            if (relationship instanceof OAuthRelationship) {
+                targetName = (relationship as OAuthRelationship).target.name
+            } else if (relationship instanceof GeneralRelationship) {
+                targetName = (relationship as GeneralRelationship).target.name
+                feature = GENERAL_RELATIONSHIP__TARGET
+            }
+            if (!relatedNames.contains(targetName)) {
+                error("The Social Machine '" + targetName + 
+                      "' has not been listed in the 'relates to' section", 
+                      relationship, feature)
+            }
+        }
+    }
 
     @Check
     def checkSocialMachineRelationshipOperations(SocialMachine sm) {
@@ -76,6 +101,29 @@ class SMADLValidator extends AbstractSMADLValidator {
             }
         }
     }
+    
+    @Check
+    def checkDuplicatedParamInGeneralRelationship(GeneralRelationship genRelationship) {
+        var allParams = genRelationship.configParams
+        var index = 0
+        for (param : allParams) {
+            var List<GeneralConfigParameter> remainingParams = allParams.subList(index + 1, allParams.size)
+            var List<String> remainingNames = newArrayList
+            for (toGetName : remainingParams) {
+                remainingNames.add(toGetName.name)
+            }
+            var failIndex = 0
+            for (currentName : remainingNames) {
+                if (currentName.equals(param.name)) {
+                    error('''Duplicated configuration parameter: «param.name»''',
+                        genRelationship, GENERAL_RELATIONSHIP__CONFIG_PARAMS, failIndex + index + 1)
+                }
+                failIndex = failIndex + 1
+            }
+            index = index + 1
+        }
+    }
+    
 //    @Check
 //    def checkSocialMachineSelfOrCyclicReference(SocialMachine sm) {
 //         sm.findDependentTasks [ cycle |
@@ -118,4 +166,5 @@ class SMADLValidator extends AbstractSMADLValidator {
 //        for (t : sm.depends) 
 //            internalFindDependentTasksRec(t, set)
 //    }
+
 }

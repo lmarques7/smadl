@@ -2020,10 +2020,10 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:12: ( '0x' | '0X' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2051,7 +2051,7 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:13: '0x'
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:13: '0x'
                     {
                     match("0x"); 
 
@@ -2059,7 +2059,7 @@ public class InternalSMADLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:18: '0X'
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:18: '0X'
                     {
                     match("0X"); 
 
@@ -2069,7 +2069,7 @@ public class InternalSMADLLexer extends Lexer {
 
             }
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -2107,7 +2107,7 @@ public class InternalSMADLLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2116,10 +2116,10 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -2137,7 +2137,7 @@ public class InternalSMADLLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2161,7 +2161,7 @@ public class InternalSMADLLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6468:84: ( 'l' | 'L' )
+                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6524:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2200,11 +2200,11 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6470:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6470:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6526:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6526:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6470:21: ( '0' .. '9' | '_' )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6526:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2253,11 +2253,11 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2266,7 +2266,7 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2277,7 +2277,7 @@ public class InternalSMADLLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:36: ( '+' | '-' )?
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2310,7 +2310,7 @@ public class InternalSMADLLexer extends Lexer {
 
             }
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2322,7 +2322,7 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2346,7 +2346,7 @@ public class InternalSMADLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6472:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6528:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2379,10 +2379,10 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6474:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6474:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6530:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6530:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6474:11: ( '^' )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6530:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2391,7 +2391,7 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6474:11: '^'
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6530:11: '^'
                     {
                     match('^'); 
 
@@ -2409,7 +2409,7 @@ public class InternalSMADLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6474:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6530:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2458,10 +2458,10 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2479,10 +2479,10 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2498,7 +2498,7 @@ public class InternalSMADLLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2514,7 +2514,7 @@ public class InternalSMADLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2539,10 +2539,10 @@ public class InternalSMADLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2558,7 +2558,7 @@ public class InternalSMADLLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2574,7 +2574,7 @@ public class InternalSMADLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6476:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6532:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2617,12 +2617,12 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6478:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6478:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6534:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6534:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6478:24: ( options {greedy=false; } : . )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6534:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2647,7 +2647,7 @@ public class InternalSMADLLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6478:52: .
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6534:52: .
             	    {
             	    matchAny(); 
 
@@ -2677,12 +2677,12 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2695,7 +2695,7 @@ public class InternalSMADLLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2715,7 +2715,7 @@ public class InternalSMADLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:40: ( ( '\\r' )? '\\n' )?
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2724,9 +2724,9 @@ public class InternalSMADLLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:41: ( '\\r' )? '\\n'
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:41: ( '\\r' )?
+                    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2735,7 +2735,7 @@ public class InternalSMADLLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6480:41: '\\r'
+                            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6536:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2767,10 +2767,10 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6482:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6482:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6538:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6538:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6482:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6538:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2824,8 +2824,8 @@ public class InternalSMADLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6484:16: ( . )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6484:18: .
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6540:16: ( . )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:6540:18: .
             {
             matchAny(); 
 

@@ -70,6 +70,7 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
       case SmadlPackage.RELATIONSHIP_GROUP: return createRelationshipGroup();
       case SmadlPackage.OAUTH_RELATIONSHIP: return createOAuthRelationship();
       case SmadlPackage.GENERAL_RELATIONSHIP: return createGeneralRelationship();
+      case SmadlPackage.GENERAL_CONFIG_PARAMETER: return createGeneralConfigParameter();
       case SmadlPackage.RELATIONSHIP_CONSTRAINT: return createRelationshipConstraint();
       case SmadlPackage.RELATIONSHIP_CONSTRAINT_FULL_ACCESS: return createRelationshipConstraintFullAccess();
       case SmadlPackage.RELATIONSHIP_CONSTRAINT_LIST_OF_OPS: return createRelationshipConstraintListOfOps();
@@ -169,6 +170,17 @@ public class SmadlFactoryImpl extends EFactoryImpl implements SmadlFactory
   {
     GeneralRelationshipImpl generalRelationship = new GeneralRelationshipImpl();
     return generalRelationship;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GeneralConfigParameter createGeneralConfigParameter()
+  {
+    GeneralConfigParameterImpl generalConfigParameter = new GeneralConfigParameterImpl();
+    return generalConfigParameter;
   }
 
   /**

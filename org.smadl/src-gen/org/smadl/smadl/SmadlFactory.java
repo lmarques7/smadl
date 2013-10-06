@@ -68,6 +68,15 @@ public interface SmadlFactory extends EFactory
   GeneralRelationship createGeneralRelationship();
 
   /**
+   * Returns a new object of class '<em>General Config Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Config Parameter</em>'.
+   * @generated
+   */
+  GeneralConfigParameter createGeneralConfigParameter();
+
+  /**
    * Returns a new object of class '<em>Relationship Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

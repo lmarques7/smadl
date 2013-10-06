@@ -297,22 +297,13 @@ public interface SmadlPackage extends EPackage
   int GENERAL_RELATIONSHIP__TARGET = 1;
 
   /**
-   * The feature id for the '<em><b>Param Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Config Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__PARAM_NAME = 2;
-
-  /**
-   * The feature id for the '<em><b>Param Value</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_RELATIONSHIP__PARAM_VALUE = 3;
+  int GENERAL_RELATIONSHIP__CONFIG_PARAMS = 2;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' containment reference.
@@ -321,7 +312,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__CONSTRAINT = 4;
+  int GENERAL_RELATIONSHIP__CONSTRAINT = 3;
 
   /**
    * The number of structural features of the '<em>General Relationship</em>' class.
@@ -330,7 +321,44 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP_FEATURE_COUNT = 5;
+  int GENERAL_RELATIONSHIP_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.smadl.smadl.impl.GeneralConfigParameterImpl <em>General Config Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.smadl.smadl.impl.GeneralConfigParameterImpl
+   * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralConfigParameter()
+   * @generated
+   */
+  int GENERAL_CONFIG_PARAMETER = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONFIG_PARAMETER__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONFIG_PARAMETER__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>General Config Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CONFIG_PARAMETER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.smadl.smadl.impl.RelationshipConstraintImpl <em>Relationship Constraint</em>}' class.
@@ -340,7 +368,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraint()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT = 5;
+  int RELATIONSHIP_CONSTRAINT = 6;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -368,7 +396,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraintFullAccess()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT_FULL_ACCESS = 6;
+  int RELATIONSHIP_CONSTRAINT_FULL_ACCESS = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -396,7 +424,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getRelationshipConstraintListOfOps()
    * @generated
    */
-  int RELATIONSHIP_CONSTRAINT_LIST_OF_OPS = 7;
+  int RELATIONSHIP_CONSTRAINT_LIST_OF_OPS = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -433,7 +461,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getComputationalUnit()
    * @generated
    */
-  int COMPUTATIONAL_UNIT = 8;
+  int COMPUTATIONAL_UNIT = 9;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -470,7 +498,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getProvidedService()
    * @generated
    */
-  int PROVIDED_SERVICE = 9;
+  int PROVIDED_SERVICE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -525,7 +553,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getOperationConstraint()
    * @generated
    */
-  int OPERATION_CONSTRAINT = 10;
+  int OPERATION_CONSTRAINT = 11;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute list.
@@ -553,7 +581,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralConstraint()
    * @generated
    */
-  int GENERAL_CONSTRAINT = 11;
+  int GENERAL_CONSTRAINT = 12;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -581,7 +609,7 @@ public interface SmadlPackage extends EPackage
    * @see org.smadl.smadl.impl.SmadlPackageImpl#getOperationConstraintType()
    * @generated
    */
-  int OPERATION_CONSTRAINT_TYPE = 12;
+  int OPERATION_CONSTRAINT_TYPE = 13;
 
 
   /**
@@ -822,26 +850,15 @@ public interface SmadlPackage extends EPackage
   EReference getGeneralRelationship_Target();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.smadl.smadl.GeneralRelationship#getParamName <em>Param Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.GeneralRelationship#getConfigParams <em>Config Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Param Name</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getParamName()
+   * @return the meta object for the containment reference list '<em>Config Params</em>'.
+   * @see org.smadl.smadl.GeneralRelationship#getConfigParams()
    * @see #getGeneralRelationship()
    * @generated
    */
-  EAttribute getGeneralRelationship_ParamName();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.smadl.smadl.GeneralRelationship#getParamValue <em>Param Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Param Value</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getParamValue()
-   * @see #getGeneralRelationship()
-   * @generated
-   */
-  EAttribute getGeneralRelationship_ParamValue();
+  EReference getGeneralRelationship_ConfigParams();
 
   /**
    * Returns the meta object for the containment reference '{@link org.smadl.smadl.GeneralRelationship#getConstraint <em>Constraint</em>}'.
@@ -853,6 +870,38 @@ public interface SmadlPackage extends EPackage
    * @generated
    */
   EReference getGeneralRelationship_Constraint();
+
+  /**
+   * Returns the meta object for class '{@link org.smadl.smadl.GeneralConfigParameter <em>General Config Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Config Parameter</em>'.
+   * @see org.smadl.smadl.GeneralConfigParameter
+   * @generated
+   */
+  EClass getGeneralConfigParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.GeneralConfigParameter#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.smadl.smadl.GeneralConfigParameter#getName()
+   * @see #getGeneralConfigParameter()
+   * @generated
+   */
+  EAttribute getGeneralConfigParameter_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.GeneralConfigParameter#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.smadl.smadl.GeneralConfigParameter#getValue()
+   * @see #getGeneralConfigParameter()
+   * @generated
+   */
+  EAttribute getGeneralConfigParameter_Value();
 
   /**
    * Returns the meta object for class '{@link org.smadl.smadl.RelationshipConstraint <em>Relationship Constraint</em>}'.
@@ -1276,20 +1325,12 @@ public interface SmadlPackage extends EPackage
     EReference GENERAL_RELATIONSHIP__TARGET = eINSTANCE.getGeneralRelationship_Target();
 
     /**
-     * The meta object literal for the '<em><b>Param Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Config Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GENERAL_RELATIONSHIP__PARAM_NAME = eINSTANCE.getGeneralRelationship_ParamName();
-
-    /**
-     * The meta object literal for the '<em><b>Param Value</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GENERAL_RELATIONSHIP__PARAM_VALUE = eINSTANCE.getGeneralRelationship_ParamValue();
+    EReference GENERAL_RELATIONSHIP__CONFIG_PARAMS = eINSTANCE.getGeneralRelationship_ConfigParams();
 
     /**
      * The meta object literal for the '<em><b>Constraint</b></em>' containment reference feature.
@@ -1298,6 +1339,32 @@ public interface SmadlPackage extends EPackage
      * @generated
      */
     EReference GENERAL_RELATIONSHIP__CONSTRAINT = eINSTANCE.getGeneralRelationship_Constraint();
+
+    /**
+     * The meta object literal for the '{@link org.smadl.smadl.impl.GeneralConfigParameterImpl <em>General Config Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.smadl.smadl.impl.GeneralConfigParameterImpl
+     * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralConfigParameter()
+     * @generated
+     */
+    EClass GENERAL_CONFIG_PARAMETER = eINSTANCE.getGeneralConfigParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CONFIG_PARAMETER__NAME = eINSTANCE.getGeneralConfigParameter_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CONFIG_PARAMETER__VALUE = eINSTANCE.getGeneralConfigParameter_Value();
 
     /**
      * The meta object literal for the '{@link org.smadl.smadl.impl.RelationshipConstraintImpl <em>Relationship Constraint</em>}' class.

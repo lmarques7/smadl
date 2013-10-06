@@ -41,8 +41,12 @@ OAuthRelationship:
 
 GeneralRelationship:
     name=ValidID 'with' target=[SocialMachine|ValidID] '['
-        (paramName+=ValidID '=' paramValue+=Number|STRING)+
+        (configParams+=GeneralConfigParameter)*        
     ']' (constraint=RelationshipConstraint)?
+;
+
+GeneralConfigParameter:
+    name=ValidID '=' value=(Number|STRING) ';'?
 ;
 
 RelationshipConstraint:
@@ -60,7 +64,7 @@ RelationshipConstraintListOfOps:
 ComputationalUnit:
     {ComputationalUnit}
     'constructor' '(' (parameters+=FullJvmFormalParameter)* (',' parameters+=FullJvmFormalParameter)* ')'
-    body=XBlockExpression
+    (body=XBlockExpression)?
 ;
 
 ProvidedService:

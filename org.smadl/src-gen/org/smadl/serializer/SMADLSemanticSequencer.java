@@ -57,6 +57,7 @@ import org.eclipse.xtext.xtype.XtypePackage;
 import org.smadl.services.SMADLGrammarAccess;
 import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
+import org.smadl.smadl.GeneralConfigParameter;
 import org.smadl.smadl.GeneralConstraint;
 import org.smadl.smadl.GeneralRelationship;
 import org.smadl.smadl.OAuthRelationship;
@@ -86,6 +87,12 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 			case SmadlPackage.ENTITY:
 				if(context == grammarAccess.getEntityRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
+					return; 
+				}
+				else break;
+			case SmadlPackage.GENERAL_CONFIG_PARAMETER:
+				if(context == grammarAccess.getGeneralConfigParameterRule()) {
+					sequence_GeneralConfigParameter(context, (GeneralConfigParameter) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1093,7 +1100,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameters+=FullJvmFormalParameter* parameters+=FullJvmFormalParameter* body=XBlockExpression)
+	 *     (parameters+=FullJvmFormalParameter* parameters+=FullJvmFormalParameter* body=XBlockExpression?)
 	 */
 	protected void sequence_ComputationalUnit(EObject context, ComputationalUnit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1105,6 +1112,15 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	 *     entities+=SocialMachine*
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID (value=Number | value=STRING))
+	 */
+	protected void sequence_GeneralConfigParameter(EObject context, GeneralConfigParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1127,7 +1143,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID target=[SocialMachine|ValidID] (paramName+=ValidID paramValue+=Number)* constraint=RelationshipConstraint?)
+	 *     (name=ValidID target=[SocialMachine|ValidID] configParams+=GeneralConfigParameter* constraint=RelationshipConstraint?)
 	 */
 	protected void sequence_GeneralRelationship(EObject context, GeneralRelationship semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

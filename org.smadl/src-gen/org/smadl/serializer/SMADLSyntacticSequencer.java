@@ -18,8 +18,7 @@ import org.smadl.services.SMADLGrammarAccess;
 public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SMADLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_GeneralRelationship_STRINGTerminalRuleCall_4_1_a;
-	protected AbstractElementAlias match_GeneralRelationship_STRINGTerminalRuleCall_4_1_p;
+	protected AbstractElementAlias match_GeneralConfigParameter_SemicolonKeyword_3_q;
 	protected AbstractElementAlias match_OAuthRelationship_SemicolonKeyword_11_q;
 	protected AbstractElementAlias match_OAuthRelationship_SemicolonKeyword_15_q;
 	protected AbstractElementAlias match_OAuthRelationship_SemicolonKeyword_19_q;
@@ -36,8 +35,7 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SMADLGrammarAccess) access;
-		match_GeneralRelationship_STRINGTerminalRuleCall_4_1_a = new TokenAlias(true, true, grammarAccess.getGeneralRelationshipAccess().getSTRINGTerminalRuleCall_4_1());
-		match_GeneralRelationship_STRINGTerminalRuleCall_4_1_p = new TokenAlias(true, false, grammarAccess.getGeneralRelationshipAccess().getSTRINGTerminalRuleCall_4_1());
+		match_GeneralConfigParameter_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getGeneralConfigParameterAccess().getSemicolonKeyword_3());
 		match_OAuthRelationship_SemicolonKeyword_11_q = new TokenAlias(false, true, grammarAccess.getOAuthRelationshipAccess().getSemicolonKeyword_11());
 		match_OAuthRelationship_SemicolonKeyword_15_q = new TokenAlias(false, true, grammarAccess.getOAuthRelationshipAccess().getSemicolonKeyword_15());
 		match_OAuthRelationship_SemicolonKeyword_19_q = new TokenAlias(false, true, grammarAccess.getOAuthRelationshipAccess().getSemicolonKeyword_19());
@@ -58,8 +56,6 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getArrayBracketsToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
 			return getOpSingleAssignToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
-			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -85,27 +81,14 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "=";
 	}
 	
-	/**
-	 * terminal STRING: 
-	 * 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
-	 * 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
-	 */
-	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_GeneralRelationship_STRINGTerminalRuleCall_4_1_a.equals(syntax))
-				emit_GeneralRelationship_STRINGTerminalRuleCall_4_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_GeneralRelationship_STRINGTerminalRuleCall_4_1_p.equals(syntax))
-				emit_GeneralRelationship_STRINGTerminalRuleCall_4_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_GeneralConfigParameter_SemicolonKeyword_3_q.equals(syntax))
+				emit_GeneralConfigParameter_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_OAuthRelationship_SemicolonKeyword_11_q.equals(syntax))
 				emit_OAuthRelationship_SemicolonKeyword_11_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_OAuthRelationship_SemicolonKeyword_15_q.equals(syntax))
@@ -136,17 +119,9 @@ public class SMADLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     STRING*
+	 *     ';'?
 	 */
-	protected void emit_GeneralRelationship_STRINGTerminalRuleCall_4_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     STRING+
-	 */
-	protected void emit_GeneralRelationship_STRINGTerminalRuleCall_4_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_GeneralConfigParameter_SemicolonKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
