@@ -10,6 +10,13 @@ public abstract class Relationship {
 		this.consumer = consumer;
 		this.provider = provider;
 	}
+	
+	public Relationship(SocialMachine consumer, SocialMachine provider,
+			RelationshipConstraint constraint) {
+		this.consumer = consumer;
+		this.provider = provider;
+		this.constraint = constraint;
+	}
 
 	public SocialMachine getConsumer() {
 		return consumer;
