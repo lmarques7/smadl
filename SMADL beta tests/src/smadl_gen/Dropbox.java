@@ -1,3 +1,5 @@
+package smadl_gen;
+
 import java.io.File;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.InputOutput;
