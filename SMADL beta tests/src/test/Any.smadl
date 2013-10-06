@@ -1,3 +1,7 @@
-SocialMachine Any {
+SocialMachine Any relates to Target {
+  
+  constructor()
+  
+  op videoStream()
   
 }
