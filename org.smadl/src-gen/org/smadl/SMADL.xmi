@@ -126,9 +126,9 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="GeneralRelationship">
+    <rules xsi:type="xtext:ParserRule" name="GenericRelationship">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.smadl.org#//GeneralRelationship"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.smadl.org#//GenericRelationship"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">

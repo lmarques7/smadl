@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.common.types.JvmConstructor;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericType;
@@ -12,6 +13,7 @@ import org.eclipse.xtext.common.types.JvmOperation;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.compiler.XbaseCompiler;
+import org.eclipse.xtext.xbase.compiler.output.ITreeAppendable;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
@@ -126,6 +128,15 @@ public class SMADLJvmModelInferrer extends AbstractModelInferrer {
                           SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
                         }
                         it.setAbstract(true);
+                        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+                            public void apply(final ITreeAppendable it) {
+                              StringConcatenation _builder = new StringConcatenation();
+                              _builder.append("                            ");
+                              _builder.newLine();
+                              it.append(_builder);
+                            }
+                          };
+                        SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
                       }
                     };
                   JvmOperation _method = SMADLJvmModelInferrer.this._jvmTypesBuilder.toMethod(op, _name, returnType, _function_1);

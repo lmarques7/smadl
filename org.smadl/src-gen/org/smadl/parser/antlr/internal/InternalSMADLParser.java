@@ -826,7 +826,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationshipGroup"
-    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:281:1: ruleRelationshipGroup returns [EObject current=null] : (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+ otherlv_3= '}' ) ;
+    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:281:1: ruleRelationshipGroup returns [EObject current=null] : (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+ otherlv_3= '}' ) ;
     public final EObject ruleRelationshipGroup() throws RecognitionException {
         EObject current = null;
 
@@ -841,11 +841,11 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:284:28: ( (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+ otherlv_3= '}' ) )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:1: (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+ otherlv_3= '}' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:284:28: ( (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+ otherlv_3= '}' ) )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:1: (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+ otherlv_3= '}' )
             {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:1: (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+ otherlv_3= '}' )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:3: otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+ otherlv_3= '}'
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:1: (otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+ otherlv_3= '}' )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:285:3: otherlv_0= 'Relationships' otherlv_1= '{' ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+ otherlv_3= '}'
             {
             otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleRelationshipGroup522); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -859,7 +859,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getRelationshipGroupAccess().getLeftCurlyBracketKeyword_1());
                   
             }
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:293:1: ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) ) )+
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:293:1: ( ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) ) )+
             int cnt10=0;
             loop10:
             do {
@@ -873,12 +873,12 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:294:1: ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) )
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:294:1: ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) )
             	    {
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:294:1: ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship ) )
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:295:1: (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship )
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:294:1: ( (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship ) )
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:295:1: (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship )
             	    {
-            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:295:1: (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGeneralRelationship )
+            	    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:295:1: (lv_relationships_2_1= ruleOAuthRelationship | lv_relationships_2_2= ruleGenericRelationship )
             	    int alt9=2;
             	    int LA9_0 = input.LA(1);
 
@@ -970,15 +970,15 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:311:8: lv_relationships_2_2= ruleGeneralRelationship
+            	            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:311:8: lv_relationships_2_2= ruleGenericRelationship
             	            {
             	            if ( state.backtracking==0 ) {
             	               
-            	              	        newCompositeNode(grammarAccess.getRelationshipGroupAccess().getRelationshipsGeneralRelationshipParserRuleCall_2_0_1()); 
+            	              	        newCompositeNode(grammarAccess.getRelationshipGroupAccess().getRelationshipsGenericRelationshipParserRuleCall_2_0_1()); 
             	              	    
             	            }
-            	            pushFollow(FOLLOW_ruleGeneralRelationship_in_ruleRelationshipGroup576);
-            	            lv_relationships_2_2=ruleGeneralRelationship();
+            	            pushFollow(FOLLOW_ruleGenericRelationship_in_ruleRelationshipGroup576);
+            	            lv_relationships_2_2=ruleGenericRelationship();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -991,7 +991,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             	                     			current, 
             	                     			"relationships",
             	                      		lv_relationships_2_2, 
-            	                      		"GeneralRelationship");
+            	                      		"GenericRelationship");
             	              	        afterParserOrEnumRuleCall();
             	              	    
             	            }
@@ -1539,30 +1539,30 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleOAuthRelationship"
 
 
-    // $ANTLR start "entryRuleGeneralRelationship"
-    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:545:1: entryRuleGeneralRelationship returns [EObject current=null] : iv_ruleGeneralRelationship= ruleGeneralRelationship EOF ;
-    public final EObject entryRuleGeneralRelationship() throws RecognitionException {
+    // $ANTLR start "entryRuleGenericRelationship"
+    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:545:1: entryRuleGenericRelationship returns [EObject current=null] : iv_ruleGenericRelationship= ruleGenericRelationship EOF ;
+    public final EObject entryRuleGenericRelationship() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleGeneralRelationship = null;
+        EObject iv_ruleGenericRelationship = null;
 
 
         try {
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:546:2: (iv_ruleGeneralRelationship= ruleGeneralRelationship EOF )
-            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:547:2: iv_ruleGeneralRelationship= ruleGeneralRelationship EOF
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:546:2: (iv_ruleGenericRelationship= ruleGenericRelationship EOF )
+            // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:547:2: iv_ruleGenericRelationship= ruleGenericRelationship EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getGeneralRelationshipRule()); 
+               newCompositeNode(grammarAccess.getGenericRelationshipRule()); 
             }
-            pushFollow(FOLLOW_ruleGeneralRelationship_in_entryRuleGeneralRelationship1045);
-            iv_ruleGeneralRelationship=ruleGeneralRelationship();
+            pushFollow(FOLLOW_ruleGenericRelationship_in_entryRuleGenericRelationship1045);
+            iv_ruleGenericRelationship=ruleGenericRelationship();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleGeneralRelationship; 
+               current =iv_ruleGenericRelationship; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGeneralRelationship1055); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGenericRelationship1055); if (state.failed) return current;
 
             }
 
@@ -1576,12 +1576,12 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleGeneralRelationship"
+    // $ANTLR end "entryRuleGenericRelationship"
 
 
-    // $ANTLR start "ruleGeneralRelationship"
-    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:554:1: ruleGeneralRelationship returns [EObject current=null] : ( ( (lv_name_0_0= ruleValidID ) ) otherlv_1= 'with' ( ( ruleValidID ) ) otherlv_3= '[' ( (lv_configParams_4_0= ruleGeneralConfigParameter ) )* otherlv_5= ']' ( (lv_constraint_6_0= ruleRelationshipConstraint ) )? ) ;
-    public final EObject ruleGeneralRelationship() throws RecognitionException {
+    // $ANTLR start "ruleGenericRelationship"
+    // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:554:1: ruleGenericRelationship returns [EObject current=null] : ( ( (lv_name_0_0= ruleValidID ) ) otherlv_1= 'with' ( ( ruleValidID ) ) otherlv_3= '[' ( (lv_configParams_4_0= ruleGeneralConfigParameter ) )* otherlv_5= ']' ( (lv_constraint_6_0= ruleRelationshipConstraint ) )? ) ;
+    public final EObject ruleGenericRelationship() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -1611,10 +1611,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getNameValidIDParserRuleCall_0_0()); 
+              	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getNameValidIDParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleGeneralRelationship1101);
+            pushFollow(FOLLOW_ruleValidID_in_ruleGenericRelationship1101);
             lv_name_0_0=ruleValidID();
 
             state._fsp--;
@@ -1622,7 +1622,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+              	            current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
               	        }
                      		set(
                      			current, 
@@ -1638,10 +1638,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleGeneralRelationship1113); if (state.failed) return current;
+            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleGenericRelationship1113); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getGeneralRelationshipAccess().getWithKeyword_1());
+                  	newLeafNode(otherlv_1, grammarAccess.getGenericRelationshipAccess().getWithKeyword_1());
                   
             }
             // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:580:1: ( ( ruleValidID ) )
@@ -1653,16 +1653,16 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               			if (current==null) {
-              	            current = createModelElement(grammarAccess.getGeneralRelationshipRule());
+              	            current = createModelElement(grammarAccess.getGenericRelationshipRule());
               	        }
                       
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getTargetSocialMachineCrossReference_2_0()); 
+              	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getTargetSocialMachineCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleGeneralRelationship1136);
+            pushFollow(FOLLOW_ruleValidID_in_ruleGenericRelationship1136);
             ruleValidID();
 
             state._fsp--;
@@ -1678,10 +1678,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleGeneralRelationship1148); if (state.failed) return current;
+            otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleGenericRelationship1148); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_3, grammarAccess.getGeneralRelationshipAccess().getLeftSquareBracketKeyword_3());
+                  	newLeafNode(otherlv_3, grammarAccess.getGenericRelationshipAccess().getLeftSquareBracketKeyword_3());
                   
             }
             // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:599:1: ( (lv_configParams_4_0= ruleGeneralConfigParameter ) )*
@@ -1704,10 +1704,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConfigParamsGeneralConfigParameterParserRuleCall_4_0()); 
+            	      	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getConfigParamsGeneralConfigParameterParserRuleCall_4_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleGeneralConfigParameter_in_ruleGeneralRelationship1169);
+            	    pushFollow(FOLLOW_ruleGeneralConfigParameter_in_ruleGenericRelationship1169);
             	    lv_configParams_4_0=ruleGeneralConfigParameter();
 
             	    state._fsp--;
@@ -1715,7 +1715,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+            	      	            current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
             	      	        }
             	             		add(
             	             			current, 
@@ -1737,10 +1737,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,27,FOLLOW_27_in_ruleGeneralRelationship1182); if (state.failed) return current;
+            otherlv_5=(Token)match(input,27,FOLLOW_27_in_ruleGenericRelationship1182); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_5, grammarAccess.getGeneralRelationshipAccess().getRightSquareBracketKeyword_5());
+                  	newLeafNode(otherlv_5, grammarAccess.getGenericRelationshipAccess().getRightSquareBracketKeyword_5());
                   
             }
             // ../org.smadl/src-gen/org/smadl/parser/antlr/internal/InternalSMADL.g:621:1: ( (lv_constraint_6_0= ruleRelationshipConstraint ) )?
@@ -1759,10 +1759,10 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConstraintRelationshipConstraintParserRuleCall_6_0()); 
+                      	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getConstraintRelationshipConstraintParserRuleCall_6_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleRelationshipConstraint_in_ruleGeneralRelationship1203);
+                    pushFollow(FOLLOW_ruleRelationshipConstraint_in_ruleGenericRelationship1203);
                     lv_constraint_6_0=ruleRelationshipConstraint();
 
                     state._fsp--;
@@ -1770,7 +1770,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+                      	            current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
                       	        }
                              		set(
                              			current, 
@@ -1808,7 +1808,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleGeneralRelationship"
+    // $ANTLR end "ruleGenericRelationship"
 
 
     // $ANTLR start "entryRuleGeneralConfigParameter"
@@ -23702,7 +23702,7 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19_in_ruleRelationshipGroup522 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_16_in_ruleRelationshipGroup534 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleOAuthRelationship_in_ruleRelationshipGroup557 = new BitSet(new long[]{0x0000000000040020L});
-    public static final BitSet FOLLOW_ruleGeneralRelationship_in_ruleRelationshipGroup576 = new BitSet(new long[]{0x0000000000040020L});
+    public static final BitSet FOLLOW_ruleGenericRelationship_in_ruleRelationshipGroup576 = new BitSet(new long[]{0x0000000000040020L});
     public static final BitSet FOLLOW_18_in_ruleRelationshipGroup592 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOAuthRelationship_in_entryRuleOAuthRelationship628 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOAuthRelationship638 = new BitSet(new long[]{0x0000000000000002L});
@@ -23728,15 +23728,15 @@ public class InternalSMADLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_17_in_ruleOAuthRelationship973 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_27_in_ruleOAuthRelationship987 = new BitSet(new long[]{0x0000000010000002L});
     public static final BitSet FOLLOW_ruleRelationshipConstraint_in_ruleOAuthRelationship1008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGeneralRelationship_in_entryRuleGeneralRelationship1045 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGeneralRelationship1055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleGeneralRelationship1101 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleGeneralRelationship1113 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleGeneralRelationship1136 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleGeneralRelationship1148 = new BitSet(new long[]{0x0000000008000020L});
-    public static final BitSet FOLLOW_ruleGeneralConfigParameter_in_ruleGeneralRelationship1169 = new BitSet(new long[]{0x0000000008000020L});
-    public static final BitSet FOLLOW_27_in_ruleGeneralRelationship1182 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_ruleRelationshipConstraint_in_ruleGeneralRelationship1203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGenericRelationship_in_entryRuleGenericRelationship1045 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGenericRelationship1055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleGenericRelationship1101 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleGenericRelationship1113 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleGenericRelationship1136 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleGenericRelationship1148 = new BitSet(new long[]{0x0000000008000020L});
+    public static final BitSet FOLLOW_ruleGeneralConfigParameter_in_ruleGenericRelationship1169 = new BitSet(new long[]{0x0000000008000020L});
+    public static final BitSet FOLLOW_27_in_ruleGenericRelationship1182 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_ruleRelationshipConstraint_in_ruleGenericRelationship1203 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGeneralConfigParameter_in_entryRuleGeneralConfigParameter1240 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleGeneralConfigParameter1250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleGeneralConfigParameter1296 = new BitSet(new long[]{0x0000000000800000L});

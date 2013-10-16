@@ -100,10 +100,10 @@ public class SmadlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SmadlPackage.GENERAL_RELATIONSHIP:
+      case SmadlPackage.GENERIC_RELATIONSHIP:
       {
-        GeneralRelationship generalRelationship = (GeneralRelationship)theEObject;
-        T result = caseGeneralRelationship(generalRelationship);
+        GenericRelationship genericRelationship = (GenericRelationship)theEObject;
+        T result = caseGenericRelationship(genericRelationship);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,17 +232,17 @@ public class SmadlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>General Relationship</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Generic Relationship</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>General Relationship</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Generic Relationship</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGeneralRelationship(GeneralRelationship object)
+  public T caseGenericRelationship(GenericRelationship object)
   {
     return null;
   }

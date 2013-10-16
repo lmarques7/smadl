@@ -309,9 +309,9 @@ ruleRelationshipGroup returns [EObject current=null]
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getRelationshipGroupAccess().getRelationshipsGeneralRelationshipParserRuleCall_2_0_1()); 
+	        newCompositeNode(grammarAccess.getRelationshipGroupAccess().getRelationshipsGenericRelationshipParserRuleCall_2_0_1()); 
 	    }
-		lv_relationships_2_2=ruleGeneralRelationship		{
+		lv_relationships_2_2=ruleGenericRelationship		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRelationshipGroupRule());
 	        }
@@ -319,7 +319,7 @@ ruleRelationshipGroup returns [EObject current=null]
        			$current, 
        			"relationships",
         		lv_relationships_2_2, 
-        		"GeneralRelationship");
+        		"GenericRelationship");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -541,28 +541,28 @@ ruleOAuthRelationship returns [EObject current=null]
 
 
 
-// Entry rule entryRuleGeneralRelationship
-entryRuleGeneralRelationship returns [EObject current=null] 
+// Entry rule entryRuleGenericRelationship
+entryRuleGenericRelationship returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getGeneralRelationshipRule()); }
-	 iv_ruleGeneralRelationship=ruleGeneralRelationship 
-	 { $current=$iv_ruleGeneralRelationship.current; } 
+	{ newCompositeNode(grammarAccess.getGenericRelationshipRule()); }
+	 iv_ruleGenericRelationship=ruleGenericRelationship 
+	 { $current=$iv_ruleGenericRelationship.current; } 
 	 EOF 
 ;
 
-// Rule GeneralRelationship
-ruleGeneralRelationship returns [EObject current=null] 
+// Rule GenericRelationship
+ruleGenericRelationship returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getNameValidIDParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getNameValidIDParserRuleCall_0_0()); 
 	    }
 		lv_name_0_0=ruleValidID		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+	            $current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
 	        }
        		set(
        			$current, 
@@ -575,17 +575,17 @@ ruleGeneralRelationship returns [EObject current=null]
 )
 )	otherlv_1='with' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getGeneralRelationshipAccess().getWithKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getGenericRelationshipAccess().getWithKeyword_1());
     }
 (
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGeneralRelationshipRule());
+	            $current = createModelElement(grammarAccess.getGenericRelationshipRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getTargetSocialMachineCrossReference_2_0()); 
+	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getTargetSocialMachineCrossReference_2_0()); 
 	    }
 		ruleValidID		{ 
 	        afterParserOrEnumRuleCall();
@@ -594,16 +594,16 @@ ruleGeneralRelationship returns [EObject current=null]
 )
 )	otherlv_3='[' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getGeneralRelationshipAccess().getLeftSquareBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getGenericRelationshipAccess().getLeftSquareBracketKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConfigParamsGeneralConfigParameterParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getConfigParamsGeneralConfigParameterParserRuleCall_4_0()); 
 	    }
 		lv_configParams_4_0=ruleGeneralConfigParameter		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+	            $current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
 	        }
        		add(
        			$current, 
@@ -616,16 +616,16 @@ ruleGeneralRelationship returns [EObject current=null]
 )
 )*	otherlv_5=']' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getGeneralRelationshipAccess().getRightSquareBracketKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getGenericRelationshipAccess().getRightSquareBracketKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGeneralRelationshipAccess().getConstraintRelationshipConstraintParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getGenericRelationshipAccess().getConstraintRelationshipConstraintParserRuleCall_6_0()); 
 	    }
 		lv_constraint_6_0=ruleRelationshipConstraint		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGeneralRelationshipRule());
+	            $current = createModelElementForParent(grammarAccess.getGenericRelationshipRule());
 	        }
        		set(
        			$current, 

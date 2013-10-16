@@ -59,7 +59,7 @@ import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConfigParameter;
 import org.smadl.smadl.GeneralConstraint;
-import org.smadl.smadl.GeneralRelationship;
+import org.smadl.smadl.GenericRelationship;
 import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.ProvidedService;
@@ -102,9 +102,9 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
-			case SmadlPackage.GENERAL_RELATIONSHIP:
-				if(context == grammarAccess.getGeneralRelationshipRule()) {
-					sequence_GeneralRelationship(context, (GeneralRelationship) semanticObject); 
+			case SmadlPackage.GENERIC_RELATIONSHIP:
+				if(context == grammarAccess.getGenericRelationshipRule()) {
+					sequence_GenericRelationship(context, (GenericRelationship) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1145,7 +1145,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	 * Constraint:
 	 *     (name=ValidID target=[SocialMachine|ValidID] configParams+=GeneralConfigParameter* constraint=RelationshipConstraint?)
 	 */
-	protected void sequence_GeneralRelationship(EObject context, GeneralRelationship semanticObject) {
+	protected void sequence_GenericRelationship(EObject context, GenericRelationship semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1227,7 +1227,7 @@ public class SMADLSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (relationships+=OAuthRelationship | relationships+=GeneralRelationship)+
+	 *     (relationships+=OAuthRelationship | relationships+=GenericRelationship)+
 	 */
 	protected void sequence_RelationshipGroup(EObject context, RelationshipGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

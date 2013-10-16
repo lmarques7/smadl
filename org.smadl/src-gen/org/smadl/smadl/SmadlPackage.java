@@ -269,14 +269,14 @@ public interface SmadlPackage extends EPackage
   int OAUTH_RELATIONSHIP_FEATURE_COUNT = 7;
 
   /**
-   * The meta object id for the '{@link org.smadl.smadl.impl.GeneralRelationshipImpl <em>General Relationship</em>}' class.
+   * The meta object id for the '{@link org.smadl.smadl.impl.GenericRelationshipImpl <em>Generic Relationship</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.smadl.smadl.impl.GeneralRelationshipImpl
-   * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralRelationship()
+   * @see org.smadl.smadl.impl.GenericRelationshipImpl
+   * @see org.smadl.smadl.impl.SmadlPackageImpl#getGenericRelationship()
    * @generated
    */
-  int GENERAL_RELATIONSHIP = 4;
+  int GENERIC_RELATIONSHIP = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -285,7 +285,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__NAME = 0;
+  int GENERIC_RELATIONSHIP__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -294,7 +294,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__TARGET = 1;
+  int GENERIC_RELATIONSHIP__TARGET = 1;
 
   /**
    * The feature id for the '<em><b>Config Params</b></em>' containment reference list.
@@ -303,7 +303,7 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__CONFIG_PARAMS = 2;
+  int GENERIC_RELATIONSHIP__CONFIG_PARAMS = 2;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' containment reference.
@@ -312,16 +312,16 @@ public interface SmadlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP__CONSTRAINT = 3;
+  int GENERIC_RELATIONSHIP__CONSTRAINT = 3;
 
   /**
-   * The number of structural features of the '<em>General Relationship</em>' class.
+   * The number of structural features of the '<em>Generic Relationship</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_RELATIONSHIP_FEATURE_COUNT = 4;
+  int GENERIC_RELATIONSHIP_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.smadl.smadl.impl.GeneralConfigParameterImpl <em>General Config Parameter</em>}' class.
@@ -818,58 +818,58 @@ public interface SmadlPackage extends EPackage
   EReference getOAuthRelationship_Constraint();
 
   /**
-   * Returns the meta object for class '{@link org.smadl.smadl.GeneralRelationship <em>General Relationship</em>}'.
+   * Returns the meta object for class '{@link org.smadl.smadl.GenericRelationship <em>Generic Relationship</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>General Relationship</em>'.
-   * @see org.smadl.smadl.GeneralRelationship
+   * @return the meta object for class '<em>Generic Relationship</em>'.
+   * @see org.smadl.smadl.GenericRelationship
    * @generated
    */
-  EClass getGeneralRelationship();
+  EClass getGenericRelationship();
 
   /**
-   * Returns the meta object for the attribute '{@link org.smadl.smadl.GeneralRelationship#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.smadl.smadl.GenericRelationship#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getName()
-   * @see #getGeneralRelationship()
+   * @see org.smadl.smadl.GenericRelationship#getName()
+   * @see #getGenericRelationship()
    * @generated
    */
-  EAttribute getGeneralRelationship_Name();
+  EAttribute getGenericRelationship_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.smadl.smadl.GeneralRelationship#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link org.smadl.smadl.GenericRelationship#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Target</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getTarget()
-   * @see #getGeneralRelationship()
+   * @see org.smadl.smadl.GenericRelationship#getTarget()
+   * @see #getGenericRelationship()
    * @generated
    */
-  EReference getGeneralRelationship_Target();
+  EReference getGenericRelationship_Target();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.GeneralRelationship#getConfigParams <em>Config Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.smadl.smadl.GenericRelationship#getConfigParams <em>Config Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Config Params</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getConfigParams()
-   * @see #getGeneralRelationship()
+   * @see org.smadl.smadl.GenericRelationship#getConfigParams()
+   * @see #getGenericRelationship()
    * @generated
    */
-  EReference getGeneralRelationship_ConfigParams();
+  EReference getGenericRelationship_ConfigParams();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.smadl.smadl.GeneralRelationship#getConstraint <em>Constraint</em>}'.
+   * Returns the meta object for the containment reference '{@link org.smadl.smadl.GenericRelationship#getConstraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Constraint</em>'.
-   * @see org.smadl.smadl.GeneralRelationship#getConstraint()
-   * @see #getGeneralRelationship()
+   * @see org.smadl.smadl.GenericRelationship#getConstraint()
+   * @see #getGenericRelationship()
    * @generated
    */
-  EReference getGeneralRelationship_Constraint();
+  EReference getGenericRelationship_Constraint();
 
   /**
    * Returns the meta object for class '{@link org.smadl.smadl.GeneralConfigParameter <em>General Config Parameter</em>}'.
@@ -1299,14 +1299,14 @@ public interface SmadlPackage extends EPackage
     EReference OAUTH_RELATIONSHIP__CONSTRAINT = eINSTANCE.getOAuthRelationship_Constraint();
 
     /**
-     * The meta object literal for the '{@link org.smadl.smadl.impl.GeneralRelationshipImpl <em>General Relationship</em>}' class.
+     * The meta object literal for the '{@link org.smadl.smadl.impl.GenericRelationshipImpl <em>Generic Relationship</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.smadl.smadl.impl.GeneralRelationshipImpl
-     * @see org.smadl.smadl.impl.SmadlPackageImpl#getGeneralRelationship()
+     * @see org.smadl.smadl.impl.GenericRelationshipImpl
+     * @see org.smadl.smadl.impl.SmadlPackageImpl#getGenericRelationship()
      * @generated
      */
-    EClass GENERAL_RELATIONSHIP = eINSTANCE.getGeneralRelationship();
+    EClass GENERIC_RELATIONSHIP = eINSTANCE.getGenericRelationship();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1314,7 +1314,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GENERAL_RELATIONSHIP__NAME = eINSTANCE.getGeneralRelationship_Name();
+    EAttribute GENERIC_RELATIONSHIP__NAME = eINSTANCE.getGenericRelationship_Name();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1322,7 +1322,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_RELATIONSHIP__TARGET = eINSTANCE.getGeneralRelationship_Target();
+    EReference GENERIC_RELATIONSHIP__TARGET = eINSTANCE.getGenericRelationship_Target();
 
     /**
      * The meta object literal for the '<em><b>Config Params</b></em>' containment reference list feature.
@@ -1330,7 +1330,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_RELATIONSHIP__CONFIG_PARAMS = eINSTANCE.getGeneralRelationship_ConfigParams();
+    EReference GENERIC_RELATIONSHIP__CONFIG_PARAMS = eINSTANCE.getGenericRelationship_ConfigParams();
 
     /**
      * The meta object literal for the '<em><b>Constraint</b></em>' containment reference feature.
@@ -1338,7 +1338,7 @@ public interface SmadlPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GENERAL_RELATIONSHIP__CONSTRAINT = eINSTANCE.getGeneralRelationship_Constraint();
+    EReference GENERIC_RELATIONSHIP__CONSTRAINT = eINSTANCE.getGenericRelationship_Constraint();
 
     /**
      * The meta object literal for the '{@link org.smadl.smadl.impl.GeneralConfigParameterImpl <em>General Config Parameter</em>}' class.

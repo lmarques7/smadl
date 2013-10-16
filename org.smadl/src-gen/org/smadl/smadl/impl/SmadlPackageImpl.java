@@ -18,7 +18,7 @@ import org.smadl.smadl.ComputationalUnit;
 import org.smadl.smadl.Entity;
 import org.smadl.smadl.GeneralConfigParameter;
 import org.smadl.smadl.GeneralConstraint;
-import org.smadl.smadl.GeneralRelationship;
+import org.smadl.smadl.GenericRelationship;
 import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.OperationConstraint;
 import org.smadl.smadl.OperationConstraintType;
@@ -72,7 +72,7 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass generalRelationshipEClass = null;
+  private EClass genericRelationshipEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -398,9 +398,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGeneralRelationship()
+  public EClass getGenericRelationship()
   {
-    return generalRelationshipEClass;
+    return genericRelationshipEClass;
   }
 
   /**
@@ -408,9 +408,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGeneralRelationship_Name()
+  public EAttribute getGenericRelationship_Name()
   {
-    return (EAttribute)generalRelationshipEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)genericRelationshipEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -418,9 +418,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGeneralRelationship_Target()
+  public EReference getGenericRelationship_Target()
   {
-    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(1);
+    return (EReference)genericRelationshipEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -428,9 +428,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGeneralRelationship_ConfigParams()
+  public EReference getGenericRelationship_ConfigParams()
   {
-    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(2);
+    return (EReference)genericRelationshipEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -438,9 +438,9 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGeneralRelationship_Constraint()
+  public EReference getGenericRelationship_Constraint()
   {
-    return (EReference)generalRelationshipEClass.getEStructuralFeatures().get(3);
+    return (EReference)genericRelationshipEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -726,11 +726,11 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     createEAttribute(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__USER_TOKEN);
     createEReference(oAuthRelationshipEClass, OAUTH_RELATIONSHIP__CONSTRAINT);
 
-    generalRelationshipEClass = createEClass(GENERAL_RELATIONSHIP);
-    createEAttribute(generalRelationshipEClass, GENERAL_RELATIONSHIP__NAME);
-    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__TARGET);
-    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__CONFIG_PARAMS);
-    createEReference(generalRelationshipEClass, GENERAL_RELATIONSHIP__CONSTRAINT);
+    genericRelationshipEClass = createEClass(GENERIC_RELATIONSHIP);
+    createEAttribute(genericRelationshipEClass, GENERIC_RELATIONSHIP__NAME);
+    createEReference(genericRelationshipEClass, GENERIC_RELATIONSHIP__TARGET);
+    createEReference(genericRelationshipEClass, GENERIC_RELATIONSHIP__CONFIG_PARAMS);
+    createEReference(genericRelationshipEClass, GENERIC_RELATIONSHIP__CONSTRAINT);
 
     generalConfigParameterEClass = createEClass(GENERAL_CONFIG_PARAMETER);
     createEAttribute(generalConfigParameterEClass, GENERAL_CONFIG_PARAMETER__NAME);
@@ -824,11 +824,11 @@ public class SmadlPackageImpl extends EPackageImpl implements SmadlPackage
     initEAttribute(getOAuthRelationship_UserToken(), ecorePackage.getEString(), "userToken", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOAuthRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, OAuthRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(generalRelationshipEClass, GeneralRelationship.class, "GeneralRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGeneralRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralRelationship_ConfigParams(), this.getGeneralConfigParameter(), null, "configParams", null, 0, -1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, GeneralRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(genericRelationshipEClass, GenericRelationship.class, "GenericRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGenericRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, GenericRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenericRelationship_Target(), this.getSocialMachine(), null, "target", null, 0, 1, GenericRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenericRelationship_ConfigParams(), this.getGeneralConfigParameter(), null, "configParams", null, 0, -1, GenericRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenericRelationship_Constraint(), this.getRelationshipConstraint(), null, "constraint", null, 0, 1, GenericRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalConfigParameterEClass, GeneralConfigParameter.class, "GeneralConfigParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGeneralConfigParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, GeneralConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

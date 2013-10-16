@@ -165,15 +165,15 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRelationshipsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final Alternatives cRelationshipsAlternatives_2_0 = (Alternatives)cRelationshipsAssignment_2.eContents().get(0);
 		private final RuleCall cRelationshipsOAuthRelationshipParserRuleCall_2_0_0 = (RuleCall)cRelationshipsAlternatives_2_0.eContents().get(0);
-		private final RuleCall cRelationshipsGeneralRelationshipParserRuleCall_2_0_1 = (RuleCall)cRelationshipsAlternatives_2_0.eContents().get(1);
+		private final RuleCall cRelationshipsGenericRelationshipParserRuleCall_2_0_1 = (RuleCall)cRelationshipsAlternatives_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//RelationshipGroup:
 		//
-		//	"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}";
+		//	"Relationships" "{" relationships+=(OAuthRelationship | GenericRelationship)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}"
+		//"Relationships" "{" relationships+=(OAuthRelationship | GenericRelationship)+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Relationships"
@@ -182,17 +182,17 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
-		//relationships+=(OAuthRelationship | GeneralRelationship)+
+		//relationships+=(OAuthRelationship | GenericRelationship)+
 		public Assignment getRelationshipsAssignment_2() { return cRelationshipsAssignment_2; }
 
-		//OAuthRelationship | GeneralRelationship
+		//OAuthRelationship | GenericRelationship
 		public Alternatives getRelationshipsAlternatives_2_0() { return cRelationshipsAlternatives_2_0; }
 
 		//OAuthRelationship
 		public RuleCall getRelationshipsOAuthRelationshipParserRuleCall_2_0_0() { return cRelationshipsOAuthRelationshipParserRuleCall_2_0_0; }
 
-		//GeneralRelationship
-		public RuleCall getRelationshipsGeneralRelationshipParserRuleCall_2_0_1() { return cRelationshipsGeneralRelationshipParserRuleCall_2_0_1; }
+		//GenericRelationship
+		public RuleCall getRelationshipsGenericRelationshipParserRuleCall_2_0_1() { return cRelationshipsGenericRelationshipParserRuleCall_2_0_1; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -335,8 +335,8 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getConstraintRelationshipConstraintParserRuleCall_21_0() { return cConstraintRelationshipConstraintParserRuleCall_21_0; }
 	}
 
-	public class GeneralRelationshipElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralRelationship");
+	public class GenericRelationshipElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GenericRelationship");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameValidIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -351,7 +351,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cConstraintAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cConstraintRelationshipConstraintParserRuleCall_6_0 = (RuleCall)cConstraintAssignment_6.eContents().get(0);
 		
-		//GeneralRelationship:
+		//GenericRelationship:
 		//
 		//	name=ValidID "with" target=[SocialMachine|ValidID] "[" configParams+=GeneralConfigParameter* "]"
 		//
@@ -816,7 +816,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 	private SocialMachineElements pSocialMachine;
 	private RelationshipGroupElements pRelationshipGroup;
 	private OAuthRelationshipElements pOAuthRelationship;
-	private GeneralRelationshipElements pGeneralRelationship;
+	private GenericRelationshipElements pGenericRelationship;
 	private GeneralConfigParameterElements pGeneralConfigParameter;
 	private RelationshipConstraintElements pRelationshipConstraint;
 	private RelationshipConstraintFullAccessElements pRelationshipConstraintFullAccess;
@@ -893,7 +893,7 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//RelationshipGroup:
 	//
-	//	"Relationships" "{" relationships+=(OAuthRelationship | GeneralRelationship)+ "}";
+	//	"Relationships" "{" relationships+=(OAuthRelationship | GenericRelationship)+ "}";
 	public RelationshipGroupElements getRelationshipGroupAccess() {
 		return (pRelationshipGroup != null) ? pRelationshipGroup : (pRelationshipGroup = new RelationshipGroupElements());
 	}
@@ -915,17 +915,17 @@ public class SMADLGrammarAccess extends AbstractGrammarElementFinder {
 		return getOAuthRelationshipAccess().getRule();
 	}
 
-	//GeneralRelationship:
+	//GenericRelationship:
 	//
 	//	name=ValidID "with" target=[SocialMachine|ValidID] "[" configParams+=GeneralConfigParameter* "]"
 	//
 	//	constraint=RelationshipConstraint?;
-	public GeneralRelationshipElements getGeneralRelationshipAccess() {
-		return (pGeneralRelationship != null) ? pGeneralRelationship : (pGeneralRelationship = new GeneralRelationshipElements());
+	public GenericRelationshipElements getGenericRelationshipAccess() {
+		return (pGenericRelationship != null) ? pGenericRelationship : (pGenericRelationship = new GenericRelationshipElements());
 	}
 	
-	public ParserRule getGeneralRelationshipRule() {
-		return getGeneralRelationshipAccess().getRule();
+	public ParserRule getGenericRelationshipRule() {
+		return getGenericRelationshipAccess().getRule();
 	}
 
 	//GeneralConfigParameter:

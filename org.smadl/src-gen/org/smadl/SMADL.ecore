@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//RelationshipConstraint"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="GenericRelationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//SocialMachine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configParams" upperBound="-1"

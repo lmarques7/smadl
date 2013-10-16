@@ -36,11 +36,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//OAuthRelationship/userToken"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//OAuthRelationship/constraint"/>
     </genClasses>
-    <genClasses ecoreClass="SMADL.ecore#//GeneralRelationship">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralRelationship/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/configParams"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GeneralRelationship/constraint"/>
+    <genClasses ecoreClass="SMADL.ecore#//GenericRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GenericRelationship/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SMADL.ecore#//GenericRelationship/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GenericRelationship/configParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SMADL.ecore#//GenericRelationship/constraint"/>
     </genClasses>
     <genClasses ecoreClass="SMADL.ecore#//GeneralConfigParameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SMADL.ecore#//GeneralConfigParameter/name"/>

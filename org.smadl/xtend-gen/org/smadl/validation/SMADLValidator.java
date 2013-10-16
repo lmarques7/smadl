@@ -14,7 +14,7 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xtype.XtypePackage;
 import org.smadl.smadl.GeneralConfigParameter;
-import org.smadl.smadl.GeneralRelationship;
+import org.smadl.smadl.GenericRelationship;
 import org.smadl.smadl.OAuthRelationship;
 import org.smadl.smadl.ProvidedService;
 import org.smadl.smadl.RelationshipConstraint;
@@ -53,11 +53,11 @@ public class SMADLValidator extends AbstractSMADLValidator {
           String _name = _target.getName();
           targetName = _name;
         } else {
-          if ((relationship instanceof GeneralRelationship)) {
-            SocialMachine _target_1 = ((GeneralRelationship) relationship).getTarget();
+          if ((relationship instanceof GenericRelationship)) {
+            SocialMachine _target_1 = ((GenericRelationship) relationship).getTarget();
             String _name_1 = _target_1.getName();
             targetName = _name_1;
-            feature = Literals.GENERAL_RELATIONSHIP__TARGET;
+            feature = Literals.GENERIC_RELATIONSHIP__TARGET;
           }
         }
         String _name_2 = sm.getName();
@@ -88,11 +88,11 @@ public class SMADLValidator extends AbstractSMADLValidator {
           String _name_1 = _target.getName();
           targetName = _name_1;
         } else {
-          if ((relationship instanceof GeneralRelationship)) {
-            SocialMachine _target_1 = ((GeneralRelationship) relationship).getTarget();
+          if ((relationship instanceof GenericRelationship)) {
+            SocialMachine _target_1 = ((GenericRelationship) relationship).getTarget();
             String _name_2 = _target_1.getName();
             targetName = _name_2;
-            feature = Literals.GENERAL_RELATIONSHIP__TARGET;
+            feature = Literals.GENERIC_RELATIONSHIP__TARGET;
           }
         }
         boolean _contains = relatedNames.contains(targetName);
@@ -122,12 +122,12 @@ public class SMADLValidator extends AbstractSMADLValidator {
           SocialMachine _target = ((OAuthRelationship) relationship).getTarget();
           relationshipTarget = _target;
         } else {
-          if ((relationship instanceof GeneralRelationship)) {
-            RelationshipConstraint _constraint_1 = ((GeneralRelationship) relationship).getConstraint();
+          if ((relationship instanceof GenericRelationship)) {
+            RelationshipConstraint _constraint_1 = ((GenericRelationship) relationship).getConstraint();
             constraint = _constraint_1;
-            SocialMachine _target_1 = ((GeneralRelationship) relationship).getTarget();
+            SocialMachine _target_1 = ((GenericRelationship) relationship).getTarget();
             relationshipTarget = _target_1;
-            feature = Literals.GENERAL_RELATIONSHIP__CONSTRAINT;
+            feature = Literals.GENERIC_RELATIONSHIP__CONSTRAINT;
           }
         }
         boolean _and = false;
@@ -168,7 +168,7 @@ public class SMADLValidator extends AbstractSMADLValidator {
   }
   
   @Check
-  public void checkDuplicatedParamInGeneralRelationship(final GeneralRelationship genRelationship) {
+  public void checkDuplicatedParamInGeneralRelationship(final GenericRelationship genRelationship) {
     EList<GeneralConfigParameter> allParams = genRelationship.getConfigParams();
     int index = 0;
     for (final GeneralConfigParameter param : allParams) {
@@ -193,7 +193,7 @@ public class SMADLValidator extends AbstractSMADLValidator {
               _builder.append(_name_2, "");
               int _plus_1 = (failIndex + index);
               int _plus_2 = (_plus_1 + 1);
-              this.error(_builder.toString(), genRelationship, Literals.GENERAL_RELATIONSHIP__CONFIG_PARAMS, _plus_2);
+              this.error(_builder.toString(), genRelationship, Literals.GENERIC_RELATIONSHIP__CONFIG_PARAMS, _plus_2);
             }
             int _plus_3 = (failIndex + 1);
             failIndex = _plus_3;

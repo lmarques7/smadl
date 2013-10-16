@@ -59,13 +59,13 @@ public interface SmadlFactory extends EFactory
   OAuthRelationship createOAuthRelationship();
 
   /**
-   * Returns a new object of class '<em>General Relationship</em>'.
+   * Returns a new object of class '<em>Generic Relationship</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Relationship</em>'.
+   * @return a new object of class '<em>Generic Relationship</em>'.
    * @generated
    */
-  GeneralRelationship createGeneralRelationship();
+  GenericRelationship createGenericRelationship();
 
   /**
    * Returns a new object of class '<em>General Config Parameter</em>'.
