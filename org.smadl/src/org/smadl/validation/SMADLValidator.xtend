@@ -6,7 +6,7 @@ import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.xbase.XbasePackage
 import org.eclipse.xtext.xtype.XtypePackage
 import org.smadl.smadl.GeneralConfigParameter
-import org.smadl.smadl.GeneralRelationship
+import org.smadl.smadl.GenericRelationship
 import org.smadl.smadl.OAuthRelationship
 import org.smadl.smadl.RelationshipConstraint
 import org.smadl.smadl.RelationshipConstraintListOfOps
@@ -36,9 +36,9 @@ class SMADLValidator extends AbstractSMADLValidator {
             var feature = OAUTH_RELATIONSHIP__TARGET
             if (relationship instanceof OAuthRelationship) {
                 targetName = (relationship as OAuthRelationship).target.name
-            } else if (relationship instanceof GeneralRelationship) {
-                targetName = (relationship as GeneralRelationship).target.name
-                feature = GENERAL_RELATIONSHIP__TARGET
+            } else if (relationship instanceof GenericRelationship) {
+                targetName = (relationship as GenericRelationship).target.name
+                feature = GENERIC_RELATIONSHIP__TARGET
             }
             if (targetName.equals(sm.name)) {
                 error("A social machine cannot have a self relationship", relationship, feature)
@@ -57,9 +57,9 @@ class SMADLValidator extends AbstractSMADLValidator {
             var feature = OAUTH_RELATIONSHIP__TARGET
             if (relationship instanceof OAuthRelationship) {
                 targetName = (relationship as OAuthRelationship).target.name
-            } else if (relationship instanceof GeneralRelationship) {
-                targetName = (relationship as GeneralRelationship).target.name
-                feature = GENERAL_RELATIONSHIP__TARGET
+            } else if (relationship instanceof GenericRelationship) {
+                targetName = (relationship as GenericRelationship).target.name
+                feature = GENERIC_RELATIONSHIP__TARGET
             }
             if (!relatedNames.contains(targetName)) {
                 error("The Social Machine '" + targetName + 
@@ -78,10 +78,10 @@ class SMADLValidator extends AbstractSMADLValidator {
             if (relationship instanceof OAuthRelationship) {
                 constraint = (relationship as OAuthRelationship).constraint
                 relationshipTarget = (relationship as OAuthRelationship).target
-            } else if (relationship instanceof GeneralRelationship) {
-                constraint = (relationship as GeneralRelationship).constraint
-                relationshipTarget = (relationship as GeneralRelationship).target
-                feature = GENERAL_RELATIONSHIP__CONSTRAINT
+            } else if (relationship instanceof GenericRelationship) {
+                constraint = (relationship as GenericRelationship).constraint
+                relationshipTarget = (relationship as GenericRelationship).target
+                feature = GENERIC_RELATIONSHIP__CONSTRAINT
             }
             if (constraint != null && constraint.type instanceof RelationshipConstraintListOfOps) {
                 var listOfOps = (constraint.type as RelationshipConstraintListOfOps).operations
@@ -103,7 +103,7 @@ class SMADLValidator extends AbstractSMADLValidator {
     }
     
     @Check
-    def checkDuplicatedParamInGeneralRelationship(GeneralRelationship genRelationship) {
+    def checkDuplicatedParamInGeneralRelationship(GenericRelationship genRelationship) {
         var allParams = genRelationship.configParams
         var index = 0
         for (param : allParams) {
@@ -116,7 +116,7 @@ class SMADLValidator extends AbstractSMADLValidator {
             for (currentName : remainingNames) {
                 if (currentName.equals(param.name)) {
                     error('''Duplicated configuration parameter: «param.name»''',
-                        genRelationship, GENERAL_RELATIONSHIP__CONFIG_PARAMS, failIndex + index + 1)
+                        genRelationship, GENERIC_RELATIONSHIP__CONFIG_PARAMS, failIndex + index + 1)
                 }
                 failIndex = failIndex + 1
             }
