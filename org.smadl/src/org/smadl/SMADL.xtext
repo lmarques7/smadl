@@ -10,7 +10,7 @@ grammar org.smadl.SMADL with org.eclipse.xtext.xbase.Xbase
 
 generate smadl "http://www.smadl.org"
 
-Entity:
+SocialMachineNetwork:
 	entities+=SocialMachine*
 ;
 	
@@ -19,7 +19,7 @@ SocialMachine:
         ('relates to' dependencies+=[SocialMachine|ValidID] (',' dependencies+=[SocialMachine|ValidID])*)? '{'
         (generalConstraints=GeneralConstraint ';'?)?
         (relationshipGroup=RelationshipGroup)?
-        (constructors+=ComputationalUnit)*
+        (constructors+=ComputationalUnit)?
         (wrapperInterface+=ProvidedService)*
     '}'
 ;
