@@ -50,11 +50,11 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-    def dispatch void infer(SocialMachineNetwork rootElement, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {    
+    def dispatch void infer(SocialMachineNetwork root, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {    
 
         // Here you explain how your model is mapped to Java elements, by writing the actual translation code.
         // An implementation for the initial hello world example could look like this:
-        for (sm : rootElement.entities) {
+        for (sm : root.entities) {
             var smClassDefault = sm.toClass(sm.name.toFirstUpper)
             acceptor.accept(smClassDefault).initializeLater [
                 it.abstract = true
