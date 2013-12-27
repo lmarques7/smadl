@@ -24,9 +24,9 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.smadl.configuration.SMADLOutputProvider;
 import org.smadl.smadl.ComputationalUnit;
-import org.smadl.smadl.Entity;
 import org.smadl.smadl.ProvidedService;
 import org.smadl.smadl.SocialMachine;
+import org.smadl.smadl.SocialMachineNetwork;
 
 /**
  * <p>Infers a JVM model from the source model.</p>
@@ -71,8 +71,8 @@ public class SMADLJvmModelInferrer extends AbstractModelInferrer {
    *            rely on linking using the index if isPreIndexingPhase is
    *            <code>true</code>.
    */
-  protected void _infer(final Entity element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    EList<SocialMachine> _entities = element.getEntities();
+  protected void _infer(final SocialMachineNetwork root, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
+    EList<SocialMachine> _entities = root.getEntities();
     for (final SocialMachine sm : _entities) {
       {
         String _name = sm.getName();
@@ -80,86 +80,86 @@ public class SMADLJvmModelInferrer extends AbstractModelInferrer {
         JvmGenericType smClassDefault = this._jvmTypesBuilder.toClass(sm, _firstUpper);
         IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(smClassDefault);
         final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-            public void apply(final JvmGenericType it) {
-              it.setAbstract(true);
-              it.setPackageName(SMADLOutputProvider.DEFAULT_OUTPUT_PACKAGE);
-              EList<ComputationalUnit> _constructors = sm.getConstructors();
-              for (final ComputationalUnit constructor : _constructors) {
-                EList<JvmMember> _members = it.getMembers();
-                final Procedure1<JvmConstructor> _function = new Procedure1<JvmConstructor>() {
-                    public void apply(final JvmConstructor it) {
-                      EList<JvmFormalParameter> _parameters = constructor.getParameters();
-                      for (final JvmFormalParameter p : _parameters) {
-                        EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-                        String _name = p.getName();
-                        JvmTypeReference _parameterType = p.getParameterType();
-                        JvmFormalParameter _parameter = SMADLJvmModelInferrer.this._jvmTypesBuilder.toParameter(p, _name, _parameterType);
-                        SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-                      }
-                      XExpression _body = constructor.getBody();
-                      SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
-                    }
-                  };
-                JvmConstructor _constructor = SMADLJvmModelInferrer.this._jvmTypesBuilder.toConstructor(constructor, _function);
-                SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members, _constructor);
-              }
-              EList<ProvidedService> _wrapperInterface = sm.getWrapperInterface();
-              for (final ProvidedService op : _wrapperInterface) {
-                {
-                  JvmTypeReference _elvis = null;
-                  JvmTypeReference _returnType = op.getReturnType();
-                  if (_returnType != null) {
-                    _elvis = _returnType;
-                  } else {
-                    JvmTypeReference _newTypeRef = SMADLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(it, "void");
-                    _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_returnType, _newTypeRef);
+          public void apply(final JvmGenericType it) {
+            it.setAbstract(true);
+            it.setPackageName(SMADLOutputProvider.DEFAULT_OUTPUT_PACKAGE);
+            EList<ComputationalUnit> _constructors = sm.getConstructors();
+            for (final ComputationalUnit constructor : _constructors) {
+              EList<JvmMember> _members = it.getMembers();
+              final Procedure1<JvmConstructor> _function = new Procedure1<JvmConstructor>() {
+                public void apply(final JvmConstructor it) {
+                  EList<JvmFormalParameter> _parameters = constructor.getParameters();
+                  for (final JvmFormalParameter p : _parameters) {
+                    EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+                    String _name = p.getName();
+                    JvmTypeReference _parameterType = p.getParameterType();
+                    JvmFormalParameter _parameter = SMADLJvmModelInferrer.this._jvmTypesBuilder.toParameter(p, _name, _parameterType);
+                    SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
                   }
-                  JvmTypeReference returnType = _elvis;
-                  EList<JvmMember> _members_1 = it.getMembers();
-                  String _name = op.getName();
-                  final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
-                      public void apply(final JvmOperation it) {
-                        EList<JvmFormalParameter> _parameters = op.getParameters();
-                        for (final JvmFormalParameter param : _parameters) {
-                          EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-                          String _name = param.getName();
-                          JvmTypeReference _parameterType = param.getParameterType();
-                          JvmFormalParameter _parameter = SMADLJvmModelInferrer.this._jvmTypesBuilder.toParameter(param, _name, _parameterType);
-                          SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-                        }
-                        it.setAbstract(true);
-                        final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
-                            public void apply(final ITreeAppendable it) {
-                              StringConcatenation _builder = new StringConcatenation();
-                              _builder.append("                            ");
-                              _builder.newLine();
-                              it.append(_builder);
-                            }
-                          };
-                        SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+                  XExpression _body = constructor.getBody();
+                  SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _body);
+                }
+              };
+              JvmConstructor _constructor = SMADLJvmModelInferrer.this._jvmTypesBuilder.toConstructor(constructor, _function);
+              SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmConstructor>operator_add(_members, _constructor);
+            }
+            EList<ProvidedService> _wrapperInterface = sm.getWrapperInterface();
+            for (final ProvidedService op : _wrapperInterface) {
+              {
+                JvmTypeReference _elvis = null;
+                JvmTypeReference _returnType = op.getReturnType();
+                if (_returnType != null) {
+                  _elvis = _returnType;
+                } else {
+                  JvmTypeReference _newTypeRef = SMADLJvmModelInferrer.this._jvmTypesBuilder.newTypeRef(it, "void");
+                  _elvis = ObjectExtensions.<JvmTypeReference>operator_elvis(_returnType, _newTypeRef);
+                }
+                JvmTypeReference returnType = _elvis;
+                EList<JvmMember> _members_1 = it.getMembers();
+                String _name = op.getName();
+                final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+                  public void apply(final JvmOperation it) {
+                    EList<JvmFormalParameter> _parameters = op.getParameters();
+                    for (final JvmFormalParameter param : _parameters) {
+                      EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+                      String _name = param.getName();
+                      JvmTypeReference _parameterType = param.getParameterType();
+                      JvmFormalParameter _parameter = SMADLJvmModelInferrer.this._jvmTypesBuilder.toParameter(param, _name, _parameterType);
+                      SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
+                    }
+                    it.setAbstract(true);
+                    final Procedure1<ITreeAppendable> _function = new Procedure1<ITreeAppendable>() {
+                      public void apply(final ITreeAppendable it) {
+                        StringConcatenation _builder = new StringConcatenation();
+                        _builder.append("                            ");
+                        _builder.newLine();
+                        it.append(_builder);
                       }
                     };
-                  JvmOperation _method = SMADLJvmModelInferrer.this._jvmTypesBuilder.toMethod(op, _name, returnType, _function_1);
-                  SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmMember>operator_add(_members_1, _method);
-                }
+                    SMADLJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _function);
+                  }
+                };
+                JvmOperation _method = SMADLJvmModelInferrer.this._jvmTypesBuilder.toMethod(op, _name, returnType, _function_1);
+                SMADLJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method);
               }
             }
-          };
+          }
+        };
         _accept.initializeLater(_function);
       }
     }
   }
   
-  public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
-    if (element instanceof Entity) {
-      _infer((Entity)element, acceptor, isPreIndexingPhase);
+  public void infer(final EObject root, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {
+    if (root instanceof SocialMachineNetwork) {
+      _infer((SocialMachineNetwork)root, acceptor, isPreIndexingPhase);
       return;
-    } else if (element != null) {
-      _infer(element, acceptor, isPreIndexingPhase);
+    } else if (root != null) {
+      _infer(root, acceptor, isPreIndexingPhase);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(element, acceptor, isPreIndexingPhase).toString());
+        Arrays.<Object>asList(root, acceptor, isPreIndexingPhase).toString());
     }
   }
 }

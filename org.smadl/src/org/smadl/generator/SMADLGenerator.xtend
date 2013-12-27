@@ -3,13 +3,13 @@ package org.smadl.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import org.smadl.smadl.Entity
+import org.smadl.smadl.SocialMachineNetwork
 
 class SMADLGenerator implements IGenerator {
     
     override doGenerate(Resource input, IFileSystemAccess fsa) {
         /* This code has no use unless an OutputProvider is set up */
-        var list = (input.contents.head as Entity).eContents
+        var list = (input.contents.head as SocialMachineNetwork).eContents
         var content = ""
         for(i : list) {
             content = content + i.class + "\n"

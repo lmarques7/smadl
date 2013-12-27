@@ -5,7 +5,8 @@ import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.smadl.smadl.Entity
+import org.smadl.smadl.SocialMachineNetwork
+
 import static org.smadl.configuration.SMADLOutputProvider.*
 
 /**
@@ -49,11 +50,11 @@ class SMADLJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-    def dispatch void infer(Entity element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {    
+    def dispatch void infer(SocialMachineNetwork rootElement, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {    
 
         // Here you explain how your model is mapped to Java elements, by writing the actual translation code.
         // An implementation for the initial hello world example could look like this:
-        for (sm : element.entities) {
+        for (sm : rootElement.entities) {
             var smClassDefault = sm.toClass(sm.name.toFirstUpper)
             acceptor.accept(smClassDefault).initializeLater [
                 it.abstract = true
